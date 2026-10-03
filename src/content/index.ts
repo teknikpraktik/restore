@@ -1,126 +1,126 @@
 import raw from 'virtual:content'
+import { type ExerciseVersion, type Part } from '../model'
+import { parseSections, type Section, wordCount } from './markdown'
 
 type RawFile = { data: Record<string, any>; body: string }
 const files = raw as Record<string, any>
-
-const mdFiles = (prefix: string): [string, RawFile][] =>
+const mdFiles = (prefix: string) =>
   Object.entries(files).filter(([k]) => k.startsWith(prefix) && k.endsWith('.md')) as [string, RawFile][]
 
-export type Phase = { id: number; name: string; modules: string[] }
-export type Card = { title: string; text: string }
-export type StepKind = 'inledning' | 'inramning' | 'stopp' | 'steg' | 'avslutning'
-export type ScriptStep = { kind: StepKind; seconds: number; text: string }
-export type ExerciseVersion = 'short' | 'full'
+export type Phase = { id: number; name: string; description: string; modules: string[] }
 
-export type ModuleContent = {
+export type Application = {
+  title: string
+  purpose: string
+  steps: string[]
+  days: number
+  kind?: 'reason' | 'plan'
+}
+
+export type Module = {
   id: string
   number: number
   phase: number
   title: string
+  intro: string
   objectives: string[]
   exercises: string[]
+  application: Application
   reflection: string[]
-  estimatedMinutes: { forsta: number; kann: number; prova: number; reflektera: number }
-  cards: Card[]
-  prova: Record<string, any>
-  reflektera: Record<string, any>
+  measurement: boolean
+  sources: string[]
+  theory: Section[]
 }
 
-export type ExerciseContent = {
+export type ExerciseStep = { text: string; weight: number }
+
+export type Exercise = {
   id: string
   title: string
-  summary: string
+  category: string
+  intensity: 'low' | 'moderate'
+  durations?: Record<ExerciseVersion, number>
+  combination: boolean
   positions: string[]
-  scripts: Partial<Record<ExerciseVersion, ScriptStep[]>>
+  modules: number[]
+  purpose: string
+  safety?: string
+  steps: ExerciseStep[]
 }
 
-const blocks = (body: string) =>
-  body.split(/\n---\n/).map((b) => b.trim()).filter(Boolean)
-
-export function parseCards(body: string): Card[] {
-  return blocks(body).map((b) => {
-    const m = b.match(/^## (.+)\n+([\s\S]*)$/)
-    return m ? { title: m[1].trim(), text: m[2].trim() } : { title: '', text: b }
-  })
-}
-
-export function parseScripts(body: string): Partial<Record<ExerciseVersion, ScriptStep[]>> {
-  const out: Partial<Record<ExerciseVersion, ScriptStep[]>> = {}
-  const parts = body.split(/^@@ (kort|hel)$/m)
-  for (let i = 1; i < parts.length; i += 2) {
-    const version: ExerciseVersion = parts[i] === 'kort' ? 'short' : 'full'
-    out[version] = blocks(parts[i + 1]).map((b) => {
-      const m = b.match(/^@(\w+) (\d+)\n([\s\S]*)$/)
-      if (!m) throw new Error(`Ogiltigt manusblock: ${b.slice(0, 40)}`)
-      return { kind: m[1] as StepKind, seconds: Number(m[2]), text: m[3].trim() }
-    })
-  }
-  return out
-}
+export type Source = { id: string; short: string; text: string }
 
 export const phases: Phase[] = files['phases.json']
-export const sources: { id: string; text: string }[] = files['sources.json']
+export const sources: Source[] = files['sources.json']
 
-export function getModule(id: string): ModuleContent | undefined {
-  const entry = mdFiles('modules/').find(([k, f]) => k.endsWith('/module.md') && f.data.id === id)
-  if (!entry) return undefined
-  const dir = entry[0].replace(/module\.md$/, '')
-  const meta = entry[1].data
-  return {
-    ...(meta as Omit<ModuleContent, 'cards' | 'prova' | 'reflektera'>),
-    cards: parseCards((files[dir + 'forsta.md'] as RawFile).body),
-    prova: (files[dir + 'prova.md'] as RawFile).data,
-    reflektera: (files[dir + 'reflektera.md'] as RawFile).data,
+export const modules: Module[] = mdFiles('modules/')
+  .filter(([k]) => k.endsWith('/module.md'))
+  .map(([k, f]) => {
+    const theory = files[k.replace(/module\.md$/, 'teori.md')] as RawFile | undefined
+    return { ...(f.data as Omit<Module, 'theory'>), theory: theory ? parseSections(theory.body) : [] }
+  })
+  .sort((a, b) => a.number - b.number)
+
+export const getModule = (id: string | undefined) => modules.find((m) => m.id === id)
+export const getModuleByNumber = (n: number) => modules.find((m) => m.number === n)
+export const getPhase = (id: number) => phases.find((p) => p.id === id)!
+
+const parseStep = (s: string): ExerciseStep => {
+  const m = s.match(/^\[(\d+)\] (.+)$/)
+  return m ? { weight: Number(m[1]), text: m[2] } : { weight: 1, text: s }
+}
+
+export const exercises: Exercise[] = mdFiles('exercises/').map(([, f]) => ({
+  ...(f.data as Omit<Exercise, 'steps' | 'combination'>),
+  combination: !!f.data.combination,
+  steps: (f.data.steps as string[]).map(parseStep),
+}))
+
+export const getExercise = (id: string | undefined) => exercises.find((e) => e.id === id)
+
+export const CATEGORIES = ['Andning', 'Rörelse', 'Uppmärksamhet', 'Vardag']
+
+export const getSource = (id: string) => sources.find((s) => s.id === id)
+
+export type Concept = { term: string; text: string; sources: string[]; module: string }
+export const concepts: Concept[] = (files['knowledge/begrepp.md'] as RawFile).data.concepts
+
+const page = (path: string) => {
+  const f = files[path] as RawFile
+  return { ...f.data, sections: parseSections(f.body) } as {
+    title: string
+    contacts?: { name: string; tel: string; when: string }[]
+    sections: Section[]
+  }
+}
+export const aboutPage = page('about/om-restore.md')
+export const notEnoughPage = page('about/nar-restore-inte-racker.md')
+
+// Tidsuppskattningar
+
+export const exerciseMinutes = (e: Exercise, v: ExerciseVersion) =>
+  e.durations ? Math.max(1, Math.round(e.durations[v] / 60)) : 0
+
+export const theoryMinutes = (m: Module) => Math.max(2, Math.ceil(wordCount(m.theory) / 180))
+
+export function partMinutes(m: Module, part: Part) {
+  switch (part) {
+    case 'teori':
+      return theoryMinutes(m)
+    case 'praktik': {
+      const first = getExercise(m.exercises[0])
+      return first?.durations ? exerciseMinutes(first, 'short') : 5
+    }
+    case 'tillampning':
+      return 2
+    case 'reflektion':
+      return 4
   }
 }
 
-export function getExercise(id: string): ExerciseContent | undefined {
-  const entry = mdFiles('exercises/').find(([, f]) => f.data.id === id)
-  if (!entry) return undefined
-  const { data, body } = entry[1]
-  return {
-    id: data.id,
-    title: data.title,
-    summary: data.summary,
-    positions: data.positions ?? [],
-    scripts: parseScripts(body),
-  }
-}
-
-export const exerciseIds = (): string[] =>
-  mdFiles('exercises/').map(([, f]) => f.data.id as string)
-
-export const totalSeconds = (steps: ScriptStep[]) => steps.reduce((s, x) => s + x.seconds, 0)
-
-const safety = (name: string) => (files[`safety/${name}.md`] as RawFile).data
-
-export type SelfCheckQuestion = { id: number; question: string; advice: string }
-export const selfCheck = () => safety('sjalvkontroll') as {
-  title: string
-  intro: string
-  q1Note: string
-  questions: SelfCheckQuestion[]
-}
-export const stopRule = () => safety('stoppregel') as {
-  title: string
-  stopIfTitle: string
-  stopIf: string[]
-  doTitle: string
-  do: string[]
-  after: string
-}
-export const reactions = () => safety('reaktioner') as {
-  title: string
-  commonTitle: string
-  common: string[]
-  careTitle: string
-  care: string[]
-  acuteTitle: string
-  acute: string[]
-}
-export const helpAndCare = () => safety('hjalp-och-vard') as {
-  title: string
-  intro: string
-  contacts: { name: string; tel: string; when: string }[]
-  thresholdText: string
+/** Fördelar övningens tid på stegen efter deras vikt. */
+export function timeline(e: Exercise, v: ExerciseVersion) {
+  const total = e.durations?.[v] ?? 0
+  const weights = e.steps.reduce((s, x) => s + x.weight, 0)
+  return e.steps.map((s) => ({ text: s.text, seconds: Math.round((total * s.weight) / weights) }))
 }

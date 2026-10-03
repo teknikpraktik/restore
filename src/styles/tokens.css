@@ -1,4 +1,4 @@
-/* Designtokens enligt DESIGNSPRAK.md del 2 */
+/* Designtokens. Färgerna följer DESIGNSPRAK.md del 2. Radier och typografi är reviderade i omstarten. */
 :root {
   --bg: #f7f5f1;
   --surface: #efece6;
@@ -9,34 +9,28 @@
   --accent: #3d6a5d;
   --on-accent: #ffffff;
 
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --title-l: 600 2rem/2.375rem var(--font);
-  --title-m: 600 1.5rem/1.875rem var(--font);
-  --lead: 400 1.1875rem/1.75rem var(--font);
-  --body: 400 1.0625rem/1.625rem var(--font);
-  --body-exercise: 400 1.3125rem/2rem var(--font);
-  --secondary: 400 0.9375rem/1.375rem var(--font);
-  --label: 500 0.8125rem/1.125rem var(--font);
+  /* Få textstorlekar. rem så att systemets och appens textstorlek följs. */
+  --type-display: 600 2.5rem/1.1 var(--font);
+  --type-title: 600 1.875rem/1.2 var(--font);
+  --type-heading: 600 1.25rem/1.4 var(--font);
+  --type-lead: 400 1.1875rem/1.55 var(--font);
+  --type-body: 400 1.0625rem/1.6 var(--font);
+  --type-small: 400 0.9375rem/1.47 var(--font);
+  --type-label: 500 0.8125rem/1.38 var(--font);
+  --type-instruction: 400 1.5rem/1.45 var(--font);
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 32px;
-  --space-6: 48px;
-  --space-7: 64px;
-  --margin: 24px;
-  --read-width: 600px;
+  --gutter: 24px;
+  --read: 680px;
+  --wide: 760px;
+  --nav-h: 56px;
 
-  --radius-card: 16px;
-  --radius-button: 14px;
-  --radius-small: 8px;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --radius: 8px;
+  --radius-small: 6px;
 
   --motion-fast: 150ms ease-out;
   --motion-base: 250ms ease-in-out;
-  --motion-slow: 400ms ease-in-out;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,11 +46,11 @@
   }
 }
 
-/* Reducerad rörelse: tona i stället för att flytta, eller visa direkt */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --motion-fast: 0ms;
     --motion-base: 0ms;
-    --motion-slow: 0ms;
   }
 }
+
+html[data-text-size='large'] { font-size: 112.5%; }

@@ -1,15 +1,19 @@
 import Dexie, { type Table } from 'dexie'
+import type { ExerciseVersion, Part } from '../model'
 
-// Datamodellen följer spec 9.2. Självkontrollens svar har ingen tabell och får aldrig få någon.
-
-export type StepName = 'forsta' | 'kann' | 'prova' | 'reflektera'
+// Datamodellen följer spec 9.2 med de ändringar som beskrivs i docs/omstart.md.
 
 export type Progress = {
   moduleId: string
-  steps: Partial<Record<StepName, Date>>
+  openedAt?: Date
+  updatedAt?: Date
+  theorySeen?: string[] // id för teoriavsnitt som har visats
+  parts: Partial<Record<Part, Date>>
   completedAt?: Date
 }
+
 export type ExperimentLog = { id?: number; moduleId: string; date: string }
+
 export type Reflection = {
   id?: number
   moduleId: string
@@ -17,6 +21,7 @@ export type Reflection = {
   usefulness?: 1 | 2 | 3 | 4 | 5
   createdAt: Date
 }
+
 export type Rating = {
   id?: number
   occasion: 'm01' | 'm09' | 'm13' | 'm17' | 'extra'
@@ -25,15 +30,17 @@ export type Rating = {
   recovery: number
   createdAt: Date
 }
+
 export type ExerciseSession = {
   id?: number
   exerciseId: string
-  version: 'short' | 'full'
+  moduleId?: string
+  version: ExerciseVersion
   completed: boolean
-  stoppedEarlyTooMuch?: boolean
-  after?: 'calmer' | 'same' | 'worse'
+  noticed?: 'yes' | 'no' | 'unsure'
   createdAt: Date
 }
+
 export type Plan = {
   tools: string[]
   habits: string[]
@@ -42,15 +49,26 @@ export type Plan = {
   contacts: string
   updatedAt: Date
 }
+
 export type Settings = {
   reminders?: { days: number[]; time: string }
-  safetyConfirmedAt?: Date
-  onboardedAt?: Date
   textSize: 'default' | 'large'
   audioCaptions: boolean
 }
 
 export const defaultSettings: Settings = { textSize: 'default', audioCaptions: true }
+
+const STORES = {
+  progress: 'moduleId',
+  experimentLog: '++id, moduleId',
+  reflections: '++id, moduleId',
+  ratings: '++id, occasion',
+  sessions: '++id, exerciseId',
+  plan: '',
+  settings: '',
+}
+
+const OLD_STEP: Record<string, Part> = { forsta: 'teori', kann: 'praktik', prova: 'tillampning', reflektera: 'reflektion' }
 
 export class RestoreDB extends Dexie {
   progress!: Table<Progress, string>
@@ -63,15 +81,28 @@ export class RestoreDB extends Dexie {
 
   constructor(name = 'restore') {
     super(name)
-    this.version(1).stores({
-      progress: 'moduleId',
-      experimentLog: '++id, moduleId',
-      reflections: '++id, moduleId',
-      ratings: '++id, occasion',
-      sessions: '++id, exerciseId',
-      plan: '',
-      settings: '',
-    })
+    this.version(1).stores(STORES)
+    // Version 2: ny terminologi för modulens delar, borttagna säkerhetsfält.
+    this.version(2)
+      .stores(STORES)
+      .upgrade(async (tx) => {
+        await tx.table('progress').toCollection().modify((p: any) => {
+          if (p.steps) {
+            p.parts = Object.fromEntries(Object.entries(p.steps).map(([k, v]) => [OLD_STEP[k] ?? k, v]))
+            delete p.steps
+          }
+          p.parts ??= {}
+          p.updatedAt ??= p.completedAt
+        })
+        await tx.table('sessions').toCollection().modify((s: any) => {
+          delete s.stoppedEarlyTooMuch
+          delete s.after
+        })
+        await tx.table('settings').toCollection().modify((s: any) => {
+          delete s.safetyConfirmedAt
+          delete s.onboardedAt
+        })
+      })
   }
 }
 
