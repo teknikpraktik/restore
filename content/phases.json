@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Start", "modules": ["m01"] },
+  { "id": 2, "name": "Grund", "modules": ["m02", "m03", "m04"] },
+  { "id": 3, "name": "Kroppen", "modules": ["m05", "m06", "m07", "m08"] },
+  { "id": 4, "name": "Tanken", "modules": ["m09", "m10", "m11", "m12"] },
+  { "id": 5, "name": "Vardagen", "modules": ["m13", "m14", "m15", "m16"] },
+  { "id": 6, "name": "Integration", "modules": ["m17"] }
+]
