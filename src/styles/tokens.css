@@ -1,0 +1,62 @@
+/* Designtokens enligt DESIGNSPRAK.md del 2 */
+:root {
+  --bg: #f7f5f1;
+  --surface: #efece6;
+  --surface-exercise: #ece8e1;
+  --text: #2a2c2e;
+  --text-secondary: #65686c;
+  --line: #dedad3;
+  --accent: #3d6a5d;
+  --on-accent: #ffffff;
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --title-l: 600 2rem/2.375rem var(--font);
+  --title-m: 600 1.5rem/1.875rem var(--font);
+  --lead: 400 1.1875rem/1.75rem var(--font);
+  --body: 400 1.0625rem/1.625rem var(--font);
+  --body-exercise: 400 1.3125rem/2rem var(--font);
+  --secondary: 400 0.9375rem/1.375rem var(--font);
+  --label: 500 0.8125rem/1.125rem var(--font);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --margin: 24px;
+  --read-width: 600px;
+
+  --radius-card: 16px;
+  --radius-button: 14px;
+  --radius-small: 8px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  --motion-fast: 150ms ease-out;
+  --motion-base: 250ms ease-in-out;
+  --motion-slow: 400ms ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151617;
+    --surface: #1e1f21;
+    --surface-exercise: #101112;
+    --text: #e9e7e3;
+    --text-secondary: #a3a6aa;
+    --line: #2c2e31;
+    --accent: #8db8a9;
+    --on-accent: #0f1a16;
+  }
+}
+
+/* Reducerad rörelse: tona i stället för att flytta, eller visa direkt */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+    --motion-slow: 0ms;
+  }
+}
