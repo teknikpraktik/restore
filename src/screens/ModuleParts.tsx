@@ -197,7 +197,14 @@ export function Application() {
         {app.days > 0 && <p className="secondary">Pröva under ungefär {app.days} dagar. Gör sedan reflektionen.</p>}
       </section>
 
-      {app.kind === 'reason' && (
+      {app.kind === 'reason' && done && savedReason && (
+        <section className="block" aria-labelledby="skal">
+          <h2 id="skal">Ditt skäl</h2>
+          <p>{savedReason}</p>
+        </section>
+      )}
+
+      {app.kind === 'reason' && !done && (
         <div className="field">
           <label htmlFor="skal">Ditt skäl i en mening</label>
           <textarea
@@ -218,10 +225,12 @@ export function Application() {
       {mod.measurement && (
         <section className="block" aria-labelledby="skattning">
           <h2 id="skattning">Självskattning</h2>
-          {savedRating && done ? (
+          {done ? (
             <p className="secondary">
-              Sparad {savedRating.createdAt.toLocaleDateString('sv-SE')}: stress {savedRating.stress}, sömn {savedRating.sleep},
-              återhämtning {savedRating.recovery}. Alla skattningar finns under Mer → Din progression.
+              {savedRating
+                ? `Sparad ${savedRating.createdAt.toLocaleDateString('sv-SE')}: stress ${savedRating.stress}, sömn ${savedRating.sleep}, återhämtning ${savedRating.recovery}.`
+                : 'Ingen skattning sparad för den här modulen.'}{' '}
+              Alla skattningar finns under Mer → Din progression.
             </p>
           ) : (
             <>

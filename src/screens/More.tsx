@@ -61,7 +61,7 @@ export function ProgressOverview() {
     <Page title="Din progression" back={back}>
       <section className="block" aria-labelledby="sammanfattning">
         <h2 id="sammanfattning" className="visually-hidden">Sammanfattning</h2>
-        <dl className="definitions">
+        <dl className="definitions stats">
           <div><dt>Moduler genomförda</dt><dd className="tabular">{done} av {modules.length}</dd></div>
           <div><dt>Delar gjorda</dt><dd className="tabular">{partsDone(modules, map)} av {modules.length * PARTS.length}</dd></div>
           <div><dt>Genomförda övningspass</dt><dd className="tabular">{sessions}</dd></div>

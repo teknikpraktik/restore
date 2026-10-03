@@ -198,6 +198,10 @@ textarea:focus-visible, input[type='text']:focus-visible { outline: 2px solid va
 fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 
 .scale { display: grid; gap: 4px; }
+.scale-5 { grid-template-columns: repeat(5, 1fr); }
+.scale-11 { grid-template-columns: repeat(11, 1fr); }
+/* Under 520 px blir elva knappar smalare än 44 px. Skalan bryts då på två rader. */
+@media (max-width: 519px) { .scale-11 { grid-template-columns: repeat(6, 1fr); } }
 .scale button {
   min-height: 44px; min-width: 0; padding: 0; background: transparent; cursor: pointer;
   border: 1px solid var(--line); border-radius: var(--radius-small); font-variant-numeric: tabular-nums;
@@ -239,6 +243,9 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .definitions { display: flex; flex-direction: column; }
 .definitions > div { padding: 16px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
 .definitions dt { font-weight: 600; }
+.stats > div { flex-direction: row; justify-content: space-between; align-items: baseline; padding: 12px 0; }
+.stats dt { font-weight: 400; }
+.stats dd { font-variant-numeric: tabular-nums; }
 .sources-list { padding-left: 2.5em; display: flex; flex-direction: column; gap: 8px; font: var(--type-small); }
 .table { width: 100%; border-collapse: collapse; font: var(--type-small); font-variant-numeric: tabular-nums; }
 .table th, .table td { text-align: left; padding: 10px 8px 10px 0; border-bottom: 1px solid var(--line); }

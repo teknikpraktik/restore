@@ -73,3 +73,16 @@ Varje sida utom Hem, Kurs, Övningar och Mer har en tillbakalänk till sin för�
 | DESIGNSPRAK: hörnradie 14–16 px | Måttliga radier | 6–10 px |
 
 Spec 12.3 (förbjudna påståenden) och 13 (juridik) gäller oförändrat. Spec 10 (integritet) gäller oförändrat.
+
+## 5. Beslut under bygget
+
+- **Allt innehåll är utkast.** Alla 17 modulers teori, tillämpning och ingress samt alla 23 övningar är nyskrivna och märkta `status: utkast`. Påståenden i teorin följer Förstå-avsnitten i spec 4 och källgrunden i spec 18. Inget har granskats av någon med vårdkompetens (spec 15.4).
+- **Praktik räknas som gjord** när minst en av modulens övningar har genomförts från modulen. Varje övning visar sin egen status i modulens praktiklista. Egen kombination (H1) markeras som gjord manuellt.
+- **Övningar visas under Övningar** när någon av deras moduler har öppnats eller påbörjats. Antalet ännu inte introducerade övningar anges diskret.
+- **Kort och lång version** delar samma steg. Stegens tid fördelas efter vikt i manuset (`[2]` före steget betyder dubbel tid).
+- **Självskattningen** finns kvar i modul 1, 9, 13 och 17 som frivillig del av tillämpningen, utan trösklar eller tolkning. Den visas under Mer → Din progression.
+- **När Restore inte räcker** nämner, utöver 1177 och 112, Mind Självmordslinjen 90101 vid självmordstankar. Det är den enda platsen i appen med hjälplinjer.
+- **Tidsuppskattningar** räknas fram: teori efter ordantal (180 ord per minut), praktik efter första övningens korta version, tillämpning 2 minuter, reflektion 4 minuter.
+- **Min plan** syns under Mer men är öppen först när modul 17 har öppnats.
+- **Fasavslut** visas efter sista reflektionen i en fas, med fasens lärandemål i formen ”Det här kan du nu”.
+- **Ljud** finns inte ännu. Övningarna körs i textläge med tidsangivelse.

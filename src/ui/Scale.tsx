@@ -14,7 +14,7 @@ export function Scale({ label, min, max, value, onChange, low, high }: ScaleProp
   return (
     <div className="field" role="group" aria-label={label}>
       <p style={{ fontWeight: 600 }}>{label}</p>
-      <div className="scale" style={{ gridTemplateColumns: `repeat(${values.length}, 1fr)` }}>
+      <div className={`scale scale-${values.length}`}>
         {values.map((n) => (
           <button key={n} type="button" aria-pressed={value === n} onClick={() => onChange(n)}>
             {n}
