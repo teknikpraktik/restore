@@ -12,5 +12,5 @@ contacts:
   - name: "112"
     tel: "112"
     when: Ring vid akut fara för dig själv eller någon annan.
-thresholdText: Det låter som att du har det tungt just nu. Siffrorna är inget test, men du behöver inte klara det själv. Kontakta vårdcentralen eller 1177 om det håller i sig. Vid tankar på att skada dig själv eller inte vilja leva: ring Mind Självmordslinjen 90101 eller 1177. Vid akut fara: ring 112.
+thresholdText: "Det låter som att du har det tungt just nu. Siffrorna är inget test, men du behöver inte klara det själv. Kontakta vårdcentralen eller 1177 om det håller i sig. Vid tankar på att skada dig själv eller inte vilja leva: ring Mind Självmordslinjen 90101 eller 1177. Vid akut fara: ring 112."
 ---

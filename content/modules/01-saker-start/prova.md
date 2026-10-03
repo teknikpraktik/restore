@@ -1,6 +1,6 @@
 ---
 status: utkast
-intro: I Prova gör du tre saker: självkontrollen, ditt varför och den första självskattningen. Det tar några minuter.
+intro: "I Prova gör du tre saker: självkontrollen, ditt varför och den första självskattningen. Det tar några minuter."
 why:
   title: Ditt varför
   prompt: Skriv i en mening varför du vill gå kursen.

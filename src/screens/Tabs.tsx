@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
-import { LandaNuButton, TextButton } from '../components/ui'
+import { HelpLink, LandaNuButton, TextButton } from '../components/ui'
 import { exerciseIds, getExercise, totalSeconds } from '../content'
 
 const Head = ({ title }: { title: string }) => (
   <header className="page-head">
     <h1>{title}</h1>
-    <LandaNuButton compact />
+    <div>
+      <LandaNuButton compact />
+      <HelpLink />
+    </div>
   </header>
 )
 
@@ -36,7 +39,6 @@ export function Jag() {
       <Head title="Jag" />
       <p className="lead">Samla plan, utveckling, säkerhet, inställningar och data.</p>
       <nav aria-label="Säkerhet" className="stack" style={{ gap: 0 }}>
-        <div className="help-row"><Link to="/hjalp">Hjälp och vård</Link></div>
         <div className="help-row"><Link to="/sjalvkontroll">Självkontroll</Link></div>
       </nav>
     </>
@@ -50,6 +52,7 @@ export function Verktyg() {
     <>
       <header className="page-head">
         <h1>Verktyg</h1>
+        <HelpLink />
       </header>
       <div>
         <LandaNuButton />

@@ -15,5 +15,5 @@ do:
   - Säg tyst tre saker du ser.
   - Andas ut lugnt några gånger.
   - Ta en paus i minst fem minuter. Gör något vardagligt.
-after: Fortsätt en annan dag med en kortare version. Om det händer flera gånger: välj andra övningar och tala med vården.
+after: "Fortsätt en annan dag med en kortare version. Om det händer flera gånger: välj andra övningar och tala med vården."
 ---
