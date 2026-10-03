@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { getExercise, getModule, getModuleByNumber, getPhase, modules, type Module } from '../content'
 import {
-  latestReflection, logExperimentToday, markPart, markTheorySeen, saveRating, saveReflection, today, useProgressMap,
+  latestReflection, logExperimentToday, type ProgressMap, markPart, markTheorySeen, saveRating, saveReflection, today, useProgressMap,
 } from '../db/repo'
 import { db, type Rating } from '../db/schema'
 import { moduleStatus, partRoute } from '../logic/progress'
@@ -293,7 +293,7 @@ export function Reflection() {
   }, [previous, answers, mod])
 
   if (!mod) return <Navigate to="/kurs" replace />
-  if (saved && map) return <ReflectionSaved mod={mod} />
+  if (saved && map) return <ReflectionSaved mod={mod} map={map} />
 
   const save = async () => {
     await saveReflection({
@@ -337,8 +337,7 @@ export function Reflection() {
   )
 }
 
-function ReflectionSaved({ mod }: { mod: Module }) {
-  const map = useProgressMap()!
+function ReflectionSaved({ mod, map }: { mod: Module; map: ProgressMap }) {
   const p = map[mod.id]
   const complete = moduleStatus(p) === 'done'
   const phase = getPhase(mod.phase)
