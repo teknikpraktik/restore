@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dev-dist/
+.env
+.env.*
+*.log
+coverage/
+playwright-report/
+test-results/
+.DS_Store
+# Kursunderlag får inte ligga i förrådet
+material/
