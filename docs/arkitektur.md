@@ -20,7 +20,7 @@
 | ”När Restore inte räcker”, hjälplinjer | `content/about/` | Tas bort | Avdramatiserad vårdinformation; kort avgränsning på Om-sidan |
 | Designtokens | Varm palett med grön accent | Ersätts | Svartvitt; grönt bara för bockar |
 | Tester | Vitest, Testing Library, Playwright | Behålls som verktyg, skrivs om | Nya krav |
-| Driftsättning | Vercels Git-integration, `restore-delta.vercel.app` | Behålls | `vercel.json` med SPA-omskrivning tillagd |
+| Driftsättning | Vercels Git-integration | Behålls | `vercel.json` med SPA-omskrivning tillagd. Se avsnitt 6 |
 | Dokument | `PRODUKTSPECIFIKATION.md`, `DESIGNSPRAK.md`, `docs/omstart.md` | Flyttade till `docs/historik/`, ersatta | Historiska underlag |
 
 ## 2. Struktur
@@ -81,7 +81,14 @@ Kursens metadata ingår i huvudpaketet (cirka 430 kB, 128 kB komprimerat, inklus
 
 ## 6. Driftsättning
 
-Vercel bygger varje push via Git-integrationen; `main` går till produktion på `https://restore-delta.vercel.app`. `vercel.json` skriver om alla adresser till `index.html` så att direktlänkar fungerar. Ingen server, databas eller miljövariabel används.
+Vercels Git-integration bygger varje push i projektet `teknikpraktik/restore` och rapporterar resultatet till GitHub. `vercel.json` skriver om alla adresser till `index.html` så att direktlänkar fungerar. Ingen server, databas eller miljövariabel används.
+
+Läget 18 oktober 2026:
+
+- Förhandsversionen av `feature/restore-2` (commit `30342ea`) byggdes utan fel enligt Vercels status på GitHub.
+- Alla projektets `*.vercel.app`-adresser kräver inloggning (Vercel Authentication) och kunde inte granskas utan behörighet.
+- Push till `main` gav ingen produktionsdeployment. Den senaste produktionsdeploymenten är från 3 oktober (commit `e45aa0d`). Projektets produktionsgren eller inställningar för automatisk driftsättning behöver kontrolleras i Vercel.
+- `restore-delta.vercel.app`, som anges som hemsida i GitHub-förrådet, visar en annan webbplats och hör inte till projektet.
 
 ## 7. Kända begränsningar
 

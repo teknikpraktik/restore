@@ -2,7 +2,7 @@
 
 Vetenskaplig webbutbildning om människokroppens reglersystem, nervsystemet, stressfysiologi, andning, rörelse, sömn, belastning och återhämtning. Teori på ungefär högskolenivå kombineras med praktiska laborationer och automatiskt rättade kunskapskontroller.
 
-Produktion: <https://restore-delta.vercel.app>
+Driftsättning: Vercels Git-integration (projektet `teknikpraktik/restore`). Se [docs/arkitektur.md](docs/arkitektur.md#6-driftsättning) för status.
 
 ## Status
 
