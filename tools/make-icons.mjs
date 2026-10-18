@@ -1,4 +1,4 @@
-// Genererar enkla PWA-ikoner (accentfärg med ljus ring). Egen grafik, inga beroenden.
+// Genererar enkla PWA-ikoner (svart botten med vit ring). Egen grafik, inga beroenden.
 import { deflateSync } from 'node:zlib'
 import fs from 'node:fs'
 
@@ -19,7 +19,7 @@ const chunk = (type, data) => {
   return Buffer.concat([len, td, c])
 }
 function png(size) {
-  const bg = [0x3d, 0x6a, 0x5d], fg = [0xf7, 0xf5, 0xf1]
+  const bg = [0x11, 0x11, 0x11], fg = [0xff, 0xff, 0xff]
   const raw = Buffer.alloc((size * 3 + 1) * size)
   const cx = size / 2, r1 = size * 0.28, r2 = size * 0.2
   for (let y = 0; y < size; y++) {
