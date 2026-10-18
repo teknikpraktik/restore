@@ -6,9 +6,9 @@ När du ställer dig upp drar tyngdkraften blod mot benen. Under några sekunder
 
 I halspulsådrorna och i stora kroppspulsådern finns tryckkänsliga nervändar som registrerar hur mycket kärlväggen töjs, ett slags **blodtryckssensorer**. När trycket sjunker skickar de färre signaler till hjärnstammen, som inom några sekunder ökar pulsen och drar ihop blodkärlen. Blodtrycket återställs och pulsen sjunker tillbaka, ofta till en nivå något över den i liggande [@heesch1999]. Förloppet kallas **baroreflexen**.
 
-Pulsen under de första minuterna efter uppresning används inom vården för att undersöka just den här regleringen [@finucane2019].
+Pulsen under de första minuterna efter att man har rest sig används inom vården för att undersöka just den här regleringen [@finucane2019].
 
-::: upptack 3 min Pulsen före och efter uppresning
+::: upptack 3 min Pulsen före och efter att du reser dig
 1. Sitt stilla en minut.
 2. Känn pulsen på handledens tumsida med två fingrar. Räkna slagen under 15 sekunder och multiplicera med fyra.
 3. Res dig i lugn takt och räkna igen under de första 15 sekunderna stående.
@@ -33,14 +33,14 @@ Mät vilopulsen två gånger med en minuts mellanrum, 30 sekunder varje gång. N
 
 Pulsen påverkas av kroppsställning, temperatur, koffein, sömn, måltider, kondition och känslor. Den är därför användbar för att följa hur kroppen svarar på en viss sak under likartade förhållanden. Men pulsen ensam kan inte avgöra om du är stressad, förväntansfull, varm eller nyss har gått i en trappa. Samma värde kan ha helt olika orsaker.
 
-En hög puls efter ansträngning är normal. En puls som ofta är påtagligt oregelbunden, hjärtklappning som inte klingar av eller svimning vid uppresning är däremot skäl att kontakta vården.
+En hög puls efter ansträngning är normal. En puls som ofta är påtagligt oregelbunden, hjärtklappning som inte klingar av eller svimning när du reser dig är däremot skäl att kontakta vården.
 
 ::: tillampa Bestäm din vilopuls
 Mät vilopulsen tre morgnar i rad på samma sätt: sittande, efter en minuts vila och före kaffet. Notera värdena. Det ger en uppfattning om var din egen nivå ligger, vilket är mer användbart än en jämförelse med tabellvärden.
 :::
 
 ::: fordjupning Varför pulsen först stiger och sedan sjunker något
-Hos de flesta når pulsen sin högsta nivå ungefär femton hjärtslag efter uppresningen och sjunker sedan något kring det trettionde slaget. Förhållandet mellan de två har använts för att undersöka hur det automatiska nervsystemet fungerar [@ewing1985]. En varaktig pulsökning på 30 slag per minut eller mer i stående, tillsammans med besvär, ingår i de kriterier vården använder för att utreda vissa tillstånd med yrsel vid uppresning [@sheldon2015]. Ett hemmaförsök kan inte ställa någon diagnos.
+Hos de flesta når pulsen sin högsta nivå ungefär femton hjärtslag efter att man har rest sig och sjunker sedan något kring det trettionde slaget. Förhållandet mellan de två har använts för att undersöka hur det automatiska nervsystemet fungerar [@ewing1985]. En varaktig pulsökning på 30 slag per minut eller mer i stående, tillsammans med besvär, ingår i de kriterier vården använder för att utreda vissa tillstånd med yrsel när man reser sig [@sheldon2015]. Ett hemmaförsök kan inte ställa någon diagnos.
 :::
 
 ## Det viktigaste

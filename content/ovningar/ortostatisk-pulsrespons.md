@@ -1,5 +1,5 @@
 ---
-titel: Pulsens svar på uppresning
+titel: Pulsen när du reser dig upp
 sammanfattning: >-
   Mät hur pulsen förändras när du reser dig från liggande till stående, och se hur kroppen på några
   sekunder anpassar sig så att blodtrycket hålls uppe.
@@ -64,7 +64,7 @@ Den snabba ökningen visar hur fort kroppen reagerar på att blodtrycket sjunker
 
 ## Evidensläge
 
-Hur kroppen reglerar blodtrycket vid uppresning är etablerad kunskap. Övningen är en förenklad version av en undersökning som används inom vården, utan blodtrycksmätning.
+Hur kroppen reglerar blodtrycket när man reser sig är etablerad kunskap. Övningen är en förenklad version av en undersökning som används inom vården, utan blodtrycksmätning.
 
 ## Begränsningar
 
@@ -81,7 +81,7 @@ Hur kroppen reglerar blodtrycket vid uppresning är etablerad kunskap. Övningen
 
 ## Säkerhet
 
-Kortvarig yrsel vid uppresning är vanligt. Stå nära något stadigt. Den som ofta svimmar vid uppresning gör övningen från sittande.
+Kortvarig yrsel när man reser sig är vanligt. Stå nära något stadigt. Den som ofta svimmar när hen reser sig gör övningen från sittande.
 
 ## Analysfrågor
 
