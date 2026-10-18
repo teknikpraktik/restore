@@ -51,12 +51,13 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
   const content = useChapterContent(produced ? chapter.id : undefined)
   const exercises = chapter.exercises.map(getExercise).filter((e) => !!e)
   const sources = chapterSources(chapter)
+  const exercisesHeading = exercises.length === 1 ? 'Längre övning' : 'Längre övningar'
 
   const toc: TocItem[] = produced
     ? [
         { id: 'larandemal', text: 'Lärandemål', level: 2 },
         ...chapter.headings,
-        ...(exercises.length ? [{ id: 'ovningar', text: 'Längre övningar', level: 2 as const }] : []),
+        ...(exercises.length ? [{ id: 'ovningar', text: exercisesHeading, level: 2 as const }] : []),
         ...(quiz ? [{ id: 'sjalvtest', text: 'Självtest', level: 2 as const }] : []),
         ...(sources.length ? [{ id: 'referenser', text: 'Referenser', level: 2 as const }] : []),
       ]
@@ -115,10 +116,11 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
 
         {exercises.length > 0 && (
           <section aria-labelledby="ovningar" className="chapter-section">
-            <h2 id="ovningar">Längre övningar</h2>
+            <h2 id="ovningar">{exercisesHeading}</h2>
             <p>
-              De här övningarna tar lite längre tid och kan göras senare, till exempel under veckan. De finns också
-              i övningsbiblioteket, där du kan anteckna vad du märkte.
+              {exercises.length === 1
+                ? 'Den här övningen tar lite längre tid och kan göras senare, till exempel under veckan. Den finns också i övningsbiblioteket, där du kan anteckna vad du märkte.'
+                : 'De här övningarna tar lite längre tid och kan göras senare, till exempel under veckan. De finns också i övningsbiblioteket, där du kan anteckna vad du märkte.'}
             </p>
             <ol className="exercise-list">
               {exercises.map((e) => {
