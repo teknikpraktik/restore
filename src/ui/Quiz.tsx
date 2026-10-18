@@ -6,6 +6,16 @@ import { CheckMark, formatDate, useFocusWhen } from './common'
 
 const LETTERS = 'ABCDE'
 
+/** Slumpad ordning för en frågas alternativ (Fisher–Yates). Alternativen behåller sina index, så rättningen påverkas inte. */
+function shuffledOrder(n: number) {
+  const order = Array.from({ length: n }, (_, i) => i)
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[order[i], order[j]] = [order[j], order[i]]
+  }
+  return order
+}
+
 /**
  * Självtest med automatisk rättning. Obegränsat antal försök, ingen tidsgräns.
  * Förklaringar visas efter rättning.
@@ -15,6 +25,9 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
   const [answers, setAnswers] = useState<Answers>(() => quiz.questions.map(() => null))
   const [result, setResult] = useState<QuizResult | null>(null)
   const [missing, setMissing] = useState(0)
+  // Ny ordning på alternativen vid varje försök, så att man inte lär sig positioner i stället för innehåll.
+  const newOrders = () => quiz.questions.map((q) => shuffledOrder(q.options.length))
+  const [orders, setOrders] = useState<number[][]>(newOrders)
   const resultRef = useFocusWhen<HTMLDivElement>(result)
   const attempts = progress.chapters[quiz.chapterId]?.attempts ?? []
   const passedAt = progress.chapters[quiz.chapterId]?.passedAt
@@ -45,6 +58,7 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
 
   const retry = () => {
     setAnswers(quiz.questions.map(() => null))
+    setOrders(newOrders())
     setResult(null)
     setMissing(0)
   }
@@ -101,7 +115,8 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
                     {q.multiple && <span className="quiz-multiple">Flera alternativ kan vara rätt. Välj alla som stämmer.</span>}
                   </legend>
                   <ul className="quiz-options">
-                    {q.options.map((o, oi) => {
+                    {orders[qi].map((oi, pos) => {
+                      const o = q.options[oi]
                       const id = `${q.id}-${oi}`
                       const picked = !!chosen?.includes(oi)
                       const isCorrect = result && q.correct.includes(oi)
@@ -123,7 +138,7 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
                           />
                           <label htmlFor={id}>
                             <span className="quiz-letter" aria-hidden="true">
-                              {LETTERS[oi]}
+                              {LETTERS[pos]}
                             </span>
                             <span className="quiz-text" dangerouslySetInnerHTML={{ __html: o }} />
                             {isCorrect && <span className="quiz-tag">Rätt svar</span>}

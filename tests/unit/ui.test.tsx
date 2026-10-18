@@ -150,6 +150,25 @@ describe('flersvarsfrågor', () => {
   })
 })
 
+describe('slumpad ordning på alternativen', () => {
+  it('visar alternativen i slumpad ordning och rättar ändå rätt', async () => {
+    const user = userEvent.setup()
+    const quiz = (await loadChapterContent(FIRST)).quiz!
+    // Med Math.random() = 0 blir ordningen för fyra alternativ [1, 2, 3, 0].
+    const spy = vi.spyOn(Math, 'random').mockReturnValue(0)
+    renderAt(`/kurs/${FIRST}`)
+    await screen.findByRole('button', { name: 'Rätta testet' })
+    const q = quiz.questions[0]
+    const first = document.querySelector(`.quiz-question .quiz-option input`) as HTMLInputElement
+    expect(first.id).toBe(`${q.id}-1`)
+    expect(first.closest('li')!.querySelector('.quiz-letter')!.textContent).toBe('A')
+    spy.mockRestore()
+    for (const qq of quiz.questions) for (const c of qq.correct) await user.click(document.getElementById(`${qq.id}-${c}`)!)
+    await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
+    expect(document.querySelector('.quiz-result-score')).toHaveTextContent(`${quiz.questions.length} av ${quiz.questions.length} rätt`)
+  })
+})
+
 describe('responsiv navigation', () => {
   it('öppnar och stänger mobilmenyn med kursnavigeringen', async () => {
     const user = userEvent.setup()
