@@ -1,0 +1,451 @@
+# Källförteckning för Restore.
+#
+# Varje källa måste kunna kontrolleras: DOI, ISBN eller direktlänk. Fältet verifierad anger
+# när och hur de bibliografiska uppgifterna kontrollerades. En källa utan verifierad visas som
+# overifierad i gränssnittet. Hitta aldrig på referenser.
+#
+# Källtyper: lärobok, klassisk originalartikel, översiktsartikel, systematisk översikt,
+# metaanalys, randomiserad kontrollerad studie, observationsstudie, experimentell studie,
+# metodartikel, konsensusdokument.
+#
+# Kontrollera DOI:er mot Crossref med: node tools/verify-sources.mjs
+
+kallor:
+  # Läroböcker
+  - id: hall2021
+    typ: lärobok
+    forfattare: [Hall JE, Hall ME]
+    ar: 2021
+    titel: Guyton and Hall Textbook of Medical Physiology
+    upplaga: 14:e uppl.
+    forlag: Elsevier
+    isbn: 978-0-323-59712-8
+    verifierad:
+      datum: 2026-10-18
+      metod: Titel, förlag och ISBN kontrollerade mot Open Library.
+    anmarkning: >-
+      Kapitelnumren avser 14:e upplagan och har, liksom sidhänvisningar, inte kontrollerats mot
+      ett tryckt exemplar i den här versionen av kursen.
+
+  - id: boron2016
+    typ: lärobok
+    forfattare: [Boron WF, Boulpaep EL]
+    ar: 2016
+    titel: Medical Physiology
+    upplaga: 3:e uppl.
+    forlag: Elsevier
+    isbn: 978-1-4557-4377-3
+    verifierad:
+      datum: 2026-10-18
+      metod: Titel, förlag, utgivningsår och ISBN kontrollerade mot Open Library.
+    anmarkning: >-
+      Används för etablerade läroboksvärden. Sidhänvisningar har inte kontrollerats mot tryckt
+      exemplar.
+
+  # Begreppet homeostas
+  - id: cannon1929
+    typ: klassisk originalartikel
+    forfattare: [Cannon WB]
+    ar: 1929
+    titel: Organization for physiological homeostasis
+    tidskrift: Physiological Reviews
+    volym: 9
+    nummer: 3
+    sidor: 399–431
+    doi: 10.1152/physrev.1929.9.3.399
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: modell2015
+    typ: översiktsartikel
+    forfattare: [Modell H, Cliff W, Michael J, McFarland J, Wenderoth MP, Wright A]
+    ar: 2015
+    titel: A physiologist's view of homeostasis
+    tidskrift: Advances in Physiology Education
+    volym: 39
+    nummer: 4
+    sidor: 259–266
+    doi: 10.1152/advan.00107.2015
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 26628646).
+
+  - id: michael2009
+    typ: översiktsartikel
+    forfattare: [Michael J, Modell H, McFarland J, Cliff W]
+    ar: 2009
+    titel: "The “core principles” of physiology: what should students understand?"
+    tidskrift: Advances in Physiology Education
+    volym: 33
+    nummer: 1
+    sidor: 10–16
+    doi: 10.1152/advan.90139.2008
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: billman2020
+    typ: översiktsartikel
+    forfattare: [Billman GE]
+    ar: 2020
+    titel: "Homeostasis: the underappreciated and far too often ignored central organizing principle of physiology"
+    tidskrift: Frontiers in Physiology
+    volym: 11
+    sidor: "200"
+    doi: 10.3389/fphys.2020.00200
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år och volym kontrollerade mot Crossref.
+
+  # Förutseende reglering och allostas
+  - id: sterling2012
+    typ: översiktsartikel
+    forfattare: [Sterling P]
+    ar: 2012
+    titel: "Allostasis: a model of predictive regulation"
+    tidskrift: Physiology & Behavior
+    volym: 106
+    nummer: 1
+    sidor: 5–15
+    doi: 10.1016/j.physbeh.2011.06.004
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: mcewen1998
+    typ: översiktsartikel
+    forfattare: [McEwen BS]
+    ar: 1998
+    titel: Protective and damaging effects of stress mediators
+    tidskrift: New England Journal of Medicine
+    volym: 338
+    nummer: 3
+    sidor: 171–179
+    doi: 10.1056/NEJM199801153380307
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: day2005
+    typ: översiktsartikel
+    forfattare: [Day TA]
+    ar: 2005
+    titel: "Defining stress as a prelude to mapping its neurocircuitry: no help from allostasis"
+    tidskrift: Progress in Neuro-Psychopharmacology and Biological Psychiatry
+    volym: 29
+    nummer: 8
+    sidor: 1195–1200
+    doi: 10.1016/j.pnpbp.2005.08.005
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  # Temperatur
+  - id: romanovsky2007
+    typ: översiktsartikel
+    forfattare: [Romanovsky AA]
+    ar: 2007
+    titel: "Thermoregulation: some concepts have changed. Functional architecture of the thermoregulatory system"
+    tidskrift: American Journal of Physiology – Regulatory, Integrative and Comparative Physiology
+    volym: 292
+    nummer: 1
+    sidor: R37–R46
+    doi: 10.1152/ajpregu.00668.2006
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 17008453).
+
+  - id: refinetti1992
+    typ: översiktsartikel
+    forfattare: [Refinetti R, Menaker M]
+    ar: 1992
+    titel: The circadian rhythm of body temperature
+    tidskrift: Physiology & Behavior
+    volym: 51
+    nummer: 3
+    sidor: 613–637
+    doi: 10.1016/0031-9384(92)90188-8
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 1523238).
+
+  - id: baehr2000
+    typ: observationsstudie
+    forfattare: [Baehr EK, Revelle W, Eastman CI]
+    ar: 2000
+    titel: "Individual differences in the phase and amplitude of the human circadian temperature rhythm: with an emphasis on morningness–eveningness"
+    tidskrift: Journal of Sleep Research
+    volym: 9
+    nummer: 2
+    sidor: 117–127
+    doi: 10.1046/j.1365-2869.2000.00196.x
+    verifierad:
+      datum: 2026-10-18
+      metod: Sammanfattningen läst i PubMed (PMID 10849238); DOI från PubMed.
+
+  - id: obermeyer2017
+    typ: observationsstudie
+    forfattare: [Obermeyer Z, Samra JK, Mullainathan S]
+    ar: 2017
+    titel: "Individual differences in normal body temperature: longitudinal big data analysis of patient records"
+    tidskrift: BMJ
+    volym: 359
+    sidor: j5468
+    doi: 10.1136/bmj.j5468
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 29237616).
+
+  - id: protsiv2020
+    typ: observationsstudie
+    forfattare: [Protsiv M, Ley C, Lankester J, Hastie T, Parsonnet J]
+    ar: 2020
+    titel: Decreasing human body temperature in the United States since the Industrial Revolution
+    tidskrift: eLife
+    volym: 9
+    sidor: e49555
+    doi: 10.7554/eLife.49555
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 31908267).
+
+  - id: sundlevander2002
+    typ: systematisk översikt
+    forfattare: [Sund-Levander M, Forsberg C, Wahren LK]
+    ar: 2002
+    titel: "Normal oral, rectal, tympanic and axillary body temperature in adult men and women: a systematic literature review"
+    tidskrift: Scandinavian Journal of Caring Sciences
+    volym: 16
+    nummer: 2
+    sidor: 122–128
+    doi: 10.1046/j.1471-6712.2002.00069.x
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 12000664).
+
+  - id: evans2015
+    typ: översiktsartikel
+    forfattare: [Evans SS, Repasky EA, Fisher DT]
+    ar: 2015
+    titel: "Fever and the thermal regulation of immunity: the immune system feels the heat"
+    tidskrift: Nature Reviews Immunology
+    volym: 15
+    nummer: 6
+    sidor: 335–349
+    doi: 10.1038/nri3843
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  # Glukos
+  - id: wasserman2009
+    typ: översiktsartikel
+    forfattare: [Wasserman DH]
+    ar: 2009
+    titel: Four grams of glucose
+    tidskrift: American Journal of Physiology – Endocrinology and Metabolism
+    volym: 296
+    nummer: 1
+    sidor: E11–E21
+    doi: 10.1152/ajpendo.90563.2008
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 18840763).
+
+  - id: mergenthaler2013
+    typ: översiktsartikel
+    forfattare: [Mergenthaler P, Lindauer U, Dienel GA, Meisel A]
+    ar: 2013
+    titel: "Sugar for the brain: the role of glucose in physiological and pathological brain function"
+    tidskrift: Trends in Neurosciences
+    volym: 36
+    nummer: 10
+    sidor: 587–597
+    doi: 10.1016/j.tins.2013.07.001
+    verifierad:
+      datum: 2026-10-18
+      metod: Sammanfattningen läst i PubMed (PMID 23968694); uppgiften om hjärnans glukosförbrukning kontrollerad i fulltext (PMC3900881).
+
+  - id: roder2016
+    typ: översiktsartikel
+    forfattare: [Röder PV, Wu B, Liu Y, Han W]
+    ar: 2016
+    titel: Pancreatic regulation of glucose homeostasis
+    tidskrift: Experimental & Molecular Medicine
+    volym: 48
+    nummer: 3
+    sidor: e219
+    doi: 10.1038/emm.2016.6
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år och volym kontrollerade mot Crossref.
+
+  - id: mitrakou1991
+    typ: experimentell studie
+    forfattare: [Mitrakou A, Ryan C, Veneman T, Mokan M, Jenssen T, Kiss I, Durrant J, Cryer P, Gerich J]
+    ar: 1991
+    titel: Hierarchy of glycemic thresholds for counterregulatory hormone secretion, symptoms, and cerebral dysfunction
+    tidskrift: American Journal of Physiology – Endocrinology and Metabolism
+    volym: 260
+    nummer: 1
+    sidor: E67–E74
+    doi: 10.1152/ajpendo.1991.260.1.E67
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 1987794).
+
+  - id: defronzo1979
+    typ: metodartikel
+    forfattare: [DeFronzo RA, Tobin JD, Andres R]
+    ar: 1979
+    titel: "Glucose clamp technique: a method for quantifying insulin secretion and resistance"
+    tidskrift: American Journal of Physiology – Endocrinology and Metabolism
+    volym: 237
+    nummer: 3
+    sidor: E214–E223
+    doi: 10.1152/ajpendo.1979.237.3.E214
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år och volym kontrollerade mot Crossref; sidor mot PubMed (PMID 382871).
+
+  # Blodtryck och puls
+  - id: heesch1999
+    typ: översiktsartikel
+    forfattare: [Heesch CM]
+    ar: 1999
+    titel: Reflexes that control cardiovascular function
+    tidskrift: Advances in Physiology Education
+    volym: 277
+    nummer: 6
+    sidor: S234–S243
+    doi: 10.1152/advances.1999.277.6.S234
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel och år kontrollerade mot Crossref; sidor mot PubMed (PMID 10644250), där artikeln förtecknas som supplement till American Journal of Physiology.
+
+  - id: julien2006
+    typ: översiktsartikel
+    forfattare: [Julien C]
+    ar: 2006
+    titel: "The enigma of Mayer waves: facts and models"
+    tidskrift: Cardiovascular Research
+    volym: 70
+    nummer: 1
+    sidor: 12–21
+    doi: 10.1016/j.cardiores.2005.11.008
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 16360130).
+
+  - id: finucane2019
+    typ: metodartikel
+    forfattare: [Finucane C, van Wijnen VK, Fan CW, Soraghan C, Byrne L, Westerhof BE, Freeman R, Fedorowski A, Harms MPM, Wieling W, Kenny RA]
+    ar: 2019
+    titel: A practical guide to active stand testing and analysis using continuous beat-to-beat non-invasive blood pressure monitoring
+    tidskrift: Clinical Autonomic Research
+    volym: 29
+    nummer: 4
+    sidor: 427–441
+    doi: 10.1007/s10286-019-00606-y
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 31076939).
+
+  - id: ewing1985
+    typ: observationsstudie
+    forfattare: [Ewing DJ, Martyn CN, Young RJ, Clarke BF]
+    ar: 1985
+    titel: "The value of cardiovascular autonomic function tests: 10 years experience in diabetes"
+    tidskrift: Diabetes Care
+    volym: 8
+    nummer: 5
+    sidor: 491–498
+    doi: 10.2337/diacare.8.5.491
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: sheldon2015
+    typ: konsensusdokument
+    forfattare: [Sheldon RS, Grubb BP, Olshansky B, Shen WK, Calkins H, Brignole M, Raj SR, Krahn AD, Morillo CA, Stewart JM, Sutton R, Sandroni P, Friday KJ, Hachul DT, Cohen MI, Lau DH, Mayuga KA, Moak JP, Sandhu RK, Kanjwal K]
+    ar: 2015
+    titel: 2015 Heart Rhythm Society expert consensus statement on the diagnosis and treatment of postural tachycardia syndrome, inappropriate sinus tachycardia, and vasovagal syncope
+    tidskrift: Heart Rhythm
+    volym: 12
+    nummer: 6
+    sidor: e41–e63
+    doi: 10.1016/j.hrthm.2015.03.029
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref.
+
+  - id: imai1994
+    typ: experimentell studie
+    forfattare: [Imai K, Sato H, Hori M, Kusuoka H, Ozaki H, Yokoyama H, Takeda H, Inoue M, Kamada T]
+    ar: 1994
+    titel: Vagally mediated heart rate recovery after exercise is accelerated in athletes but blunted in patients with chronic heart failure
+    tidskrift: Journal of the American College of Cardiology
+    volym: 24
+    nummer: 6
+    sidor: 1529–1535
+    doi: 10.1016/0735-1097(94)90150-3
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 7930286).
+
+  - id: cole1999
+    typ: observationsstudie
+    forfattare: [Cole CR, Blackstone EH, Pashkow FJ, Snader CE, Lauer MS]
+    ar: 1999
+    titel: Heart-rate recovery immediately after exercise as a predictor of mortality
+    tidskrift: New England Journal of Medicine
+    volym: 341
+    nummer: 18
+    sidor: 1351–1357
+    doi: 10.1056/NEJM199910283411804
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 10536127).
+
+  - id: qiu2017
+    typ: metaanalys
+    forfattare: [Qiu S, Cai X, Sun Z, Li L, Zuegel M, Steinacker JM, Schumann U]
+    ar: 2017
+    titel: "Heart rate recovery and risk of cardiovascular events and all-cause mortality: a meta-analysis of prospective cohort studies"
+    tidskrift: Journal of the American Heart Association
+    volym: 6
+    nummer: 5
+    sidor: e005505
+    doi: 10.1161/JAHA.117.005505
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 28487388).
+
+  - id: bent2020
+    typ: experimentell studie
+    forfattare: [Bent B, Goldstein BA, Kibbe WA, Dunn JP]
+    ar: 2020
+    titel: Investigating sources of inaccuracy in wearable optical heart rate sensors
+    tidskrift: npj Digital Medicine
+    volym: 3
+    sidor: "18"
+    doi: 10.1038/s41746-020-0226-6
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref; sammanfattningen läst i PubMed (PMID 32047863).
+
+  # Mätning och variation
+  - id: fraser1989
+    typ: översiktsartikel
+    forfattare: [Fraser CG, Harris EK]
+    ar: 1989
+    titel: Generation and application of data on biological variation in clinical chemistry
+    tidskrift: Critical Reviews in Clinical Laboratory Sciences
+    volym: 27
+    nummer: 5
+    sidor: 409–437
+    doi: 10.3109/10408368909106595
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref (Crossref anger förnamnsinitialen felaktigt som GG).

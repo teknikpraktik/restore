@@ -1,0 +1,1762 @@
+# Kursmanifest för Restore 2.0.
+#
+# Menyn, modulsidorna, progressionen och källförteckningen genereras från den här filen.
+# Ett nytt underkapitel läggs till genom att lägga en post under rätt modul. Numrering
+# (1.1, 1.2 …) räknas fram från ordningen och ingår inte i id:t.
+#
+# Fält per underkapitel:
+#   id           unikt och stabilt, används i adressen /kurs/<id>
+#   titel        ämnesspecifik rubrik
+#   beskrivning  en till två meningar om vad kapitlet behandlar
+#   forkunskaper id för kapitel som bör läsas först (valfritt)
+#   larandemal   vad läsaren ska kunna efter kapitlet
+#   studietid    ungefärlig studietid i minuter (teori, övningar och kontroll)
+#   innehall     producerad | under-produktion
+#   kontroll     klar | ej-producerad
+#   ovningar     id för övningar i övningsbiblioteket (bara för producerade kapitel)
+#
+# Ett kapitel med innehall: producerad måste ha en teorifil i content/kapitel/<id>.md.
+# Ett kapitel med kontroll: klar måste ha en kontroll i content/kontroller/<id>.yaml.
+
+moduler:
+  - id: reglersystem
+    titel: Människokroppen som biologiskt reglersystem
+    beskrivning: >-
+      Fysiologins organiserande princip. Hur kroppen håller kritiska variabler inom fungerande
+      intervall genom återkoppling, och hur cellernas transport, signalering och energiomsättning
+      gör regleringen möjlig.
+    kapitel:
+      - id: homeostas-och-negativ-aterkoppling
+        titel: Homeostas och negativ återkoppling
+        beskrivning: >-
+          Den inre miljön, reglerade variabler och reglerkretsens komponenter. Kvantitativ
+          beskrivning av negativ återkoppling, dynamik och fördröjning, positiv återkoppling och
+          förutseende reglering.
+        larandemal:
+          - Definiera homeostas och skilja mellan reglerade variabler och de effektorer som påverkar dem.
+          - Beskriva sensor, integrerande centrum, effektor och felsignal i en fysiologisk reglerkrets.
+          - Beräkna och tolka förstärkningen i en negativ återkopplingskrets.
+          - Förklara varför fördröjning i en reglerkrets kan ge översvängning och svängningar.
+          - Skilja negativ återkoppling, positiv återkoppling och framåtkoppling med fysiologiska exempel.
+          - Planera och tolka enkla mätningar av hur puls och kroppstemperatur regleras.
+        studietid: 150
+        innehall: producerad
+        kontroll: klar
+        ovningar:
+          - ortostatisk-pulsrespons
+          - pulsaterhamtning-efter-belastning
+          - kroppstemperaturens-dygnsvariation
+
+      - id: kroppsvatskor-och-den-inre-miljon
+        titel: Kroppsvätskor och den inre miljön
+        beskrivning: >-
+          Kroppsvattnets fördelning mellan intracellulärt och extracellulärt rum, elektrolyter,
+          osmolalitet och reglering av vätskebalans.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Redogöra för kroppsvattnets fördelning och hur rummen kan mätas.
+          - Förklara osmolalitet, tonicitet och vätskeförflyttning mellan rummen.
+          - Beskriva hur ADH, törst och njurarna reglerar plasmaosmolaliteten.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: cellmembranet-och-transport
+        titel: Cellmembranet och transportmekanismer
+        beskrivning: >-
+          Membranets uppbyggnad, diffusion, osmos, kanaler, bärarproteiner och aktiv transport,
+          med Na⁺/K⁺-ATPas som centralt exempel.
+        forkunskaper: [kroppsvatskor-och-den-inre-miljon]
+        larandemal:
+          - Beskriva lipiddubbelskiktets egenskaper som diffusionsbarriär.
+          - Tillämpa Ficks lag för att resonera om diffusionshastighet.
+          - Skilja passiv transport, primär och sekundär aktiv transport.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: cellular-kommunikation-och-hormoner
+        titel: Cellulär kommunikation, receptorer och hormoner
+        beskrivning: >-
+          Endokrin, parakrin och synaptisk signalering. Receptortyper, signalkaskader och
+          principer för hormonell reglering.
+        forkunskaper: [cellmembranet-och-transport]
+        larandemal:
+          - Jämföra nervös och hormonell signalering med avseende på hastighet och räckvidd.
+          - Beskriva membranbundna och intracellulära receptorer och deras signalvägar.
+          - Förklara hormonella återkopplingsaxlar med hypotalamus och hypofys.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: energiomsattning-och-atp
+        titel: Energiomsättning och ATP-omsättning
+        beskrivning: >-
+          Hur cellerna omvandlar energi från näringsämnen till ATP, och hur energiomsättningen
+          mäts med indirekt kalorimetri.
+        forkunskaper: [cellmembranet-och-transport]
+        larandemal:
+          - Beskriva glykolys, citronsyracykel och oxidativ fosforylering på översiktlig nivå.
+          - Förklara begreppen basalomsättning och respiratorisk kvot.
+          - Beräkna energiomsättning från syreupptagning med ett standardvärde för energiekvivalent.
+        studietid: 100
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: syra-basbalans
+        titel: Syra–basbalans
+        beskrivning: >-
+          Vätejonkoncentrationens reglering. Buffertsystem, Henderson–Hasselbalchs ekvation och
+          lungornas och njurarnas kompensation.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Tillämpa Henderson–Hasselbalchs ekvation för bikarbonatbufferten.
+          - Skilja respiratoriska och metabola rubbningar och deras kompensation.
+          - Förklara varför koldioxid är en central reglerad variabel.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: termoreglering
+        titel: Termoreglering
+        beskrivning: >-
+          Värmebalansens komponenter, termoreceptorer, termoeffektorer och modeller för
+          temperaturreglering, inklusive feber och arbete i värme.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Ställa upp värmebalansekvationen och beskriva dess termer.
+          - Beskriva autonoma och beteendemässiga termoeffektorer.
+          - Redogöra för kritiken mot en enda central börvärdesmodell.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: biologisk-variation-och-referensintervall
+        titel: Biologisk variation och referensintervall
+        beskrivning: >-
+          Variation inom och mellan individer, rytmer, mätfel och hur referensintervall tas fram
+          och bör tolkas.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Skilja mellan analytisk variation, variation inom individ och variation mellan individer.
+          - Förklara hur ett referensintervall definieras och varför det inte är en hälsogräns.
+          - Beräkna om en skillnad mellan två mätningar är större än den förväntade variationen.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: nervsystemet
+    titel: Nervsystemets anatomi och signalering
+    beskrivning: >-
+      Nervsystemets indelning, nervcellens elektriska egenskaper, synaptisk överföring och
+      hjärnans huvudstrukturer. Grunden för modulerna om autonom reglering, perception och motorik.
+    kapitel:
+      - id: centrala-och-perifera-nervsystemet
+        titel: Centrala och perifera nervsystemets indelning
+        beskrivning: >-
+          Anatomisk och funktionell indelning: CNS och PNS, somatiskt och autonomt, afferent och
+          efferent.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Beskriva nervsystemets anatomiska och funktionella indelningar.
+          - Skilja afferenta och efferenta banor.
+          - Redogöra för kranialnervernas och spinalnervernas organisation.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: nervceller-och-gliaceller
+        titel: Nervceller och gliaceller
+        beskrivning: >-
+          Nervcellens morfologi och gliacellernas funktioner, inklusive myelinisering och
+          blod–hjärnbarriären.
+        forkunskaper: [centrala-och-perifera-nervsystemet]
+        larandemal:
+          - Beskriva nervcellens delar och deras funktion.
+          - Redogöra för astrocyters, oligodendrocyters, Schwannceller och mikroglias roller.
+          - Förklara myelinets betydelse för ledningshastighet.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: vilomembranpotential
+        titel: Vilomembranpotential och jonjämvikter
+        beskrivning: >-
+          Hur jonkoncentrationsskillnader och selektiv permeabilitet ger en membranpotential.
+          Nernst- och Goldman–Hodgkin–Katz-ekvationerna.
+        forkunskaper: [cellmembranet-och-transport, nervceller-och-gliaceller]
+        larandemal:
+          - Beräkna jämviktspotentialen för en jon med Nernsts ekvation.
+          - Förklara varför vilopotentialen ligger nära kaliums jämviktspotential.
+          - Beskriva Na⁺/K⁺-ATPasets roll för att upprätthålla gradienterna.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: aktionspotentialen
+        titel: Aktionspotentialen och impulsledning
+        beskrivning: >-
+          Spänningskänsliga jonkanaler, tröskel, refraktärperiod och ledning i omyeliniserade och
+          myeliniserade axon.
+        forkunskaper: [vilomembranpotential]
+        larandemal:
+          - Beskriva aktionspotentialens faser och de kanaler som ligger bakom dem.
+          - Förklara aktionspotentialen som ett exempel på positiv återkoppling.
+          - Förklara saltatorisk ledning och faktorer som påverkar ledningshastighet.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: synaptisk-transmission
+        titel: Synaptisk transmission och neurotransmittorer
+        beskrivning: >-
+          Kemiska och elektriska synapser, transmittorfrisättning, postsynaptiska potentialer och
+          de viktigaste transmittorsystemen.
+        forkunskaper: [aktionspotentialen]
+        larandemal:
+          - Beskriva stegen i kemisk synaptisk överföring.
+          - Skilja jonotropa och metabotropa receptorer.
+          - Förklara spatial och temporal summation.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: sensoriska-receptorer
+        titel: Sensoriska receptorer, transduktion och kodning
+        beskrivning: >-
+          Hur receptorer omvandlar fysikaliska och kemiska stimuli till nervsignaler, och hur
+          intensitet och läge kodas.
+        forkunskaper: [aktionspotentialen]
+        larandemal:
+          - Förklara receptorpotential, adaptation och receptiva fält.
+          - Beskriva frekvenskodning och populationskodning av stimulusintensitet.
+          - Klassificera receptorer efter stimulusmodalitet.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: ryggmargen-och-reflexbagen
+        titel: Ryggmärgen och reflexbågen
+        beskrivning: >-
+          Ryggmärgens organisation, segmentell innervation och reflexbågens komponenter.
+        forkunskaper: [synaptisk-transmission]
+        larandemal:
+          - Beskriva ryggmärgens grå och vita substans och dess banor.
+          - Redogöra för reflexbågens fem komponenter.
+          - Skilja monosynaptiska och polysynaptiska reflexer.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: hjarnans-huvudstrukturer
+        titel: Hjärnstam, mellanhjärna och storhjärna
+        beskrivning: >-
+          Hjärnans huvudindelning och de funktioner som är centrala i kursen: hjärnstammens
+          reglercentra, hypotalamus, talamus, limbiska strukturer och hjärnbarken.
+        forkunskaper: [centrala-och-perifera-nervsystemet]
+        larandemal:
+          - Lokalisera och namnge hjärnans huvudstrukturer.
+          - Beskriva hjärnstammens och hypotalamus roll i homeostatisk reglering.
+          - Redogöra för hjärnbarkens lober och deras huvudsakliga funktioner.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: neuroplasticitet
+        titel: Neuroplasticitet och synaptisk förändring
+        beskrivning: >-
+          Långtidspotentiering, långtidsdepression och strukturell plasticitet, samt vad begreppet
+          neuroplasticitet kan och inte kan förklara.
+        forkunskaper: [synaptisk-transmission]
+        larandemal:
+          - Beskriva mekanismerna bakom NMDA-receptorberoende långtidspotentiering.
+          - Skilja synaptisk, strukturell och funktionell plasticitet.
+          - Värdera populära påståenden om neuroplasticitet mot forskningsläget.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: autonoma-nervsystemet
+    titel: Det autonoma nervsystemet
+    beskrivning: >-
+      Den del av nervsystemet som reglerar hjärta, kärl, andning, mag–tarmkanal och körtlar.
+      Anatomi, transmittorer, central kontroll, reflexer och mätmetoder.
+    kapitel:
+      - id: autonoma-nervsystemets-organisation
+        titel: Autonoma nervsystemets anatomiska organisation
+        beskrivning: >-
+          Pre- och postganglionära neuron, ganglier och de tre delarna: sympatiska,
+          parasympatiska och enteriska nervsystemet.
+        forkunskaper: [centrala-och-perifera-nervsystemet]
+        larandemal:
+          - Beskriva den tvåneuronala efferenta banan.
+          - Jämföra sympatikus och parasympatikus utflöde från CNS.
+          - Redogöra för det enteriska nervsystemets relativa självständighet.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: sympatiska-nervsystemets-organisation
+        titel: Sympatiska nervsystemets organisation
+        beskrivning: >-
+          Torakolumbalt utflöde, gränssträngen, binjuremärgen och sympatikus differentierade,
+          organspecifika styrning.
+        forkunskaper: [autonoma-nervsystemets-organisation]
+        larandemal:
+          - Beskriva sympatikus anatomiska förlopp från ryggmärg till målorgan.
+          - Förklara binjuremärgens roll som modifierat sympatiskt ganglion.
+          - Värdera föreställningen om sympatikus som ett odifferentierat på–av-system.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: parasympatiska-nervsystemet-och-vagus
+        titel: Parasympatiska nervsystemet och vagusnerven
+        beskrivning: >-
+          Kraniosakralt utflöde, vagusnervens efferenta och afferenta fibrer och dess
+          kardiovaskulära och gastrointestinala funktioner.
+        forkunskaper: [autonoma-nervsystemets-organisation]
+        larandemal:
+          - Beskriva de kranialnerver som bär parasympatiska fibrer.
+          - Redogöra för att majoriteten av vagusnervens fibrer är afferenta.
+          - Förklara vagal kontroll av hjärtfrekvensen via sinusknutan.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: autonoma-transmittorer-och-receptorer
+        titel: Transmittorer och receptorer i autonoma nervsystemet
+        beskrivning: >-
+          Acetylkolin, noradrenalin och adrenalin. Nikotinerga, muskarinerga och adrenerga
+          receptorer och deras effekter i olika vävnader.
+        forkunskaper: [synaptisk-transmission, autonoma-nervsystemets-organisation]
+        larandemal:
+          - Ange transmittor och receptortyp i varje led av sympatiska och parasympatiska banor.
+          - Förklara α- och β-receptorernas vävnadsspecifika effekter.
+          - Resonera om hur farmakologiska blockerare används för att studera autonom kontroll.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: central-autonom-reglering
+        titel: Central autonom reglering i hjärnstam och hypotalamus
+        beskrivning: >-
+          Nucleus tractus solitarius, ventrolaterala medulla, hypotalamus och det centrala
+          autonoma nätverket.
+        forkunskaper: [hjarnans-huvudstrukturer, autonoma-nervsystemets-organisation]
+        larandemal:
+          - Beskriva NTS som mottagare av viscerala afferenta signaler.
+          - Redogöra för hypotalamus roll i att samordna autonoma, endokrina och beteendemässiga svar.
+          - Förklara hur högre hjärnområden kan modulera autonomt utflöde.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: baroreflexen
+        titel: Baroreflexen och korttidsreglering av blodtrycket
+        beskrivning: >-
+          Baroreceptorer i sinus caroticus och aortabågen, reflexbågen och baroreflexens
+          känslighet, med blodtrycksregleringen vid uppresning som exempel.
+        forkunskaper: [homeostas-och-negativ-aterkoppling, central-autonom-reglering]
+        larandemal:
+          - Beskriva baroreflexens sensorer, centrala bearbetning och effektorer.
+          - Använda sambandet mellan medelartärtryck, hjärtminutvolym och perifert motstånd.
+          - Förklara metoder för att skatta baroreflexens känslighet.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: hjartfrekvens-och-hrv
+        titel: Hjärtfrekvens och hjärtfrekvensvariabilitet
+        beskrivning: >-
+          Sinusknutans automatik, autonom modulation av hjärtfrekvensen och mått på
+          hjärtfrekvensvariabilitet i tids- och frekvensdomän.
+        forkunskaper: [parasympatiska-nervsystemet-och-vagus, autonoma-transmittorer-och-receptorer]
+        larandemal:
+          - Förklara hur sympatikus och vagus påverkar sinusknutans depolarisering.
+          - Beräkna RMSSD från en serie RR-intervall.
+          - Redogöra för metodproblem vid tolkning av HRV som mått på vagal aktivitet.
+        studietid: 100
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: modeller-av-autonom-reglering
+        titel: Modeller av autonom reglering och deras evidensläge
+        beskrivning: >-
+          Från Cannons kamp–flykt-respons till moderna modeller av differentierad autonom kontroll,
+          och en granskning av polyvagalteorins anatomiska och fysiologiska antaganden.
+        forkunskaper: [hjartfrekvens-och-hrv]
+        larandemal:
+          - Redogöra för hur modellen av ett enhetligt sympatiskt påslag har reviderats.
+          - Granska polyvagalteorins centrala antaganden mot jämförande anatomi och fysiologi.
+          - Skilja mellan en pedagogisk modell och en empiriskt prövad teori.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: stressfysiologi
+    titel: Stressfysiologi och neuroendokrin reglering
+    beskrivning: >-
+      De system som mobiliserar kroppen vid krav och hot, hur de regleras och avslutas, och hur
+      upprepad eller långvarig aktivering påverkar kroppens funktioner.
+    kapitel:
+      - id: stressbegreppet
+        titel: Stressbegreppet – stressor, stressrespons och belastning
+        beskrivning: >-
+          Begreppshistoria från Cannon och Selye till nutida definitioner, och skillnaden mellan
+          stressor, respons och upplevelse.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Skilja begreppen stressor, stressrespons och upplevd stress.
+          - Redogöra för Selyes generella adaptationssyndrom och dess begränsningar.
+          - Förklara varför stress inte är ett entydigt fysiologiskt tillstånd.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: sympatiko-adrenomedullara-systemet
+        titel: Det sympatiko-adrenomedullära systemet
+        beskrivning: >-
+          Den snabba stressresponsen: sympatisk aktivering, katekolaminfrisättning från
+          binjuremärgen och dess kardiovaskulära och metabola effekter.
+        forkunskaper: [sympatiska-nervsystemets-organisation, stressbegreppet]
+        larandemal:
+          - Beskriva katekolaminernas syntes, frisättning och nedbrytning.
+          - Redogöra för de kardiovaskulära och metabola effekterna av adrenalin.
+          - Jämföra tidsförloppet för sympatiska och hormonella stressvar.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: hpa-axeln
+        titel: Hypotalamus–hypofys–binjure-axeln
+        beskrivning: >-
+          CRH, ACTH och kortisol. Axelns anatomi, aktivering och negativa återkoppling.
+        forkunskaper: [cellular-kommunikation-och-hormoner, stressbegreppet]
+        larandemal:
+          - Beskriva HPA-axelns hormoner och deras ursprung.
+          - Förklara glukokortikoidernas negativa återkoppling på hypotalamus och hypofys.
+          - Redogöra för tidsförloppet från stressor till förhöjt kortisol.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: kortisol-och-dygnsrytm
+        titel: Kortisolets verkningar och dygnsrytm
+        beskrivning: >-
+          Glukokortikoidreceptorer, kortisolets metabola och immunologiska effekter,
+          dygnsrytmen och uppvaknandesvaret.
+        forkunskaper: [hpa-axeln]
+        larandemal:
+          - Beskriva kortisolets effekter på glukosomsättning, immunfunktion och kärltonus.
+          - Redogöra för kortisolets dygnsprofil.
+          - Värdera metodproblem vid mätning av kortisol i saliv.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: reglering-och-avslutning-av-stressresponsen
+        titel: Reglering och avslutning av stressresponsen
+        beskrivning: >-
+          Hur stressresponsen bromsas: glukokortikoidåterkoppling, parasympatisk reaktivering
+          och habituering vid upprepade stressorer.
+        forkunskaper: [hpa-axeln]
+        larandemal:
+          - Förklara varför en effektiv avslutning av stressresponsen är lika viktig som aktiveringen.
+          - Beskriva habituering och sensitisering av stressvar.
+          - Redogöra för skillnaden mellan reaktivitet och återhämtningstid.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: allostas-och-allostatisk-belastning
+        titel: Allostas och allostatisk belastning
+        beskrivning: >-
+          Modellen om förutseende reglering och kumulativ fysiologisk belastning, hur den har
+          operationaliserats och vilken kritik den mött.
+        forkunskaper: [homeostas-och-negativ-aterkoppling, reglering-och-avslutning-av-stressresponsen]
+        larandemal:
+          - Jämföra allostasbegreppet med homeostas.
+          - Beskriva hur allostatisk belastning mäts med sammansatta biomarkörindex.
+          - Värdera modellens förklaringsvärde och kritiken mot den.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: akut-och-langvarig-stress
+        titel: Akut och långvarig stress – fysiologiska konsekvenser
+        beskrivning: >-
+          Skillnader mellan kortvariga stressvar som förbättrar prestation och långvarig
+          aktivering med kardiovaskulära, metabola och kognitiva följder.
+        forkunskaper: [allostas-och-allostatisk-belastning]
+        larandemal:
+          - Beskriva sambandet mellan aktiveringsnivå och prestation och dess begränsningar.
+          - Redogöra för epidemiologiska samband mellan långvarig stress och kardiovaskulär sjukdom.
+          - Skilja korrelation från orsakssamband i stressforskning.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: stress-immunsystem-och-inflammation
+        titel: Stress, immunsystem och inflammation
+        beskrivning: >-
+          Neuroendokrin–immunologisk interaktion, kortisolets antiinflammatoriska verkan och
+          låggradig inflammation.
+        forkunskaper: [kortisol-och-dygnsrytm]
+        larandemal:
+          - Beskriva hur glukokortikoider och katekolaminer påverkar immunceller.
+          - Förklara begreppet glukokortikoidresistens.
+          - Värdera evidensen för samband mellan psykosocial stress och inflammationsmarkörer.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: matning-av-stress
+        titel: Mätning av stress – biomarkörer och självskattning
+        beskrivning: >-
+          Kortisol, katekolaminer, puls, blodtryck, HRV och frågeformulär. Vad varje metod mäter,
+          deras felkällor och hur de bör kombineras.
+        forkunskaper: [kortisol-och-dygnsrytm, hjartfrekvens-och-hrv]
+        larandemal:
+          - Redogöra för validitet och reliabilitet hos vanliga stressmått.
+          - Förklara varför fysiologiska mått och självskattning ofta korrelerar svagt.
+          - Planera en enkel mätserie med kontroll för dygnsvariation.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: perception
+    titel: Perception och hjärnans informationsbearbetning
+    beskrivning: >-
+      Hur hjärnan omvandlar sensoriska signaler till uppfattningar om omvärlden. Sensoriska banor,
+      inferens, smärta och multisensorisk integration, med psykofysiska experiment som metod.
+    kapitel:
+      - id: sensoriska-banor-och-kortikal-bearbetning
+        titel: Sensoriska banor, talamus och kortikal bearbetning
+        beskrivning: >-
+          Från receptor via talamus till primär och associativ hjärnbark. Topografisk
+          organisation och hierarkisk bearbetning.
+        forkunskaper: [sensoriska-receptorer, hjarnans-huvudstrukturer]
+        larandemal:
+          - Beskriva de somatosensoriska banornas förlopp.
+          - Förklara somatotopi och kortikal förstoring.
+          - Redogöra för talamus roll som relä och filter.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: perceptuell-inferens
+        titel: Perceptuell inferens och prediktiv bearbetning
+        beskrivning: >-
+          Perception som tolkning under osäkerhet. Bayesianska modeller och teorin om prediktiv
+          bearbetning, med tydlig åtskillnad mellan data och teoretisk modell.
+        forkunskaper: [sensoriska-banor-och-kortikal-bearbetning]
+        larandemal:
+          - Förklara hur förväntningar kan påverka perception, med experimentella exempel.
+          - Beskriva Bayes sats i termer av förhandskunskap och sensoriskt belägg.
+          - Värdera evidensläget för prediktiv bearbetning som allmän hjärnteori.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: visuell-perception
+        titel: Visuell perception
+        beskrivning: >-
+          Näthinnan, synbanan och visuella kortexområden. Kontrast, rörelse, djup och
+          uppmärksamhetens betydelse för vad vi ser.
+        forkunskaper: [sensoriska-banor-och-kortikal-bearbetning]
+        larandemal:
+          - Beskriva fotoreceptorernas egenskaper och synbanans förlopp.
+          - Förklara lateral inhibition och dess perceptuella följder.
+          - Redogöra för den ventrala och dorsala visuella strömmen.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: vestibulara-systemet
+        titel: Vestibulära systemet och rumslig orientering
+        beskrivning: >-
+          Båggångar och otolitorgan, vestibulookulär reflex och integrationen av vestibulär,
+          visuell och proprioceptiv information.
+        forkunskaper: [sensoriska-receptorer]
+        larandemal:
+          - Beskriva hur båggångarna registrerar vinkelacceleration.
+          - Förklara den vestibulookulära reflexen.
+          - Redogöra för orsaker till yrsel vid sensorisk konflikt.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: nociception-och-smartmodulering
+        titel: Nociception och smärtmodulering
+        beskrivning: >-
+          Nociceptorer, spinala och supraspinala banor, central sensitisering och nedåtgående
+          smärtmodulering.
+        forkunskaper: [sensoriska-receptorer, ryggmargen-och-reflexbagen]
+        larandemal:
+          - Skilja nociception från smärtupplevelse.
+          - Beskriva Aδ- och C-fibrer och deras egenskaper.
+          - Förklara nedåtgående modulering från periakveduktala grå substansen.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: multisensorisk-integration
+        titel: Multisensorisk integration
+        beskrivning: >-
+          Hur hjärnan kombinerar information från olika sinnen, viktning efter tillförlitlighet
+          och illusioner som uppstår vid konflikt.
+        forkunskaper: [perceptuell-inferens]
+        larandemal:
+          - Förklara principen om tillförlitlighetsviktad integration.
+          - Beskriva McGurk-effekten och ventrilokvisteffekten.
+          - Resonera om varför multisensorisk integration ger mer exakta skattningar.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: psykofysiska-metoder
+        titel: Perceptuella illusioner och psykofysiska metoder
+        beskrivning: >-
+          Absoluta trösklar, skillnadströsklar, Webers lag och signaldetektionsteori, med
+          illusioner som verktyg för att studera perception.
+        forkunskaper: [sensoriska-receptorer]
+        larandemal:
+          - Tillämpa Webers lag på ett enkelt experiment med vikter.
+          - Förklara begreppen träffar, falsklarm och känslighet (d′) i signaldetektionsteori.
+          - Planera ett psykofysiskt hemexperiment med kontroll för förväntanseffekter.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: interoception
+    titel: Interoception och kroppslig medvetenhet
+    beskrivning: >-
+      Hur signaler från kroppens inre organ når hjärnan, hur de bearbetas och hur förmågan att
+      uppfatta dem kan mätas. Ett område med snabb forskningsutveckling och betydande metodproblem.
+    kapitel:
+      - id: interoceptionsbegreppet
+        titel: Interoceptionsbegreppet och dess dimensioner
+        beskrivning: >-
+          Historik och nutida definitioner. Skillnaden mellan interoceptiv träffsäkerhet,
+          självskattad interoceptiv uppmärksamhet och metakognitiv medvetenhet.
+        forkunskaper: [sensoriska-receptorer]
+        larandemal:
+          - Definiera interoception och skilja den från exteroception och proprioception.
+          - Beskriva de tre dimensionerna träffsäkerhet, sensibilitet och medvetenhet.
+          - Förklara varför dimensionerna ofta korrelerar svagt med varandra.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: interoceptiva-signalvagar
+        titel: Interoceptiva signalvägar
+        beskrivning: >-
+          Vagala och spinala viscerala afferenter, lamina I, nucleus tractus solitarius och
+          vidare projektioner till talamus och insula.
+        forkunskaper: [interoceptionsbegreppet, central-autonom-reglering]
+        larandemal:
+          - Beskriva de två huvudsakliga vägarna för viscerala afferenta signaler.
+          - Redogöra för vilka typer av receptorer som finns i inre organ.
+          - Förklara varför de flesta interoceptiva signaler inte blir medvetna.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: insula-och-kroppens-representation
+        titel: Insula och den kortikala representationen av kroppen
+        beskrivning: >-
+          Insulas anatomi och funktionella indelning, och dess roll i integrationen av
+          interoceptiva, emotionella och kognitiva signaler.
+        forkunskaper: [interoceptiva-signalvagar]
+        larandemal:
+          - Beskriva den bakre, mellersta och främre insulans förmodade funktioner.
+          - Redogöra för belägg från avbildning och lesionsstudier.
+          - Värdera tolkningar av insula som säte för medvetande om kroppen.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: matning-av-interoception
+        titel: Mätning av interoception och metodproblem
+        beskrivning: >-
+          Hjärtslagsräkning, hjärtslagsdiskrimination och andningsbaserade uppgifter. Varför den
+          mest använda metoden har ifrågasatts.
+        forkunskaper: [interoceptionsbegreppet]
+        larandemal:
+          - Beskriva hjärtslagsräkningsuppgiften och hur poäng beräknas.
+          - Redogöra för kritiken att uppgiften påverkas av kunskap om den egna pulsen.
+          - Genomföra och tolka en enkel hjärtslagsräkning med medvetenhet om felkällorna.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: interoception-emotion-och-beslut
+        titel: Interoception, emotion och beslutsfattande
+        beskrivning: >-
+          Teorier om kroppsliga signalers roll i emotion, från James–Lange till
+          konstruktionistiska modeller, och experimentella belägg.
+        forkunskaper: [interoceptionsbegreppet]
+        larandemal:
+          - Jämföra James–Lange, Cannon–Bard och tvåfaktorsteorin.
+          - Beskriva experiment där kroppslig återkoppling manipulerats.
+          - Värdera hypotesen om somatiska markörer mot replikationsläget.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: kroppsschema-och-kroppsuppfattning
+        titel: Kroppsschema och kroppsuppfattning
+        beskrivning: >-
+          Hjärnans representation av kroppens form, storlek och läge, och experiment där den
+          kan förändras, som gummihandsillusionen.
+        forkunskaper: [multisensorisk-integration]
+        larandemal:
+          - Skilja kroppsschema från kroppsuppfattning.
+          - Förklara gummihandsillusionen med multisensorisk integration.
+          - Redogöra för kritik mot illusionens standardmått.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: traning-av-interoceptiv-uppmarksamhet
+        titel: Träning av interoceptiv uppmärksamhet – evidensläget
+        beskrivning: >-
+          Interventioner som syftar till att förbättra interoceptiv förmåga och vad
+          kontrollerade studier har visat.
+        forkunskaper: [matning-av-interoception]
+        larandemal:
+          - Beskriva typer av interoceptiv träning som studerats.
+          - Redogöra för effektstorlekar och metodkvalitet i tillgängliga studier.
+          - Skilja förändrad självskattning från förändrad mätbar träffsäkerhet.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: andning
+    titel: Andningsfysiologi och andningsreglering
+    beskrivning: >-
+      Andningens mekanik, gasutbyte och kemiska reglering, kopplingen mellan andning och
+      hjärtfrekvens, och vad som är känt om effekterna av medvetet förändrade andningsmönster.
+    kapitel:
+      - id: andningsmekanik
+        titel: Andningsorganens anatomi och andningsmekanik
+        beskrivning: >-
+          Luftvägar, alveoler, andningsmuskler och tryckförhållanden. Compliance och
+          luftvägsmotstånd.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Beskriva tryckförändringarna i pleura och alveoler under en andningscykel.
+          - Förklara diafragmans och de interkostala musklernas roll.
+          - Definiera compliance och luftvägsmotstånd.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: lungvolymer-och-ventilation
+        titel: Lungvolymer och ventilation
+        beskrivning: >-
+          Tidalvolym, residualvolym och vitalkapacitet, minutventilation och alveolär ventilation,
+          samt dödutrymmets betydelse.
+        forkunskaper: [andningsmekanik]
+        larandemal:
+          - Definiera de statiska lungvolymerna och kapaciteterna.
+          - Beräkna alveolär ventilation från andningsfrekvens, tidalvolym och dödutrymme.
+          - Förklara varför långsam djup andning och snabb ytlig andning ger olika alveolär ventilation.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: gasutbyte-och-syrgastransport
+        titel: Gasutbyte och syrgastransport
+        beskrivning: >-
+          Partialtryck, diffusion över alveolarmembranet, hemoglobinets syrgasbindning och
+          dissociationskurvans förskjutningar.
+        forkunskaper: [lungvolymer-och-ventilation]
+        larandemal:
+          - Tillämpa Daltons lag och beräkna inandningsluftens syrgaspartialtryck.
+          - Förklara syrgasdissociationskurvans form och Bohr-effekten.
+          - Beskriva hur koldioxid transporteras i blodet.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: kemoreceptorer-och-ventilationskontroll
+        titel: Kemoreceptorer och ventilationskontroll
+        beskrivning: >-
+          Centrala och perifera kemoreceptorer, ventilationens känslighet för koldioxid och syre,
+          och andningens roll i syra–basregleringen.
+        forkunskaper: [gasutbyte-och-syrgastransport, syra-basbalans]
+        larandemal:
+          - Beskriva de centrala och perifera kemoreceptorernas läge och stimuli.
+          - Förklara varför koldioxid är den dominerande drivkraften för andning i vila.
+          - Tolka ventilationens svarskurva för koldioxid.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: andningscentra-och-viljemassig-andning
+        titel: Hjärnstammens andningscentra och viljemässig andning
+        beskrivning: >-
+          PreBötzinger-komplexet, rytmgenerering och samspelet mellan automatisk och
+          kortikalt styrd andning.
+        forkunskaper: [kemoreceptorer-och-ventilationskontroll, hjarnans-huvudstrukturer]
+        larandemal:
+          - Beskriva hjärnstammens rytmgenererande nätverk.
+          - Förklara hur kortikala banor kan åsidosätta den automatiska andningen.
+          - Redogöra för fysiologin bakom brytpunkten vid andningsuppehåll.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: respiratorisk-sinusarytmi
+        titel: Respiratorisk sinusarytmi och kardiorespiratorisk koppling
+        beskrivning: >-
+          Hjärtfrekvensens variation med andningen, de mekanismer som har föreslagits och
+          sambandet med andningsfrekvens och tidalvolym.
+        forkunskaper: [hjartfrekvens-och-hrv, kemoreceptorer-och-ventilationskontroll]
+        larandemal:
+          - Beskriva respiratorisk sinusarytmi och hur den mäts.
+          - Redogöra för centrala och reflexmässiga förklaringsmodeller.
+          - Förklara varför RSA inte ensam är ett rent mått på vagal tonus.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: andningsmonster-och-hyperventilation
+        titel: Andningsmönster, hyperventilation och hypokapni
+        beskrivning: >-
+          Normala variationer i andningsmönster, fysiologiska följder av överventilation och
+          begreppet dysfunktionell andning.
+        forkunskaper: [kemoreceptorer-och-ventilationskontroll]
+        larandemal:
+          - Förklara sambandet mellan ventilation, arteriellt koldioxidtryck och pH.
+          - Beskriva symtom och mekanismer vid akut hypokapni.
+          - Redogöra för svårigheterna att definiera dysfunktionell andning.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: langsam-andning-mekanismer-och-evidens
+        titel: Långsam andning – mekanismer och evidensläge
+        beskrivning: >-
+          Fysiologiska effekter av andning kring sex andetag per minut, resonansfrekvens och
+          vad randomiserade studier visar om effekter på blodtryck och självskattad stress.
+        forkunskaper: [respiratorisk-sinusarytmi, baroreflexen]
+        larandemal:
+          - Förklara hur långsam andning påverkar RSA och baroreflexens svängningar.
+          - Sammanfatta resultaten från metaanalyser av andningsinterventioner.
+          - Skilja akuta fysiologiska effekter från dokumenterade långsiktiga effekter.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: motorisk-kontroll
+    titel: Muskler, rörelse och motorisk kontroll
+    beskrivning: >-
+      Skelettmuskelns fysiologi, proprioceptiva sinnesorgan, spinala och supraspinala
+      kontrollsystem, balans och motorisk inlärning.
+    kapitel:
+      - id: skelettmuskelns-kontraktion
+        titel: Skelettmuskelns uppbyggnad och kontraktionsmekanism
+        beskrivning: >-
+          Sarkomeren, glidfilamentteorin, excitation–kontraktionskoppling och sambandet mellan
+          längd, hastighet och kraft.
+        forkunskaper: [aktionspotentialen]
+        larandemal:
+          - Beskriva sarkomerens uppbyggnad och korsbryggecykeln.
+          - Förklara kalciumjonernas roll i excitation–kontraktionskopplingen.
+          - Tolka kraft–längd- och kraft–hastighetssambanden.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: motoriska-enheter-och-kraftgradering
+        titel: Motoriska enheter och kraftgradering
+        beskrivning: >-
+          Motoriska enheter, rekrytering enligt storleksprincipen och frekvensmodulering.
+          Muskelfibertyper.
+        forkunskaper: [skelettmuskelns-kontraktion]
+        larandemal:
+          - Definiera motorisk enhet och innervationskvot.
+          - Förklara Hennemans storleksprincip.
+          - Jämföra muskelfibertypernas egenskaper.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: muskelspolar-och-golgi-senorgan
+        titel: Muskelspolar och Golgi senorgan
+        beskrivning: >-
+          De proprioceptiva sinnesorganen i muskler och senor, γ-motoriskt system och deras roll
+          i reglering av muskellängd och kraft.
+        forkunskaper: [sensoriska-receptorer, motoriska-enheter-och-kraftgradering]
+        larandemal:
+          - Beskriva muskelspolens uppbyggnad och dess Ia- och II-afferenter.
+          - Förklara α–γ-koaktivering.
+          - Redogöra för Golgi senorganets svar på muskelkraft.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: proprioception-och-ledsinne
+        titel: Proprioception och ledsinne
+        beskrivning: >-
+          Lägessinne, rörelsesinne och kraftsinne, deras perifera och centrala grund och hur de
+          mäts experimentellt.
+        forkunskaper: [muskelspolar-och-golgi-senorgan]
+        larandemal:
+          - Skilja lägessinne, rörelsesinne och kraftsinne.
+          - Beskriva metoder för att mäta proprioceptiv precision.
+          - Förklara vibrationsinducerade rörelseillusioner.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: spinala-reflexer-och-muskeltonus
+        titel: Spinala reflexer och muskeltonus
+        beskrivning: >-
+          Sträckreflexen, reciprok inhibition, flexorreflexen och vad muskeltonus är i
+          fysiologisk mening.
+        forkunskaper: [ryggmargen-och-reflexbagen, muskelspolar-och-golgi-senorgan]
+        larandemal:
+          - Beskriva sträckreflexens bana.
+          - Förklara reciprok inhibition.
+          - Skilja neural tonus från passiva vävnadsegenskaper.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: supraspinal-motorisk-kontroll
+        titel: Motorisk cortex, basala ganglier och lillhjärnan
+        beskrivning: >-
+          Kortikospinala banor, basala gangliernas roll i val och initiering av rörelser och
+          lillhjärnans roll i koordination och felkorrigering.
+        forkunskaper: [hjarnans-huvudstrukturer, spinala-reflexer-och-muskeltonus]
+        larandemal:
+          - Beskriva motorkortex organisation och kortikospinala banor.
+          - Förklara basala gangliernas direkta och indirekta vägar på översiktlig nivå.
+          - Redogöra för lillhjärnans roll som jämförare mellan avsedd och utförd rörelse.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: postural-kontroll-och-balans
+        titel: Postural kontroll och balans
+        beskrivning: >-
+          Hur visuella, vestibulära och proprioceptiva signaler integreras för att hålla
+          tyngdpunkten över understödsytan, och hur balans mäts.
+        forkunskaper: [vestibulara-systemet, proprioception-och-ledsinne]
+        larandemal:
+          - Beskriva förhållandet mellan tyngdpunkt, tryckcentrum och understödsyta.
+          - Förklara fotleds- och höftstrategi.
+          - Genomföra och tolka ett enkelt balansprov med och utan synintryck.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: motorisk-inlarning
+        titel: Motorisk inlärning
+        beskrivning: >-
+          Stadier i färdighetsinlärning, inlärning genom felkorrigering, betydelsen av
+          variation, återkoppling och sömn.
+        forkunskaper: [supraspinal-motorisk-kontroll]
+        larandemal:
+          - Skilja prestation under träning från bestående inlärning.
+          - Förklara kontextuell interferens och variabel träning.
+          - Redogöra för evidensen om olika former av återkoppling.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: muskelspanning-och-belastning
+        titel: Muskelaktivitet, spänning och belastningsrelaterad smärta
+        beskrivning: >-
+          Vad elektromyografi visar om muskelaktivitet i vila och vid psykisk belastning, och
+          evidensläget för samband med muskuloskeletal smärta.
+        forkunskaper: [motoriska-enheter-och-kraftgradering, nociception-och-smartmodulering]
+        larandemal:
+          - Beskriva hur ytelektromyografi mäter muskelaktivitet och dess felkällor.
+          - Redogöra för experimentella data om muskelaktivitet vid mental belastning.
+          - Värdera hypoteser om låggradig muskelaktivitet och smärta.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: fysisk-aktivitet
+    titel: Fysisk aktivitet och fysiologisk adaptation
+    beskrivning: >-
+      Kroppens akuta svar på muskelarbete och de långsiktiga anpassningar som träning ger.
+      Principer för belastning, ansträngningsgradering och sambandet mellan aktivitet och hälsa.
+    kapitel:
+      - id: energisystem-under-arbete
+        titel: Energisystem under arbete
+        beskrivning: >-
+          Fosfokreatin, anaerob glykolys och oxidativ metabolism, deras kapacitet och effekt,
+          och laktatets roll.
+        forkunskaper: [energiomsattning-och-atp, skelettmuskelns-kontraktion]
+        larandemal:
+          - Jämföra energisystemens maximala effekt och kapacitet.
+          - Förklara varför laktat inte är orsak till muskeltrötthet i den enkla bemärkelsen.
+          - Beskriva substratval vid olika arbetsintensitet.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: kardiovaskulara-svar-pa-arbete
+        titel: Kardiovaskulära svar på akut arbete
+        beskrivning: >-
+          Hjärtminutvolym, slagvolym och omfördelning av blodflöde vid arbete. Central kommando
+          och muskelreflexer.
+        forkunskaper: [baroreflexen, energisystem-under-arbete]
+        larandemal:
+          - Beskriva hur hjärtminutvolymen ökar vid arbete.
+          - Förklara central kommando och träningspressorreflexen.
+          - Tillämpa Ficks princip på syreupptagning.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: maximal-syreupptagning
+        titel: Maximal syreupptagning och dess bestämningsfaktorer
+        beskrivning: >-
+          VO₂max, dess centrala och perifera begränsningar, mätmetoder och betydelse som
+          hälsomarkör.
+        forkunskaper: [kardiovaskulara-svar-pa-arbete]
+        larandemal:
+          - Definiera VO₂max och redogöra för kriterier vid direkt mätning.
+          - Förklara de centrala och perifera faktorerna bakom VO₂max.
+          - Värdera indirekta skattningar från submaximala test och konsumentprodukter.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: traningsprinciper
+        titel: Träningsprinciper – överbelastning, specificitet och reversibilitet
+        beskrivning: >-
+          De grundläggande principerna för fysiologisk anpassning och hur träningsdos beskrivs i
+          intensitet, volym och frekvens.
+        forkunskaper: [homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Förklara överbelastningsprincipen som en störning av homeostas.
+          - Beskriva specificitetsprincipen med exempel.
+          - Redogöra för tidsförloppet vid avträning.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: uthallighetstraningens-adaptationer
+        titel: Uthållighetsträningens adaptationer
+        beskrivning: >-
+          Kardiella, vaskulära och muskulära anpassningar till uthållighetsträning, inklusive
+          mitokondriell biogenes.
+        forkunskaper: [maximal-syreupptagning, traningsprinciper]
+        larandemal:
+          - Beskriva hur slagvolym och blodvolym förändras med träning.
+          - Förklara mitokondriell biogenes och kapillarisering.
+          - Redogöra för varför vilopulsen sjunker med uthållighetsträning.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: styrketraningens-adaptationer
+        titel: Styrketräningens adaptationer
+        beskrivning: >-
+          Neurala anpassningar och muskelhypertrofi, deras tidsförlopp och dos–responssamband.
+        forkunskaper: [motoriska-enheter-och-kraftgradering, traningsprinciper]
+        larandemal:
+          - Förklara varför styrkan ökar innan muskeln växer.
+          - Beskriva mekanismer för muskelproteinsyntes.
+          - Sammanfatta evidensen om träningsvolym och belastning.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: anstrangningsgradering
+        titel: Ansträngningsgradering – puls, upplevd ansträngning och trösklar
+        beskrivning: >-
+          Borgskalan, pulszoner, ventilatoriska trösklar och talprov som metoder för att styra
+          intensitet.
+        forkunskaper: [kardiovaskulara-svar-pa-arbete]
+        larandemal:
+          - Använda Borgs RPE-skala och förklara dess konstruktion.
+          - Beräkna intensitet som andel av pulsreserven.
+          - Värdera formler för maximal hjärtfrekvens.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: fysisk-aktivitet-och-halsa
+        titel: Fysisk aktivitet och hälsa – dos–responssamband
+        beskrivning: >-
+          Epidemiologiska samband mellan aktivitet, kondition och sjuklighet, rekommendationer
+          och svårigheterna att fastställa orsakssamband.
+        forkunskaper: [maximal-syreupptagning]
+        larandemal:
+          - Beskriva formen på dos–responskurvan för fysisk aktivitet och dödlighet.
+          - Redogöra för gällande rekommendationer om fysisk aktivitet för vuxna.
+          - Förklara omvänd kausalitet och förväxlingsfaktorer i aktivitetsforskning.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: stillasittande-och-vardagsaktivitet
+        titel: Stillasittande och vardagsaktivitet
+        beskrivning: >-
+          Stillasittande som separat exponering, avbrott i sittande och energiförbrukning i
+          vardagsaktivitet.
+        forkunskaper: [fysisk-aktivitet-och-halsa]
+        larandemal:
+          - Skilja stillasittande från låg fysisk aktivitet.
+          - Redogöra för experimentella studier av avbrutet sittande och glukosomsättning.
+          - Beräkna energiförbrukning med MET-värden.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: somn-och-dygnsrytm
+    titel: Sömn och dygnsrytm
+    beskrivning: >-
+      Sömnens uppbyggnad och reglering, den cirkadiska klockan, sömnens funktioner och följderna
+      av sömnbrist. Metoder för att mäta sömn och evidensbaserade beteendemässiga principer.
+    kapitel:
+      - id: somnens-arkitektur
+        titel: Sömnens arkitektur och sömnstadier
+        beskrivning: >-
+          Polysomnografiska kriterier, NREM- och REM-sömn, sömncykler och hur sömnens
+          sammansättning förändras med ålder.
+        forkunskaper: [hjarnans-huvudstrukturer]
+        larandemal:
+          - Beskriva EEG-kännetecknen för sömnens stadier.
+          - Redogöra för sömncykelns uppbyggnad under en natt.
+          - Förklara hur sömnarkitekturen förändras med åldern.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: tvaprocessmodellen
+        titel: Tvåprocessmodellen – sömntryck och cirkadisk drivkraft
+        beskrivning: >-
+          Borbélys modell med homeostatiskt sömntryck (process S) och cirkadisk reglering
+          (process C), adenosinets roll och modellens förutsägelser.
+        forkunskaper: [somnens-arkitektur, homeostas-och-negativ-aterkoppling]
+        larandemal:
+          - Beskriva process S och process C och hur de samverkar.
+          - Förklara adenosinets och koffeinets verkningsmekanism.
+          - Använda modellen för att förutsäga effekten av förskjuten sömn.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: cirkadisk-reglering
+        titel: Cirkadisk reglering
+        beskrivning: >-
+          Nucleus suprachiasmaticus, molekylära klockgener, perifera klockor och kronotyp.
+        forkunskaper: [tvaprocessmodellen]
+        larandemal:
+          - Beskriva den molekylära återkopplingsslinga som ger cirkadisk rytm.
+          - Förklara skillnaden mellan central och perifer klocka.
+          - Redogöra för kronotyp och dess mätning.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: ljus-melatonin-och-fasforskjutning
+        titel: Ljus, melatonin och fasförskjutning
+        beskrivning: >-
+          Melanopsininnehållande ganglieceller, fasresponskurvan för ljus, melatoninets roll och
+          tillämpning vid skiftarbete och tidszonsförflyttning.
+        forkunskaper: [cirkadisk-reglering]
+        larandemal:
+          - Beskriva hur ljus når den cirkadiska klockan.
+          - Tolka en fasresponskurva för ljus.
+          - Redogöra för evidensen om kvällsljus från skärmar.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: somnens-funktioner
+        titel: Sömnens funktioner
+        beskrivning: >-
+          Minneskonsolidering, synaptisk homeostas, metabolisk och immunologisk reglering och
+          den glymfatiska hypotesen, med tydlig evidensmarkering.
+        forkunskaper: [somnens-arkitektur]
+        larandemal:
+          - Redogöra för belägg för sömnens roll i minneskonsolidering.
+          - Beskriva hypotesen om synaptisk homeostas.
+          - Värdera evidensläget för den glymfatiska hypotesen hos människa.
+        studietid: 90
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: somnbrist
+        titel: Sömnbrist och dess effekter
+        beskrivning: >-
+          Akut och kronisk sömnrestriktion, effekter på uppmärksamhet, glukosomsättning och
+          aptitreglering, samt individuella skillnader i sårbarhet.
+        forkunskaper: [tvaprocessmodellen]
+        larandemal:
+          - Beskriva dos–responssambandet mellan sömnrestriktion och uppmärksamhet.
+          - Redogöra för metabola effekter i experimentella studier.
+          - Förklara varför självskattad trötthet underskattar prestationsförlust.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: koffein-alkohol-och-somn
+        titel: Koffein, alkohol och sömn
+        beskrivning: >-
+          Farmakokinetik och effekter på sömnens latens, struktur och kvalitet.
+        forkunskaper: [tvaprocessmodellen]
+        larandemal:
+          - Beräkna kvarvarande koffeinmängd utifrån halveringstid.
+          - Beskriva alkoholens effekter på sömnens första och andra halva.
+          - Sammanfatta metaanalytiska data om koffeinintag och efterföljande sömn.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: matning-av-somn
+        titel: Mätning av sömn – polysomnografi, aktigrafi och konsumentprodukter
+        beskrivning: >-
+          Referensmetoden, rörelsebaserade och pulsbaserade skattningar och sömndagbok. Vad
+          konsumentprodukter kan och inte kan mäta.
+        forkunskaper: [somnens-arkitektur]
+        larandemal:
+          - Beskriva polysomnografins komponenter.
+          - Redogöra för överensstämmelsen mellan aktigrafi och polysomnografi.
+          - Föra och analysera en sömndagbok enligt standardiserat format.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: beteendemassiga-principer-for-somn
+        titel: Beteendemässiga principer för sömnreglering
+        beskrivning: >-
+          Stimuluskontroll, sömnfönster och regelbundenhet. Mekanismerna bakom komponenterna i
+          kognitiv beteendeterapi vid sömnbesvär och vad de bygger på.
+        forkunskaper: [tvaprocessmodellen, matning-av-somn]
+        larandemal:
+          - Förklara stimuluskontroll utifrån inlärningsteori.
+          - Förklara hur ett begränsat sömnfönster påverkar sömntrycket.
+          - Skilja allmänna sömnråd med svagt stöd från komponenter med starkt stöd.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: kognition-och-emotion
+    titel: Kognition, uppmärksamhet och emotioner
+    beskrivning: >-
+      Exekutiva funktioner, uppmärksamhetens neurala nätverk, emotionernas biologi och
+      reglering, och hur belastning påverkar kognitiv kontroll.
+    kapitel:
+      - id: arbetsminne-och-exekutiva-funktioner
+        titel: Arbetsminne och exekutiva funktioner
+        beskrivning: >-
+          Modeller av arbetsminnet, kapacitetsbegränsningar och de exekutiva funktionerna
+          inhibition, uppdatering och flexibilitet.
+        forkunskaper: [hjarnans-huvudstrukturer]
+        larandemal:
+          - Beskriva Baddeleys arbetsminnesmodell.
+          - Redogöra för empiriska skattningar av arbetsminnets kapacitet.
+          - Skilja de tre huvudsakliga exekutiva funktionerna.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: uppmarksamhetens-natverk
+        titel: Uppmärksamhetens neurala nätverk
+        beskrivning: >-
+          Selektiv, delad och uthållig uppmärksamhet. Dorsala och ventrala
+          uppmärksamhetsnätverken och kostnaden vid uppgiftsväxling.
+        forkunskaper: [arbetsminne-och-exekutiva-funktioner]
+        larandemal:
+          - Skilja uppmärksamhetens huvudformer.
+          - Beskriva de dorsala och ventrala uppmärksamhetsnätverken.
+          - Mäta och tolka växlingskostnad i ett enkelt experiment.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: prefrontala-cortex-under-belastning
+        titel: Prefrontala cortex under belastning
+        beskrivning: >-
+          Katekolaminernas inverterade U-formade verkan på prefrontal funktion och
+          stressrelaterade förändringar i kognitiv kontroll.
+        forkunskaper: [arbetsminne-och-exekutiva-funktioner, sympatiko-adrenomedullara-systemet]
+        larandemal:
+          - Förklara det inverterade U-sambandet mellan katekolaminnivå och arbetsminne.
+          - Redogöra för djurexperimentella och humana belägg.
+          - Skilja kortvariga från långvariga effekter av stress på kognition.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: emotionsteorier
+        titel: Emotioner – definitioner och teorier
+        beskrivning: >-
+          Grundemotionsteori, dimensionella modeller och konstruktionistiska teorier, och vilka
+          empiriska data de bygger på.
+        forkunskaper: [interoception-emotion-och-beslut]
+        larandemal:
+          - Jämföra grundemotionsteori och konstruktionistisk teori.
+          - Beskriva valens och aktivering som dimensioner.
+          - Redogöra för debatten om fysiologiska mönster för specifika emotioner.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: amygdala-och-radsloinlarning
+        titel: Amygdala, betingning och rädsloinlärning
+        beskrivning: >-
+          Klassisk rädslobetingning, amygdalas kretsar, utsläckning som ny inlärning och
+          återkomst av betingade reaktioner.
+        forkunskaper: [neuroplasticitet]
+        larandemal:
+          - Beskriva rädslobetingning i termer av betingat och obetingat stimulus.
+          - Förklara utsläckning som ny inhibitorisk inlärning.
+          - Redogöra för spontan återhämtning och förnyelse.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: emotionsreglering
+        titel: Emotionsreglering – strategier och evidens
+        beskrivning: >-
+          Gross processmodell, omvärdering, undertryckande och uppmärksamhetsomdirigering, och
+          vad experimentella studier och metaanalyser visar.
+        forkunskaper: [emotionsteorier]
+        larandemal:
+          - Beskriva processmodellens fem strategifamiljer.
+          - Jämföra omvärdering och undertryckande med avseende på fysiologiska och subjektiva utfall.
+          - Värdera effektstorlekar i metaanalyser av emotionsreglering.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: kognitiv-vardering-och-stressrespons
+        titel: Kognitiv värdering och stressrespons
+        beskrivning: >-
+          Lazarus värderingsteori, hot- och utmaningsvärdering och experimentella studier av
+          omtolkning av fysiologisk aktivering.
+        forkunskaper: [stressbegreppet, emotionsreglering]
+        larandemal:
+          - Beskriva primär och sekundär värdering.
+          - Redogöra för det kardiovaskulära mönstret vid hot respektive utmaning.
+          - Värdera evidensen för interventioner som omtolkar aktivering.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: uppmarksamhetstraning-och-meditation
+        titel: Uppmärksamhetsträning och meditation – evidensläget
+        beskrivning: >-
+          Vad meditationsforskning har visat om uppmärksamhet, emotionsreglering och
+          fysiologiska mått, och dess metodologiska svagheter.
+        forkunskaper: [uppmarksamhetens-natverk]
+        larandemal:
+          - Skilja fokuserad uppmärksamhet från öppen monitorering som träningsformer.
+          - Sammanfatta resultat från metaanalyser med aktiva kontrollgrupper.
+          - Redogöra för metodproblem som förväntanseffekter och publikationsbias.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: grubblande-och-oro
+        titel: Grubblande och oro som kognitiva processer
+        beskrivning: >-
+          Repetitivt negativt tänkande, dess samband med förlängd fysiologisk aktivering och
+          experimentella metoder för att påverka det.
+        forkunskaper: [kognitiv-vardering-och-stressrespons]
+        larandemal:
+          - Definiera repetitivt negativt tänkande.
+          - Beskriva hypotesen om förlängd stressrespons (perseverativ kognition).
+          - Redogöra för studier av schemalagd oro.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: belastning-och-aterhamtning
+    titel: Belastning, återhämtning och arbetsförmåga
+    beskrivning: >-
+      Hur fysisk och mental belastning ger trötthet, hur återhämtning sker på olika tidsskalor
+      och hur balansen mellan belastning och kapacitet kan följas.
+    kapitel:
+      - id: aterhamtning-som-fysiologisk-process
+        titel: Återhämtning som fysiologisk process
+        beskrivning: >-
+          Återgång efter belastning på olika tidsskalor: sekunder, timmar och dygn. Metabol,
+          autonom och strukturell återhämtning.
+        forkunskaper: [homeostas-och-negativ-aterkoppling, reglering-och-avslutning-av-stressresponsen]
+        larandemal:
+          - Beskriva återhämtningsprocesser på olika tidsskalor.
+          - Förklara begreppet överkompensation och dess empiriska stöd.
+          - Skilja passiv vila från aktiv återhämtning.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: belastning-och-kapacitet
+        titel: Modeller för belastning och kapacitet
+        beskrivning: >-
+          Banisters modell med kondition och trötthet, akut-kronisk belastningskvot och
+          modellernas prediktiva begränsningar.
+        forkunskaper: [traningsprinciper]
+        larandemal:
+          - Beskriva Banisters impuls–responsmodell matematiskt.
+          - Redogöra för kritiken mot akut–kronisk belastningskvot.
+          - Skilja beskrivande modeller från prediktiva.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: trotthet-perifera-och-centrala-mekanismer
+        titel: Trötthet – perifera och centrala mekanismer
+        beskrivning: >-
+          Muskulär trötthet, central trötthet och mental trötthet, och hur de skiljs åt
+          experimentellt.
+        forkunskaper: [energisystem-under-arbete]
+        larandemal:
+          - Definiera trötthet som minskad förmåga respektive upplevelse.
+          - Beskriva metoder som skiljer central och perifer trötthet.
+          - Värdera evidensen för att mental trötthet påverkar fysisk prestation.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: overbelastning-och-relativ-energibrist
+        titel: Överbelastning, överträning och relativ energibrist
+        beskrivning: >-
+          Funktionell och icke-funktionell överbelastning, överträningssyndrom och relativ
+          energibrist vid idrott.
+        forkunskaper: [belastning-och-kapacitet]
+        larandemal:
+          - Skilja funktionell överbelastning från överträningssyndrom.
+          - Beskriva begreppet energitillgänglighet.
+          - Redogöra för varför inga enskilda biomarkörer kan diagnostisera överträning.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: psykologisk-aterhamtning-fran-arbete
+        titel: Psykologisk återhämtning från arbete
+        beskrivning: >-
+          Mental frånkoppling, avslappning, behärskning och kontroll som
+          återhämtningsupplevelser, och longitudinella samband med välbefinnande.
+        forkunskaper: [aterhamtning-som-fysiologisk-process]
+        larandemal:
+          - Beskriva de fyra återhämtningsupplevelserna.
+          - Redogöra för ansträngnings–återhämtningsmodellen.
+          - Värdera styrkan i longitudinella studier av frånkoppling.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: matning-av-aterhamtning
+        titel: Mätning av återhämtning – vilopuls, HRV och självskattning
+        beskrivning: >-
+          Morgonmätningar av vilopuls och HRV, självskattningsskalor och hur trender bör tolkas
+          mot individuell variation.
+        forkunskaper: [hjartfrekvens-och-hrv, biologisk-variation-och-referensintervall]
+        larandemal:
+          - Beskriva ett standardiserat protokoll för morgonmätning.
+          - Beräkna ett rullande medelvärde och den minsta meningsfulla förändringen.
+          - Redogöra för evidensen om HRV-styrd träning.
+        studietid: 75
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: pauser-och-kognitiv-uthallighet
+        titel: Pauser, arbetsrytm och kognitiv uthållighet
+        beskrivning: >-
+          Prestationsförlust över tid i uppmärksamhetskrävande uppgifter, effekten av korta
+          pauser och experimentella studier av arbetsrytm.
+        forkunskaper: [uppmarksamhetens-natverk, trotthet-perifera-och-centrala-mekanismer]
+        larandemal:
+          - Beskriva vigilansminskning i uthållighetsuppgifter.
+          - Sammanfatta metaanalytiska data om mikropauser.
+          - Planera ett eget försök med schemalagda pauser.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: sociala-relationer
+    titel: Sociala relationer och fysiologiska responser
+    beskrivning: >-
+      Hur social kontext påverkar stressystem, kardiovaskulär reaktivitet och hälsa, och vilka
+      mekanismer som har föreslagits för sambanden.
+    kapitel:
+      - id: sociala-relationer-och-halsa
+        titel: Sociala relationer och hälsa – epidemiologiska samband
+        beskrivning: >-
+          Metaanalyser av social integration och dödlighet, effektstorlekar och problem med
+          orsaksslutsatser.
+        forkunskaper: [akut-och-langvarig-stress]
+        larandemal:
+          - Sammanfatta resultaten från metaanalyser om sociala relationer och dödlighet.
+          - Skilja strukturella och funktionella mått på sociala relationer.
+          - Förklara förväxlingsfaktorer och omvänd kausalitet i dessa studier.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: socialt-stod-och-stressbuffring
+        titel: Socialt stöd och stressbuffring
+        beskrivning: >-
+          Experimentella studier av socialt stöd under laboratoriestress och buffringshypotesen.
+        forkunskaper: [sociala-relationer-och-halsa]
+        larandemal:
+          - Beskriva buffringshypotesen.
+          - Redogöra för experimentella resultat om stöd och kardiovaskulär reaktivitet.
+          - Förklara varför oönskat stöd kan öka reaktiviteten.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: socialt-utvarderingshot
+        titel: Socialt utvärderingshot och laboratoriestress
+        beskrivning: >-
+          Trier Social Stress Test, metaanalyser av vilka uppgiftsegenskaper som aktiverar
+          HPA-axeln och vad det säger om stressresponsens orsaker.
+        forkunskaper: [hpa-axeln]
+        larandemal:
+          - Beskriva TSST-protokollets komponenter.
+          - Redogöra för betydelsen av okontrollerbarhet och social utvärdering för kortisolsvaret.
+          - Värdera generaliserbarheten från laboratorium till vardag.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: oxytocin
+        titel: Oxytocin – fysiologi och överdrivna påståenden
+        beskrivning: >-
+          Oxytocinets etablerade fysiologiska funktioner, studier av intranasalt oxytocin och
+          replikationsproblem i forskningsfältet.
+        forkunskaper: [cellular-kommunikation-och-hormoner]
+        larandemal:
+          - Beskriva oxytocinets roll vid förlossning och amning som exempel på positiv återkoppling.
+          - Redogöra för metodproblem vid mätning av oxytocin i perifert blod.
+          - Värdera evidensläget för beteendeeffekter av intranasalt oxytocin.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: ensamhet-och-social-isolering
+        titel: Ensamhet och social isolering – mekanismer
+        beskrivning: >-
+          Skillnaden mellan objektiv isolering och upplevd ensamhet, och föreslagna
+          beteendemässiga och fysiologiska mekanismer.
+        forkunskaper: [sociala-relationer-och-halsa]
+        larandemal:
+          - Skilja social isolering från upplevd ensamhet.
+          - Beskriva föreslagna mekanismer via sömn, stressystem och hälsobeteenden.
+          - Redogöra för evidensen från interventionsstudier mot ensamhet.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: fysiologisk-synkronisering
+        titel: Fysiologisk synkronisering mellan människor
+        beskrivning: >-
+          Studier av samvariation i hjärtfrekvens, andning och hudkonduktans mellan personer i
+          interaktion, och de metodologiska fallgroparna.
+        forkunskaper: [hjartfrekvens-och-hrv]
+        larandemal:
+          - Beskriva hur fysiologisk synkronisering mäts.
+          - Förklara varför gemensamma yttre faktorer kan ge skensynkronisering.
+          - Värdera tolkningar av synkronisering som tecken på social samhörighet.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: beteendeforandring
+    titel: Beteendeförändring och vanebildning
+    beskrivning: >-
+      Inlärningspsykologins grunder, vanors automatik, motivation, planering och
+      självmonitorering, och evidensläget för olika beteendeförändringstekniker.
+    kapitel:
+      - id: klassisk-och-operant-betingning
+        titel: Klassisk och operant betingning
+        beskrivning: >-
+          Associativ inlärning, förstärkningsscheman och hur konsekvenser formar beteende.
+        forkunskaper: [neuroplasticitet]
+        larandemal:
+          - Skilja klassisk och operant betingning.
+          - Beskriva förstärkningsscheman och deras effekt på beteendets stabilitet.
+          - Förklara dopaminets roll som prediktionsfelsignal.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: vanor-och-automatik
+        titel: Vanor – automatik och kontextberoende
+        beskrivning: >-
+          Vanor som kontextutlösta automatiska beteenden, studier av vanebildningens tidsförlopp
+          och skillnaden mellan vana och målstyrt beteende.
+        forkunskaper: [klassisk-och-operant-betingning]
+        larandemal:
+          - Definiera vana i psykologisk mening.
+          - Redogöra för empiriska data om hur lång tid vanebildning tar.
+          - Förklara kontextens roll i både bildning och brytning av vanor.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: motivation-och-malsattning
+        titel: Motivation och målsättning
+        beskrivning: >-
+          Självbestämmandeteori, målsättningsteori och skillnaden mellan intention och
+          beteende.
+        forkunskaper: [vanor-och-automatik]
+        larandemal:
+          - Beskriva självbestämmandeteorins motivationsformer.
+          - Redogöra för intention–beteendegapet.
+          - Förklara egenskaper hos mål som ökar sannolikheten att de uppnås.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: genomforandeintentioner
+        titel: Genomförandeintentioner och planering
+        beskrivning: >-
+          Om–så-planer, deras verkningsmekanism och metaanalytiska effektstorlekar.
+        forkunskaper: [motivation-och-malsattning]
+        larandemal:
+          - Formulera en korrekt genomförandeintention.
+          - Förklara den föreslagna mekanismen med automatiserad stimulusrespons.
+          - Sammanfatta effektstorlekar och begränsningar.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: sjalvmonitorering-och-aterkoppling
+        titel: Självmonitorering och återkoppling
+        beskrivning: >-
+          Registrering av eget beteende och fysiologiska mått som förändringsteknik, och
+          reaktivitet hos mätning.
+        forkunskaper: [genomforandeintentioner]
+        larandemal:
+          - Beskriva självmonitorering som beteendeförändringsteknik.
+          - Förklara mätreaktivitet.
+          - Värdera evidensen för aktivitetsmätare som stöd för beteendeförändring.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: beteendeforandringstekniker
+        titel: Beteendeförändringstekniker och deras evidensläge
+        beskrivning: >-
+          Taxonomier över beteendeförändringstekniker, hur de används i forskning och vilka
+          som har bäst stöd.
+        forkunskaper: [sjalvmonitorering-och-aterkoppling]
+        larandemal:
+          - Beskriva syftet med en standardiserad taxonomi över tekniker.
+          - Redogöra för tekniker med starkast stöd för fysisk aktivitet.
+          - Förklara varför effekter av enskilda tekniker är svåra att isolera.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: aterfall-och-vidmakthallande
+        titel: Återfall och vidmakthållande
+        beskrivning: >-
+          Varför förändringar ofta inte består, modeller för återfall och strategier för
+          vidmakthållande.
+        forkunskaper: [vanor-och-automatik]
+        larandemal:
+          - Beskriva återfall som en förväntad del av beteendeförändring.
+          - Redogöra för skillnaden mellan initiering och vidmakthållande.
+          - Planera för högriskssituationer med hjälp av kontextanalys.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+  - id: integration
+    titel: Praktisk integration och individuella protokoll
+    beskrivning: >-
+      Hur kunskapen från kursen omsätts i systematiska egenexperiment och långsiktiga protokoll,
+      med vetenskapliga metoder för att undvika felaktiga slutsatser om den egna kroppen.
+    kapitel:
+      - id: testbara-fragor
+        titel: Att formulera en testbar fråga om den egna funktionen
+        beskrivning: >-
+          Från allmän nyfikenhet till en avgränsad fråga med definierad exponering, utfall och
+          tidsram.
+        forkunskaper: [biologisk-variation-och-referensintervall]
+        larandemal:
+          - Formulera en fråga med tydlig exponering och tydligt utfallsmått.
+          - Skilja mekanistiska frågor från effektfrågor.
+          - Bedöma om en fråga är möjlig att besvara med egna mätningar.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: matmetoder-for-egenexperiment
+        titel: Mätmetoder för egenexperiment
+        beskrivning: >-
+          Val av mått, reliabilitet och validitet, standardisering av mätsituationen och
+          användning av konsumentprodukter.
+        forkunskaper: [testbara-fragor]
+        larandemal:
+          - Välja mått med hänsyn till reliabilitet och validitet.
+          - Standardisera tidpunkt, position och förhållanden vid mätning.
+          - Värdera konsumentprodukters mätprecision.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: n-of-1-design
+        titel: N-of-1-design – baslinje, intervention och uppföljning
+        beskrivning: >-
+          Upplägg för experiment med en individ: ABA- och växlingsdesign, randomisering av
+          perioder och utsläckningstid.
+        forkunskaper: [matmetoder-for-egenexperiment]
+        larandemal:
+          - Beskriva ABA- och ABAB-design.
+          - Förklara varför baslinjens längd och stabilitet är avgörande.
+          - Planera ett eget experiment med randomiserad periodordning.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: tolkning-av-egna-data
+        titel: Tolkning av egna data – variation, regression mot medelvärdet och förväntan
+        beskrivning: >-
+          Systematiska felkällor vid tolkning av egna mätningar och enkla statistiska verktyg för
+          att bedöma förändring.
+        forkunskaper: [n-of-1-design]
+        larandemal:
+          - Förklara regression mot medelvärdet med ett räkneexempel.
+          - Redogöra för förväntanseffekter vid icke-blindade egenexperiment.
+          - Använda medelvärde, standardavvikelse och minsta meningsfulla förändring.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: individuellt-traningsprotokoll
+        titel: Att bygga ett individuellt träningsprotokoll
+        beskrivning: >-
+          Sammanställning av övningar från kursen till ett protokoll med syfte, dos, progression
+          och uppföljningsmått.
+        forkunskaper: [traningsprinciper, n-of-1-design]
+        larandemal:
+          - Specificera ett protokoll med syfte, frekvens, intensitet och duration.
+          - Planera progression utifrån överbelastningsprincipen.
+          - Välja uppföljningsmått som är kopplade till protokollets syfte.
+        studietid: 60
+        innehall: under-produktion
+        kontroll: ej-producerad
+
+      - id: langsiktig-uppfoljning
+        titel: Långsiktig uppföljning och revidering
+        beskrivning: >-
+          Hur protokoll utvärderas över månader, när de bör ändras och hur egna erfarenheter
+          vägs mot forskningsläget.
+        forkunskaper: [individuellt-traningsprotokoll, tolkning-av-egna-data]
+        larandemal:
+          - Planera uppföljning med fasta utvärderingspunkter.
+          - Avgöra när en förändring är tillräckligt stor för att motivera en revidering.
+          - Väga individuella resultat mot evidens från kontrollerade studier.
+        studietid: 45
+        innehall: under-produktion
+        kontroll: ej-producerad
