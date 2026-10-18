@@ -57,8 +57,8 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
         { id: 'larandemal', text: 'Lärandemål', level: 2 },
         ...chapter.headings,
         ...(exercises.length ? [{ id: 'ovningar', text: 'Längre övningar', level: 2 as const }] : []),
-        ...(sources.length ? [{ id: 'referenser', text: 'Referenser', level: 2 as const }] : []),
         ...(quiz ? [{ id: 'sjalvtest', text: 'Självtest', level: 2 as const }] : []),
+        ...(sources.length ? [{ id: 'referenser', text: 'Referenser', level: 2 as const }] : []),
       ]
     : []
 
@@ -140,6 +140,15 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
           </section>
         )}
 
+        {quiz && (
+          <section aria-labelledby="sjalvtest" className="chapter-section">
+            <h2 id="sjalvtest">Självtest</h2>
+            <Loading state={content}>
+              {(c) => c.quiz && <Quiz quiz={c.quiz} theoryAnchor={chapter.headings[0]?.id ?? 'larandemal'} />}
+            </Loading>
+          </section>
+        )}
+
         {sources.length > 0 && (
           <section aria-labelledby="referenser" className="chapter-section">
             <h2 id="referenser">Referenser</h2>
@@ -157,15 +166,6 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
             <p className="small">
               Uppgifter om hur varje källa har kontrollerats finns i <Link to="/kallor">källförteckningen</Link>.
             </p>
-          </section>
-        )}
-
-        {quiz && (
-          <section aria-labelledby="sjalvtest" className="chapter-section">
-            <h2 id="sjalvtest">Självtest</h2>
-            <Loading state={content}>
-              {(c) => c.quiz && <Quiz quiz={c.quiz} theoryAnchor={chapter.headings[0]?.id ?? 'larandemal'} />}
-            </Loading>
           </section>
         )}
 
