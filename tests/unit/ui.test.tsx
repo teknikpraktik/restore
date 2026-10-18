@@ -42,8 +42,8 @@ describe('kursnavigering', () => {
     const user = userEvent.setup()
     renderAt(`/kurs/${FIRST}`)
     const nav = sidebar()
-    const first = nav.getByRole('button', { name: /Människokroppen som biologiskt reglersystem/ })
-    const second = nav.getByRole('button', { name: /Nervsystemets anatomi och signalering/ })
+    const first = nav.getByRole('button', { name: /Kroppen söker balans/ })
+    const second = nav.getByRole('button', { name: /Så fungerar nervsystemet/ })
     expect(first).toHaveAttribute('aria-expanded', 'true')
     expect(second).toHaveAttribute('aria-expanded', 'false')
     const secondList = document.getElementById(second.getAttribute('aria-controls')!)!
@@ -63,12 +63,12 @@ describe('kursnavigering', () => {
   it('navigerar mellan underkapitel och markerar det aktiva', async () => {
     const user = userEvent.setup()
     renderAt(`/kurs/${FIRST}`)
-    expect(await screen.findByRole('heading', { level: 1, name: /Homeostas och negativ återkoppling/ })).toBeVisible()
-    await user.click(sidebar().getByRole('link', { name: /Termoreglering/ }))
-    expect(await screen.findByRole('heading', { level: 1, name: /1\.7\s+Termoreglering/ })).toBeVisible()
-    expect(sidebar().getByRole('link', { name: /Termoreglering/ })).toHaveAttribute('aria-current', 'page')
+    expect(await screen.findByRole('heading', { level: 1, name: /Kroppen håller sig i balans/ })).toBeVisible()
+    await user.click(sidebar().getByRole('link', { name: /När återhämtningen inte hinner ikapp/ }))
+    expect(await screen.findByRole('heading', { level: 1, name: /1\.7\s+När återhämtningen inte hinner ikapp/ })).toBeVisible()
+    expect(sidebar().getByRole('link', { name: /När återhämtningen inte hinner ikapp/ })).toHaveAttribute('aria-current', 'page')
 
-    await user.click(screen.getByRole('link', { name: /Nästa.*Biologisk variation/ }))
+    await user.click(screen.getByRole('link', { name: /Nästa.*Din egen normala variation/ }))
     expect(await screen.findByRole('heading', { level: 1, name: /1\.8/ })).toBeVisible()
   })
 
@@ -77,7 +77,7 @@ describe('kursnavigering', () => {
     expect(await screen.findByRole('heading', { level: 1, name: /Baroreflexen/ })).toBeVisible()
     expect(screen.getByText('Innehållet är under produktion')).toBeVisible()
     expect(screen.getByRole('heading', { name: 'Planerade lärandemål' })).toBeVisible()
-    expect(screen.queryByRole('heading', { name: 'Kunskapskontroll' })).toBeNull()
+    expect(screen.queryByRole('heading', { name: 'Självtest' })).toBeNull()
     expect(screen.queryByRole('heading', { name: 'Laborationer' })).toBeNull()
   })
 
@@ -94,7 +94,7 @@ describe('grön bock', () => {
   it('visas i menyn efter godkänd kontroll, inte efter underkänd', async () => {
     const quiz = (await loadChapterContent(FIRST)).quiz!
     renderAt(`/kurs/${FIRST}`)
-    const link = () => sidebar().getByRole('link', { name: /Homeostas och negativ återkoppling/ })
+    const link = () => sidebar().getByRole('link', { name: /Kroppen håller sig i balans/ })
     expect(within(link()).queryByRole('img', { name: /Godkänd/ })).toBeNull()
 
     act(() => {
@@ -112,21 +112,21 @@ describe('grön bock', () => {
     const user = userEvent.setup()
     const quiz = (await loadChapterContent(FIRST)).quiz!
     renderAt(`/kurs/${FIRST}`)
-    await screen.findByRole('button', { name: 'Rätta kontrollen' })
+    await screen.findByRole('button', { name: 'Rätta testet' })
 
     // Underkänt först
-    await user.click(screen.getByRole('button', { name: 'Rätta kontrollen' }))
+    await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getByRole('alert')).toHaveTextContent(/obesvarade/)
     for (const q of quiz.questions)
       await user.click(document.getElementById(`${q.id}-${(q.correct + 1) % q.options.length}`)!)
-    await user.click(screen.getByRole('button', { name: 'Rätta kontrollen' }))
+    await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getByText(/Inte godkänt/)).toBeVisible()
     expect(document.querySelector('.course-sidebar .check')).toBeNull()
 
     // Sedan godkänt
-    await user.click(screen.getByRole('button', { name: 'Gör om kontrollen' }))
+    await user.click(screen.getByRole('button', { name: 'Gör om testet' }))
     for (const q of quiz.questions) await user.click(document.getElementById(`${q.id}-${q.correct}`)!)
-    await user.click(screen.getByRole('button', { name: 'Rätta kontrollen' }))
+    await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getAllByText(/Godkänt\./)[0]).toBeVisible()
     expect(document.querySelector('.course-sidebar .check')).not.toBeNull()
   })
@@ -200,11 +200,11 @@ describe('övriga sidor', () => {
   it('övningsbiblioteket filtrerar', async () => {
     const user = userEvent.setup()
     renderAt('/ovningar')
-    expect(screen.getByText(/3 av 3 övningar/)).toBeVisible()
+    expect(screen.getByText(/6 av 6 övningar/)).toBeVisible()
     await user.selectOptions(screen.getByLabelText('Typ'), 'Belastnings- och återhämtningsförsök')
-    expect(screen.getByText(/1 av 3 övningar/)).toBeVisible()
+    expect(screen.getByText(/1 av 6 övningar/)).toBeVisible()
     await user.selectOptions(screen.getByLabelText('Evidensläge'), 'experimentell')
-    expect(screen.getByText(/0 av 3 övningar/)).toBeVisible()
+    expect(screen.getByText(/0 av 6 övningar/)).toBeVisible()
   })
 
   it('källförteckningen är sökbar', async () => {

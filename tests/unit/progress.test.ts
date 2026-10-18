@@ -14,7 +14,7 @@ import {
 } from '../../src/progress/store'
 
 const FIRST = 'homeostas-och-negativ-aterkoppling'
-const PLANNED = 'kroppsvatskor-och-den-inre-miljon'
+const PLANNED = 'baroreflexen'
 
 let quiz: Quiz
 const correctAnswers = () => quiz.questions.map((q) => q.correct)
@@ -136,6 +136,22 @@ describe('persistens', () => {
     expect(() => importProgress('inte json')).toThrow(/JSON/)
     expect(() => importProgress('{"version": 99}')).toThrow()
     expect(isPassed(getState(), FIRST)).toBe(true)
+  })
+
+  it('läser progression sparad i Restore 2.0, även med kapitel som har tagits bort', () => {
+    const fromV2 = {
+      version: 1,
+      chapters: {
+        [FIRST]: { attempts: [{ at: '2026-10-18T10:00:00.000Z', correct: 8, total: 8, passed: true }], passedAt: '2026-10-18T10:00:00.000Z' },
+        termoreglering: { attempts: [{ at: '2026-10-18T11:00:00.000Z', correct: 1, total: 8, passed: false }] },
+      },
+      exercises: { 'ortostatisk-pulsrespons': [{ at: '2026-10-18T12:00:00.000Z', values: { liggande: '60', topp: '84' }, note: '' }] },
+      lastChapter: 'termoreglering',
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(fromV2))
+    reloadFromStorage()
+    expect(isPassed(getState(), FIRST)).toBe(true)
+    expect(getState().exercises['ortostatisk-pulsrespons'][0].values.liggande).toBe('60')
   })
 
   it('godtar inte godkännande av ej producerade kapitel vid inläsning', () => {

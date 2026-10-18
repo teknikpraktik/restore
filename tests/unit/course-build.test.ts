@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { buildCourse, FORBIDDEN_PHRASES } from '../../tools/course-build'
-import { createMarkdown } from '../../tools/markdown'
+import { createMarkdown, theoryText, wordCount } from '../../tools/markdown'
 
 const built = buildCourse('content')
 const { meta } = built
@@ -66,12 +66,14 @@ describe('kursstruktur', () => {
     const c = meta.chapters[id]
     expect(c.content).toBe('producerad')
     expect(c.quiz).toBe('klar')
-    expect(c.exercises.length).toBeGreaterThanOrEqual(3)
-    expect(c.readingMinutes).toBeGreaterThanOrEqual(15)
-    expect(c.headings.length).toBeGreaterThan(8)
-    expect(c.sources.length).toBeGreaterThanOrEqual(15)
+    expect(c.readingMinutes).toBeLessThanOrEqual(5)
+    expect(c.headings.length).toBeGreaterThanOrEqual(3)
+    expect(c.sources.length).toBeGreaterThanOrEqual(5)
+    expect(c.tasks!.upptack).toBeGreaterThanOrEqual(2)
+    expect(c.tasks!.reflektera).toBeGreaterThanOrEqual(1)
+    expect(c.tasks!.tillampa).toBeGreaterThanOrEqual(1)
     const content = built.chapterContent[id]
-    expect(content.html).toContain('class="katex')
+    expect(content.html).toContain('box-upptack')
     expect(content.quiz!.questions.length).toBeGreaterThanOrEqual(5)
     expect(content.quiz!.questions.length).toBeLessThanOrEqual(8)
     expect(content.quiz!.passThreshold).toBe(0.8)
@@ -86,11 +88,11 @@ describe('kursstruktur', () => {
     }
   })
 
-  it('har kontrollerbara källor som alla citeras', () => {
+  it('har kontrollerbara källor kopplade till modulerna där de citeras', () => {
     for (const s of Object.values(meta.sources)) {
       expect(s.doi || s.isbn || s.url, s.id).toBeTruthy()
-      expect(s.chapters.length, s.id).toBeGreaterThan(0)
-      expect(s.modules.length, s.id).toBeGreaterThan(0)
+      // Källor som inte citeras i publicerad text får finnas kvar som underlag.
+      expect(s.modules.length, s.id).toBe(new Set(s.chapters.map((c) => meta.chapters[c].moduleId)).size)
     }
   })
 })
@@ -103,7 +105,7 @@ describe('validering', () => {
 
   it('avvisar en kontroll till ett kapitel som inte är producerat', () => {
     const run = buildWith('kursplan.yaml', (s) =>
-      s.replace(/(id: kroppsvatskor-och-den-inre-miljon[\s\S]*?kontroll: )ej-producerad/, '$1klar'),
+      s.replace(/(id: centrala-och-perifera-nervsystemet[\s\S]*?kontroll: )ej-producerad/, '$1klar'),
     )
     expect(run).toThrow(/kan inte ha en färdig kunskapskontroll/)
   })
@@ -129,6 +131,43 @@ describe('validering', () => {
   })
 })
 
+describe('pedagogisk mall', () => {
+  it('ger alla producerade kapitel Förstå, Upptäck, Reflektera och Tillämpa', () => {
+    for (const id of meta.order) {
+      const c = meta.chapters[id]
+      if (c.content !== 'producerad') continue
+      expect(c.tasks!.upptack, id).toBeGreaterThanOrEqual(Math.ceil(c.readingMinutes! / 7))
+      expect(c.tasks!.reflektera, id).toBeGreaterThan(0)
+      expect(c.tasks!.tillampa, id).toBeGreaterThan(0)
+      expect(c.practiceMinutes, id).toBeGreaterThan(0)
+    }
+  })
+
+  it('har en färdig modul 1 där alla kapitel kan godkännas', () => {
+    const m1 = meta.modules[0]
+    expect(m1.title).toBe('Kroppen söker balans')
+    expect(m1.goals.length).toBeGreaterThan(0)
+    for (const id of m1.chapters) {
+      expect(meta.chapters[id].content, id).toBe('producerad')
+      expect(meta.quizzes[id].questions, id).toBe(5)
+    }
+  })
+
+  it('ger varje modul mål', () => {
+    for (const m of meta.modules) expect(m.goals.length, m.id).toBeGreaterThan(0)
+  })
+
+  it('avvisar ett producerat kapitel utan Upptäck-uppgift', () => {
+    const run = buildWith('kapitel/din-normala-variation.md', (s) => s.replace(/::: upptack[^\n]*\n[\s\S]*?\n:::\n/g, ''))
+    expect(run).toThrow(/Upptäck/)
+  })
+
+  it('avvisar en Upptäck-uppgift utan tidsangivelse', () => {
+    const run = buildWith('kapitel/din-normala-variation.md', (s) => s.replace('::: upptack 2 min Tre mätningar i rad', '::: upptack Tre mätningar i rad'))
+    expect(run).toThrow(/saknar tidsangivelse/)
+  })
+})
+
 describe('språk', () => {
   it('innehåller inga terapeutiska eller kommersiella formuleringar', () => {
     const run = buildWith('sidor/om.md', (s) => s + '\nHär kan du landa i kroppen.')
@@ -145,6 +184,7 @@ describe('Markdown', () => {
     expect(out.html).toContain('href="#kalla-a2020"')
     expect(out.html).toContain('Andersson, 2020, s. 4')
     expect(out.cited).toEqual(['a2020'])
+    expect(md.render('$\Delta y = d$').html).toContain('class="katex')
   })
 
   it('renderar illustrationer med alternativtext, bildtext och källa', () => {
@@ -157,6 +197,15 @@ describe('Markdown', () => {
   it('kräver alternativtext för illustrationer', () => {
     const out = md.render('::: figur\nbild: /x.webp\n:::')
     expect(out.errors).toContain('Illustration saknar bild eller alt')
+  })
+
+  it('räknar inte uppgifter, reflektion och fördjupning som obligatorisk teori', () => {
+    const src = 'Ett två tre.\n\n::: upptack 3 min Prova\nfyra fem sex sju\n:::\n\n::: fordjupning Mer\nåtta nio\n:::\n'
+    expect(wordCount(theoryText(src))).toBe(3)
+    const out = md.render(src)
+    expect(out.practice).toEqual([3])
+    expect(out.html).toContain('<details class="fordjupning">')
+    expect(out.html).toContain('Upptäck · 3 min')
   })
 
   it('ger rubriker id och märker breda tabeller', () => {
