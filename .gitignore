@@ -11,3 +11,4 @@ test-results/
 # Kursunderlag får inte ligga i förrådet
 material/
 .claude/
+*.tsbuildinfo

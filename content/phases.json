@@ -1,8 +1,0 @@
-[
-  { "id": 1, "name": "Start", "description": "Vad kursen är, hur den fungerar och vad du vill få ut av den.", "modules": ["m01"] },
-  { "id": 2, "name": "Grund", "description": "Hur stress fungerar i kroppen, det autonoma nervsystemet och kroppens signaler.", "modules": ["m02", "m03", "m04"] },
-  { "id": 3, "name": "Kroppen", "description": "Andning, muskelspänning, fysisk aktivitet och sömn.", "modules": ["m05", "m06", "m07", "m08"] },
-  { "id": 4, "name": "Tanken", "description": "Tolkning, ältande, känslor och självkritik.", "modules": ["m09", "m10", "m11", "m12"] },
-  { "id": 5, "name": "Vardagen", "description": "Relationer, arbete, gränser och vanor.", "modules": ["m13", "m14", "m15", "m16"] },
-  { "id": 6, "name": "Integration", "description": "En egen plan för tiden efter kursen.", "modules": ["m17"] }
-]
