@@ -1,0 +1,71 @@
+# Självtest för 1.6 Belastning och återhämtning – kroppens normala rytm.
+
+fragor:
+  - id: paverkan-av-traning
+    typ: forstaelse
+    fraga: Varför blir kroppen starkare och mer uthållig av regelbunden träning?
+    alternativ:
+      - För att den upprepade påfrestningen följs av återhämtning, och kroppen anpassar sig efter den.
+      - För att träning förhindrar all påfrestning.
+      - För att kroppen blir starkare ju mindre man vilar.
+      - För att musklerna slutar bli trötta.
+    ratt: 1
+    forklaring: >-
+      När kroppen utsätts för en påfrestning den hinner återhämta sig från anpassar den sig. Både
+      påfrestningen och återhämtningen behövs.
+
+  - id: pulsen-sjunker
+    typ: situation
+    fraga: Du har gått snabbt i en trappa. Hur brukar pulsen förändras när du stannar?
+    alternativ:
+      - Den sjunker i jämn takt tills den är som i vila.
+      - Den fortsätter att stiga en lång stund.
+      - Den sjunker först efter flera minuter.
+      - Den sjunker snabbast i början och sedan allt långsammare.
+    ratt: 4
+    forklaring: >-
+      Den första snabba nedgången beror främst på att vagusnerven, som bromsar hjärtat, snabbt blir aktiv
+      igen. Därefter sjunker pulsen långsammare.
+
+  - id: hemmatest
+    typ: slutsats
+    fraga: >-
+      Din puls sjönk ganska lite under minuten efter en trappa. Vilken slutsats är mest rimlig utifrån det du
+      har läst?
+    alternativ:
+      - Att du har en hjärtsjukdom.
+      - Att du ska sluta röra på dig.
+      - Att ett enstaka hemmaförsök säger lite om hälsan, men att det kan vara intressant att följa över tid.
+      - Att pulsklockan måste vara trasig.
+    ratt: 3
+    forklaring: >-
+      Samband mellan långsam återgång och risk har setts i stora studier av arbetsprov inom vården. Ett
+      enskilt hemmaförsök kan inte bedöma hälsan. Det kan däremot vara intressant att följa hur din egen
+      återgång förändras.
+
+  - id: promenad-och-stamning
+    typ: forstaelse
+    fraga: Vad visar forskningen om hur en enstaka stunds rörelse påverkar stämningen?
+    alternativ:
+      - Den har ingen effekt på stämningen.
+      - Den förbättrar i genomsnitt stämningen och minskar upplevd stress, men effekten varierar mellan
+        personer.
+      - Den förbättrar alltid stämningen lika mycket för alla.
+      - Den fungerar bara om man tränar mycket hårt.
+    ratt: 2
+    forklaring: >-
+      Forskningen visar att ett enda pass rörelse i genomsnitt förbättrar stämningen och minskar upplevd
+      stress, men inte lika mycket för alla. Det är inte klarlagt vilken typ och längd som fungerar bäst.
+
+  - id: rorelsepaus
+    typ: tillampning
+    fraga: Du brukar känna dig seg och spänd runt klockan tre. Vilket experiment stämmer bäst med kapitlet?
+    alternativ:
+      - Lägga in fem minuters rörelse vid den tiden och jämföra hur du mår före och efter.
+      - Dricka mer kaffe för att orka.
+      - Undvika rörelse för att spara energi.
+      - Vänta tills känslan går över av sig själv.
+    ratt: 1
+    forklaring: >-
+      En kort rörelsepaus är lätt att pröva. Genom att skatta energi, spänning och stämning före och efter kan
+      du se om det hjälper just dig.

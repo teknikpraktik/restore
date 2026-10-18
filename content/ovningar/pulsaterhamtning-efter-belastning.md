@@ -1,114 +1,99 @@
 ---
-titel: Pulsens återhämtning efter standardiserad belastning
+titel: Pulsens återhämtning efter en kort ansträngning
 sammanfattning: >-
-  Belasta kroppen med tre minuters steppning i fast takt och mät hur snabbt pulsen återgår.
-  Försöket ger en skattning av reglerkretsens tidskonstant och visar skillnaden mellan en snabb
-  och en långsam återgångsfas.
+  Gå upp och ner för ett trappsteg i tre minuter i jämn takt och följ hur pulsen sjunker efteråt. Gör
+  om försöket med några veckors mellanrum och se hur din återhämtning förändras.
 system: [Kardiovaskulära systemet, Autonoma nervsystemet]
 typ: Belastnings- och återhämtningsförsök
-tid: 25
+tid: 15
 svarighetsgrad: medel
 evidens: etablerad
 utrustning:
   - Ett trappsteg eller en stadig pall, 15–25 cm hög
-  - Metronom (finns som gratis app eller webbsida) eller musik i känt tempo
+  - Metronom (gratis app eller webbsida) eller musik i jämnt tempo
   - Klocka eller mobiltelefon med tidtagarur
-  - Pulsklocka eller pulsband (rekommenderat)
+  - Pulsklocka eller pulsband (rekommenderas)
   - En stol
 matvarden:
   - id: vila
-    etikett: Vilopuls sittande
+    etikett: Puls i vila, sittande
     enhet: slag/min
   - id: slut
-    etikett: Puls direkt när belastningen avslutas
+    etikett: Puls när du slutar
     enhet: slag/min
   - id: s30
     etikett: Puls efter 30 sekunder
     enhet: slag/min
   - id: s60
-    etikett: Puls efter 60 sekunder
+    etikett: Puls efter 1 minut
     enhet: slag/min
   - id: s120
-    etikett: Puls efter 120 sekunder
+    etikett: Puls efter 2 minuter
     enhet: slag/min
   - id: s180
-    etikett: Puls efter 180 sekunder
+    etikett: Puls efter 3 minuter
     enhet: slag/min
   - id: anstrangning
-    etikett: Upplevd ansträngning vid avslut (0–10)
+    etikett: Hur ansträngande det kändes (0–10)
   - id: stegh
-    etikett: Steghöjd och metronomtakt
+    etikett: Steghöjd och takt
     typ: text
 ---
 
 ## Syfte
 
-Att mäta hur snabbt hjärtfrekvensen återgår mot vilonivån efter en standardiserad belastning, och att använda mätvärdena för att skatta en tidskonstant enligt modellen för exponentiell återgång.
+Att se hur snabbt pulsen återgår efter en kort, jämn ansträngning, och att få ett eget utgångsvärde att jämföra med senare.
 
 ## Teoretisk bakgrund
 
-Under muskelarbete ökar hjärtfrekvensen genom att den vagala aktiviteten till sinusknutan minskar och den sympatiska ökar. När arbetet upphör återgår pulsen, men inte i ett jämnt förlopp. Imai och medarbetare visade att pulsens fall under de första 30 sekunderna efter arbete nästan helt försvann vid blockad av vagusnerven med atropin, men var i stort sett oberoende av sympatisk blockad och arbetets intensitet. Den senare, långsammare fasen påverkades däremot även av sympatisk aktivitet och arbetsbelastning. Den snabba fasen var snabbare hos vältränade skidåkare och långsammare hos patienter med kronisk hjärtsvikt [@imai1994].
-
-Pulsåterhämtningen har också studerats som riskmarkör. I en kohort på 2 428 personer som genomgick arbetsprov var en minskning med högst 12 slag per minut under den första minuten efter maximalt arbete förenad med ökad dödlighet under sex års uppföljning, även efter justering för andra riskfaktorer [@cole1999]. En metaanalys av prospektiva kohortstudier har bekräftat sambandet [@qiu2017]. Sambanden är observationella och gäller standardiserade arbetsprov, inte hemmaförsök.
-
-Om återgången beskrivs med teorins ekvation 6 kan tidskonstanten skattas från två mätpunkter. Med vilopulsen $y_\infty$, pulsen vid avslutat arbete $y_0$ och pulsen $y(t)$ vid tiden $t$:
-
-$$
-\tau \approx \frac{t}{\ln\left(\dfrac{y_0 - y_\infty}{y(t) - y_\infty}\right)}
-$$
+När ansträngningen slutar sjunker pulsen snabbast under den första halvminuten. Den snabba nedgången beror främst på att vagusnerven, som bromsar hjärtat, snabbt blir aktiv igen. Den långsammare fasen efteråt påverkas också av hur hård ansträngningen var [@imai1994]. Vältränade personer har i genomsnitt en snabbare återgång. I stora studier av arbetsprov inom vården hade personer med långsam återgång högre risk för hjärt-kärlsjukdom [@cole1999; @qiu2017]. Det gäller grupper av människor och standardiserade prov, inte ett enskilt hemmaförsök.
 
 ## Genomförande
 
-1. Ställ in metronomen på 96 slag per minut. En stegcykel består av fyra slag: höger fot upp, vänster fot upp, höger fot ned, vänster fot ned. Det ger 24 stegcykler per minut.
-2. Sitt stilla i 5 minuter och mät vilopulsen under den sista minuten.
-3. Ställ dig vid steget. Starta tidtagaruret och stega i metronomens takt i exakt 3 minuter. Byt gärna ledande fot efter halva tiden.
-4. Registrera pulsen i samma ögonblick som du slutar. Sätt dig direkt på stolen och sitt stilla.
-5. Registrera pulsen efter 30, 60, 120 och 180 sekunder. Utan pulsmätare: räkna slagen under 10 sekunder strax före varje tidpunkt och multiplicera med 6. Räkningen blir osäker vid höga pulsvärden; försöket rekommenderas därför med pulsmätare.
-6. Skatta din upplevda ansträngning vid avslutet på en skala från 0 (ingen ansträngning) till 10 (maximal ansträngning).
-7. Beräkna pulsåterhämtningen efter 60 sekunder som pulsen vid avslutat arbete minus pulsen efter 60 sekunder.
-8. Skatta tidskonstanten med formeln ovan, en gång med värdet vid 30 sekunder och en gång med värdet vid 120 sekunder.
-9. Upprepa försöket en annan dag vid samma tidpunkt, med samma steghöjd och takt, för att se hur reproducerbart resultatet är.
+1. Ställ metronomen på 96 slag per minut. Ett steg består av fyra slag: höger fot upp, vänster upp, höger ner, vänster ner.
+2. Sitt stilla i fem minuter och mät pulsen under den sista minuten.
+3. Gå upp och ner för steget i takt med metronomen i tre minuter. Byt gärna fot efter halva tiden.
+4. Mät pulsen direkt när du slutar. Sätt dig.
+5. Mät pulsen efter 30 sekunder, 1 minut, 2 minuter och 3 minuter.
+6. Skatta hur ansträngande det kändes från 0 till 10.
+7. Räkna ut hur mycket pulsen sjönk under den första minuten.
+8. Gör om försöket med samma steg och takt efter några veckor.
 
 ## Observationer
 
-Registrera vilopuls, puls vid avslut, puls efter 30, 60, 120 och 180 sekunder, upplevd ansträngning samt steghöjd och metronomtakt. Rita gärna pulsen som funktion av tiden efter avslutat arbete och markera vilopulsen som en vågrät linje.
+Skriv ner pulsen i vila, när du slutar och vid varje mätpunkt efteråt, hur ansträngande det kändes och vilken steghöjd och takt du använde. Rita gärna pulsen som en kurva.
 
 ## Förväntat resultat
 
-Pulsen sjunker snabbast under den första halvminuten och därefter allt långsammare. Den skattade tidskonstanten blir därför vanligen kortare med 30-sekundersvärdet än med 120-sekundersvärdet. Efter tre minuter ligger pulsen ofta fortfarande något över vilopulsen. Hur hög pulsen blir under arbetet beror på kondition, kroppsvikt, steghöjd och dagsform.
+Pulsen sjunker snabbt i början och sedan långsammare. Efter tre minuter är den ofta fortfarande lite högre än i vila. Hur hög pulsen blir beror på kondition, kroppsvikt, steghöjd och dagsform.
 
 ## Tolkning
 
-Om en enkel exponentiell modell beskrev förloppet fullständigt skulle tidskonstanten bli densamma oavsett vilken mätpunkt som används. Att den inte blir det visar att återgången består av minst två processer med olika hastighet: en snabb vagal reaktivering och en långsammare återgång av sympatisk aktivitet, cirkulerande katekolaminer, kroppstemperatur och ämnesomsättning [@imai1994]. Det är ett exempel på att en verklig reglering ofta består av flera parallella återkopplingar med olika tidskonstanter.
-
-Att pulsen efter tre minuter inte nått vilonivån betyder inte att regleringen är ofullständig. Kroppen har efter arbetet fortfarande förhöjd ämnesomsättning och temperatur, och den nivå som pulsen närmar sig under de första minuterna är därför inte densamma som vilonivån före arbetet.
+Den snabba nedgången i början visar hur fort kroppen kan bromsa hjärtat när kravet upphör. Att det sedan går långsammare visar att återhämtningen består av flera processer: kroppen ska också bli av med värme och återställa ämnesomsättningen. Jämför i första hand med dina egna tidigare försök.
 
 ## Evidensläge
 
-Den fysiologiska mekanismen bakom pulsens snabba återgång, vagal reaktivering, är etablerad kunskap från farmakologiska blockadförsök [@imai1994]. Sambandet mellan långsam pulsåterhämtning och risk är väl belagt i observationsstudier av kliniska arbetsprov [@cole1999; @qiu2017], men visar samband och inte orsak. Steppning hemma är inte ett validerat konditionstest, och resultatet kan inte jämföras med gränsvärden från kliniska arbetsprov.
+Mekanismen bakom pulsens snabba återgång är etablerad kunskap. Sambandet mellan långsam återgång och risk bygger på observationsstudier av kliniska arbetsprov. Ett hemmaförsök med steppning är inte ett validerat konditionstest.
 
 ## Begränsningar
 
-- Belastningen är densamma i absoluta termer men inte i relativa: en tyngre eller mindre vältränad person arbetar på en högre andel av sin kapacitet.
-- Pulsåterhämtningen beror på om du sitter, står eller går efter arbetet. Jämför bara försök med samma protokoll.
-- Formeln för tidskonstanten förutsätter att vilopulsen är den nivå pulsen närmar sig, vilket bara gäller ungefärligt.
-- Optiska pulsmätare kan reagera fördröjt vid snabba förändringar, och felet är i genomsnitt större under aktivitet än i vila [@bent2020]. Ett pulsband som mäter hjärtats elektriska signal är säkrare.
-- Ett enskilt försök säger lite om förändringar över tid. Dagsform, sömn, koffein, temperatur och vätskestatus påverkar resultatet.
+- Samma steg är olika ansträngande för olika personer.
+- Det spelar roll om du sitter, står eller går efteråt. Gör på samma sätt varje gång.
+- Pulsklockor kan visa fel vid snabba förändringar [@bent2020]. Ett pulsband är säkrare.
+- Sömn, kaffe, värme och dagsform påverkar resultatet.
 
 ## Variationer
 
-- **Enklare:** Gå i rask takt i trappor eller på stället i 3 minuter i stället för att stega.
-- **Dos och svar:** Gör försöket med metronomtakt 80 och 112 slag per minut på olika dagar och jämför toppuls och tidskonstant. Svarar den snabba fasen på belastningens storlek på samma sätt som den långsamma?
-- **Återhämtningsform:** Jämför sittande vila med lugn gång efter arbetet, med samma belastning.
-- **Över tid:** Upprepa försöket en gång i veckan under en period med regelbunden konditionsträning. Använd variationen mellan de första försöken för att bedöma vilka förändringar som är större än mätbruset.
+- **Enklare:** Gå i rask takt i en trappa eller på stället i tre minuter.
+- **Lättare:** Använd ett lägre steg eller takten 80 slag per minut.
+- **Över tid:** Gör försöket en gång i veckan under en period med regelbunden träning.
 
 ## Säkerhet
 
-Belastningen är måttlig för de flesta. Avbryt vid bröstsmärta, uttalad andfåddhet, yrsel eller oregelbunden puls. Den som har känd hjärtsjukdom eller av vården avråtts från fysisk ansträngning bör inte genomföra försöket utan att först rådgöra med sin vårdgivare.
+Avbryt vid bröstsmärta, kraftig andfåddhet, yrsel eller oregelbunden puls. Har du hjärtsjukdom eller har du blivit avrådd från ansträngning, fråga din vårdgivare först.
 
 ## Analysfrågor
 
-1. Vilken tidskonstant fick du med 30-sekunders- respektive 120-sekundersvärdet? Vad säger skillnaden om antalet processer som bidrar till återgången?
-2. Varför sjunker pulsen snabbare i början än i slutet av återhämtningen? Förklara med vagusnervens och det sympatiska nervsystemets olika verkningssätt på sinusknutan.
-3. Om du upprepade försöket: hur stor var skillnaden i pulsåterhämtning efter 60 sekunder mellan försöken? Hur stor förändring skulle du behöva se över en träningsperiod för att tro att den är verklig?
-4. Varför kan resultaten från kliniska arbetsprov, till exempel gränsen 12 slag per minut, inte tillämpas på ditt eget försök?
+1. Hur mycket sjönk pulsen under den första minuten, och hur mycket under minut två och tre?
+2. Varför sjunker pulsen snabbast i början?
+3. Om du gjorde om försöket: vad hade förändrats, och vad kan det bero på?

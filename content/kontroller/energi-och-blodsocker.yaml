@@ -1,0 +1,73 @@
+# Självtest för 1.5 Energi, hunger och blodsocker.
+
+fragor:
+  - id: irriterad-eftermiddag
+    typ: situation
+    fraga: >-
+      Klockan är fyra på eftermiddagen. Du har inte ätit sedan lunch, är lättirriterad och har svårt att
+      koncentrera dig. Vilken förklaring är värd att pröva först?
+    alternativ:
+      - Att du har fått en allvarlig stressreaktion.
+      - Att du är hungrig och att kroppen behöver energi.
+      - Att du har sovit för mycket.
+      - Att det beror på vädret.
+    ratt: 2
+    forklaring: >-
+      När blodsockret sjunker kan det märkas som irritation, rastlöshet och svårigheter att koncentrera sig,
+      och inte bara som en känsla i magen. Det är lätt att tolka som stress. Att äta något är ett enkelt sätt
+      att pröva förklaringen.
+
+  - id: liten-reserv
+    typ: forstaelse
+    fraga: Blodet innehåller bara några gram glukos åt gången. Hur kan blodsockret ändå vara stabilt i timmar
+      mellan måltiderna?
+    alternativ:
+      - Levern fyller hela tiden på med glukos, och kroppen reglerar upptaget.
+      - Hjärnan slutar använda glukos mellan måltiderna.
+      - Blodsockret är inte stabilt mellan måltiderna.
+      - Musklerna lämnar tillbaka allt socker de har tagit upp.
+    ratt: 1
+    forklaring: >-
+      Mängden glukos i blodet är liten, men den fylls ständigt på. Levern frisätter glukos mellan måltiderna,
+      och hormonerna insulin och glukagon håller tillflöde och upptag i balans.
+
+  - id: insulin-roll
+    typ: forstaelse
+    fraga: Vad gör insulin när blodsockret stiger efter en måltid?
+    alternativ:
+      - Höjer blodsockret ytterligare.
+      - Får levern att frisätta mer socker.
+      - Gör att man blir hungrig.
+      - Hjälper cellerna att ta upp socker ur blodet.
+    ratt: 4
+    forklaring: >-
+      Insulin frisätts när blodsockret stiger och hjälper cellerna att ta upp socker. Det är negativ
+      återkoppling: svaret för blodsockret tillbaka mot den vanliga nivån.
+
+  - id: varningstecken-ordning
+    typ: slutsats
+    fraga: >-
+      I försök där blodsockret sänks långsamt reagerar kroppen med hormoner innan personen märker något. Vad
+      betyder det i vardagen?
+    alternativ:
+      - Att man aldrig kan märka att blodsockret sjunker.
+      - Att man ska äta socker så fort man känner minsta trötthet.
+      - Att kroppen oftast hinner rätta till ett sjunkande blodsocker innan du märker det.
+      - Att hunger alltid är ett tecken på sjukdom.
+    ratt: 3
+    forklaring: >-
+      Regleringen är ordnad i steg: först hormoner, sedan kännbara tecken som darrighet och irritation, sist
+      påverkan på koncentrationen. Kroppen hinner därför oftast rätta till det innan du märker något.
+
+  - id: planera-maltid
+    typ: tillampning
+    fraga: Du har en lång dag med möten från klockan ett till fem. Vilket upplägg stämmer bäst med kapitlet?
+    alternativ:
+      - Hoppa över lunchen så att du hinner förbereda dig.
+      - Planera in en måltid eller ett mellanmål före de långa mötena och lägg märke till hur energin håller.
+      - Äta så mycket som möjligt på morgonen så att det räcker hela dagen.
+      - Det spelar ingen roll när man äter.
+    ratt: 2
+    forklaring: >-
+      Långa pass utan mat kan göra det svårare att hantera krav. Att planera in mat före de mest krävande
+      delarna av dagen och lägga märke till effekten är ett enkelt experiment att pröva.

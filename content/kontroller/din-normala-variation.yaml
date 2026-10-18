@@ -1,0 +1,69 @@
+# Självtest för 1.8 Din egen normala variation.
+
+fragor:
+  - id: tva-olika-varden
+    typ: situation
+    fraga: Du mäter pulsen och får 64. En minut senare får du 70. Vad är mest rimligt?
+    alternativ:
+      - Den första mätningen var fel.
+      - Pulsen har stigit för att du blivit sjuk.
+      - Båda värdena kan vara riktiga. Pulsen varierar och mätningen har ett litet fel.
+      - Det går inte att mäta pulsen själv.
+    ratt: 3
+    forklaring: >-
+      Mätvärden varierar både av mätfel och av verklig variation i kroppen. En skillnad på några slag mellan
+      två mätningar är normal.
+
+  - id: baslinje
+    typ: forstaelse
+    fraga: Vad menas med din baslinje?
+    alternativ:
+      - Ett värde som alla friska personer ska ha.
+      - Det läge dina egna värden brukar ligga på under vanliga förhållanden.
+      - Det lägsta värdet du någonsin har uppmätt.
+      - Gränsen för när man ska söka vård.
+    ratt: 2
+    forklaring: >-
+      Baslinjen är ditt eget vanliga läge. Eftersom människor skiljer sig från varandra är det ofta mer
+      användbart att jämföra med sin egen baslinje än med ett allmänt normalvärde.
+
+  - id: monster-over-tid
+    typ: slutsats
+    fraga: Du sov dåligt i natt och känner dig trött i dag. Vilken slutsats är mest rimlig?
+    alternativ:
+      - Att en enstaka dålig natt säger lite. Ett mönster över flera dagar säger mer.
+      - Att du har fått sömnproblem.
+      - Att du måste börja mäta sömnen varje natt.
+      - Att du behöver söka vård direkt.
+    ratt: 1
+    forklaring: >-
+      Enstaka dåliga dagar är vanliga. Det är först när något är annorlunda flera dagar i rad som det kan vara
+      värt att lägga märke till.
+
+  - id: jamfora-med-tabell
+    typ: tillampning
+    fraga: En app säger att din vilopuls är högre än genomsnittet för din ålder. Hur är det klokast att använda
+      informationen?
+    alternativ:
+      - Dra slutsatsen att något är fel.
+      - Strunta i alla mätningar framöver.
+      - Försöka få ner pulsen till genomsnittet så fort som möjligt.
+      - Jämföra med dina egna tidigare värden, mätta under liknande förhållanden.
+    ratt: 4
+    forklaring: >-
+      Genomsnitt bygger på många personer och visar inte var just du brukar ligga. Det är mer användbart att
+      följa dina egna värden över tid. Har du symtom som oroar dig kan du alltid kontakta vården.
+
+  - id: matning-och-oro
+    typ: tillampning
+    fraga: Du märker att du blir orolig av att kontrollera pulsklockan många gånger om dagen. Vad stämmer bäst med
+      kapitlet?
+    alternativ:
+      - Mäta ännu oftare för att vara säker.
+      - Byta till en dyrare klocka.
+      - Mäta mer sällan eller göra ett uppehåll. Syftet är att förstå, inte att övervaka.
+      - Oro av mätningar är ett tecken på sjukdom.
+    ratt: 3
+    forklaring: >-
+      För de flesta gör anteckningar det lättare att se mönster, men för en del ökar täta mätningar oron. Då
+      är det klokt att mäta mer sällan eller sluta en tid.

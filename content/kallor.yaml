@@ -449,3 +449,18 @@ kallor:
     verifierad:
       datum: 2026-10-18
       metod: DOI, titel, år, volym och sidor kontrollerade mot Crossref (Crossref anger förnamnsinitialen felaktigt som GG).
+
+  # Rörelse och sinnesstämning
+  - id: basso2017
+    typ: översiktsartikel
+    forfattare: [Basso JC, Suzuki WA]
+    ar: 2017
+    titel: "The effects of acute exercise on mood, cognition, neurophysiology, and neurochemical pathways: a review"
+    tidskrift: Brain Plasticity
+    volym: 2
+    nummer: 2
+    sidor: 127–152
+    doi: 10.3233/BPL-160040
+    verifierad:
+      datum: 2026-10-18
+      metod: DOI kontrollerad mot Crossref (som anger utgivningsår 2016); år och sidor enligt PubMed (PMID 29765853); uppgifterna om stämning och stress kontrollerade i fulltext (PMC5928534).

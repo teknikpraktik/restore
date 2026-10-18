@@ -1,151 +1,74 @@
-# Kunskapskontroll för 1.1 Homeostas och negativ återkoppling.
-# ratt anger numret på rätt alternativ (1 = första). Minst 80 % rätt krävs för godkänt.
-# Varje fråga mäter ett av kapitlets lärandemål (anges i kommentaren).
+# Självtest för 1.1 Kroppen håller sig i balans.
+# ratt anger numret på rätt alternativ (1 = första). 4 av 5 rätt markerar kapitlet som klart.
 
 fragor:
-  # Lärandemål 1: reglerad variabel och effektor
-  - id: reglerad-variabel
-    typ: begrepp
-    fraga: >-
-      När du reser dig upp ökar hjärtfrekvensen tydligt. Varför beskrivs hjärtfrekvensen ändå inte
-      som den reglerade variabeln i baroreflexen?
+  - id: svettning-i-varmt-rum
+    typ: situation
+    fraga: Du kommer in i ett varmt rum och börjar svettas efter en stund. Vad är det mest rimliga sättet att
+      förstå det?
     alternativ:
-      - Hjärtfrekvensen mäts inte av några receptorer och kan därför inte påverkas av reflexer.
-      - Hjärtfrekvensen är en effektorvariabel som ändras för att hålla artärtrycket inom sitt intervall.
-      - Hjärtfrekvensen regleras bara av hormoner och inte av nervsystemet.
-      - Hjärtfrekvensen är konstant hos friska personer och behöver därför inte regleras.
+      - Svettningen är ett tecken på att du är stressad.
+      - Kroppen har märkt att det blivit varmare och kyler sig själv.
+      - Kroppen har förlorat kontrollen över temperaturen.
+      - Svettningen beror på att du har druckit för lite.
     ratt: 2
     forklaring: >-
-      Baroreceptorerna mäter artärtryckets påverkan på kärlväggen, och det är trycket som försvaras.
-      Hjärtfrekvensen är en av flera effektorvariabler som tillåts variera kraftigt just för att
-      trycket ska hållas stabilt. Hjärtfrekvensen styrs dessutom i hög grad av nervsystemet, via
-      vagusnerven och sympatiska nerver.
+      Svettning är ett av kroppens sätt att göra sig av med värme när det blir varmt. Det är ett exempel på
+      homeostas: kroppen känner av en förändring och svarar så att temperaturen hålls stabil.
 
-  # Lärandemål 2: reglerkretsens komponenter
-  - id: komponenter
-    typ: begrepp
-    fraga: >-
-      I glukosregleringen registrerar betacellerna i de Langerhanska öarna glukoskoncentrationen och
-      frisätter insulin i proportion till den. Vilka komponenter i reglerkretsen motsvarar
-      betacellen?
+  - id: negativ-aterkoppling
+    typ: forstaelse
+    fraga: Vad betyder det att en reglering i kroppen sker genom negativ återkoppling?
     alternativ:
-      - Endast effektor.
-      - Efferent väg och effektor.
-      - Sensor och integrerande centrum.
-      - Afferent väg och efferent väg.
-    ratt: 3
-    forklaring: >-
-      Betacellen känner av glukos genom sin egen glukosmetabolism (sensor) och omsätter signalen
-      till en bestämd insulinfrisättning (integrerande centrum). Insulinet i blodet är den efferenta
-      vägen, och lever, muskel och fettväv är effektorerna. Exemplet visar att modellens komponenter
-      inte alltid motsvarar separata anatomiska strukturer.
-
-  # Lärandemål 3: förstärkning
-  - id: forstarkning
-    typ: berakning
-    fraga: >-
-      En störning skulle utan reglering höja en variabel med 30 enheter. Med fungerande negativ
-      återkoppling stiger variabeln bara med 3 enheter. Vilken är reglerkretsens förstärkning
-      enligt definitionen $F = \text{korrigering} / \text{kvarstående fel}$?
-    alternativ:
-      - $-10$
-      - $-0{,}1$
-      - $-9$
-      - $-27$
-    ratt: 3
-    forklaring: >-
-      Korrigeringen är $3 - 30 = -27$ enheter och det kvarstående felet är $+3$ enheter. Förstärkningen
-      blir $-27 / 3 = -9$. Kontroll med ekvation 5: $30 / (1 + 9) = 3$. Svaret $-10$ uppstår om man
-      dividerar hela störningen med felet i stället för korrigeringen.
-
-  # Lärandemål 3: kvarstående fel
-  - id: kvarstaende-fel
-    typ: berakning
-    fraga: >-
-      En reglerkrets med proportionell reglering har förstärkningen $F = -4$. En störning skulle utan
-      reglering ändra variabeln med 50 enheter. Hur stor blir den kvarstående avvikelsen enligt
-      $\Delta y = d / (1 + |F|)$?
-    alternativ:
-      - 10 enheter
-      - 12,5 enheter
-      - 0 enheter, eftersom negativ återkoppling eliminerar störningen
-      - 40 enheter
+      - Att kroppen svarar i motsatt riktning mot förändringen, så att värdet förs tillbaka.
+      - Att regleringen har en negativ effekt på hälsan.
+      - Att kroppen förstärker förändringen tills den är klar.
+      - Att regleringen bara fungerar när man vilar.
     ratt: 1
     forklaring: >-
-      $\Delta y = 50 / (1 + 4) = 10$ enheter. En proportionell reglering lämnar alltid ett visst
-      kvarstående fel, eftersom det är avvikelsen som driver korrigeringen. Svaret 12,5 uppstår om
-      man dividerar med $|F|$ i stället för $1 + |F|$; 40 är storleken på korrigeringen.
+      Negativ betyder här att svaret motverkar förändringen: blir det för varmt kyler kroppen, blir det för
+      kallt värmer den. Ordet säger inget om att något är dåligt.
 
-  # Lärandemål 2 och 6: baroreflexens orsakskedja
-  - id: uppresning
-    typ: orsak-verkan
-    fraga: >-
-      Vilken kedja beskriver bäst vad som händer under de första sekunderna efter att en person
-      reser sig upp från liggande?
+  - id: puls-vid-uppresning
+    typ: slutsats
+    fraga: Din puls ökar några sekunder efter att du har rest dig upp från soffan. Vilken slutsats är mest rimlig?
     alternativ:
-      - Ökat venöst återflöde → ökad slagvolym → stigande artärtryck → ökad vagal aktivitet → lägre puls.
-      - Sjunkande kroppstemperatur → muskelskakning → ökad ämnesomsättning → högre puls.
-      - Minskat venöst återflöde → minskad slagvolym → sjunkande artärtryck → minskad baroreceptoraktivitet → minskad vagal och ökad sympatisk aktivitet → högre puls.
-      - Ökad koldioxidhalt i blodet → ökad andning → ökad baroreceptoraktivitet → högre puls.
+      - Hjärtat arbetar för hårt och du bör vila mer.
+      - Du är troligen stressad.
+      - Pulsen borde vara densamma oavsett kroppsställning.
+      - Kroppen höjer pulsen för att hålla blodtrycket stabilt när blod samlas i benen.
+    ratt: 4
+    forklaring: >-
+      När du reser dig sjunker blodtrycket en kort stund. Kroppen ökar pulsen för att hålla blodtrycket uppe.
+      Det är blodtrycket som hålls stabilt, och pulsen är ett av verktygen. En pulsökning vid uppresning är
+      därför normal.
+
+  - id: normal-temperatur
+    typ: forstaelse
+    fraga: Din temperatur i munnen är 36,3 grader en morgon. Vad är mest rimligt att tänka?
+    alternativ:
+      - Värdet är för lågt, eftersom normal temperatur är 37 grader.
+      - Termometern måste vara trasig.
+      - Värdet ligger inom det normala spannet, som varierar mellan personer och över dygnet.
+      - Kroppen har slutat reglera temperaturen.
     ratt: 3
     forklaring: >-
-      Vid uppresning samlas blod i benens och bukens vener. Återflödet och slagvolymen minskar och
-      artärtrycket sjunker. Baroreceptorerna sänder färre impulser, och hjärnstammen svarar med
-      minskad vagal och ökad sympatisk aktivitet. Det första alternativet beskriver motsatt
-      störning, en tryckstegring.
+      Normal temperatur är ett spann, inte en exakt siffra. I ett stort material låg friska personers
+      temperatur i munnen oftast mellan ungefär 35,7 och 37,3 grader, och den är lägre på morgonen än på
+      kvällen.
 
-  # Lärandemål 4: fördröjning och översvängning
-  - id: fordrojning
-    typ: resonemang
-    fraga: >-
-      Två reglerkretsar har samma förstärkning, men i den ena tar det betydligt längre tid innan
-      effektorn påverkar variabeln. Vilket beteende är mest sannolikt för kretsen med lång
-      fördröjning efter en plötslig störning?
-    alternativ:
-      - Den når den nya nivån snabbare, eftersom korrigeringen hinner byggas upp längre.
-      - Den riskerar att korrigera för mycket, med översvängning och svängningar kring referensnivån.
-      - Den blir en positiv återkopplingskrets.
-      - Den får ett mindre kvarstående fel, eftersom felet beror på fördröjningen.
-    ratt: 2
-    forklaring: >-
-      Med fördröjning fortsätter korrigeringen att öka efter att variabeln redan har nått rätt nivå,
-      eftersom kretsen reagerar på gammal information. Det ger översvängning och, vid hög förstärkning,
-      svängningar. Det kvarstående felet i jämviktsläget bestäms av förstärkningen, inte av
-      fördröjningen, och kretsen förblir negativ eftersom korrigeringen fortfarande motverkar
-      avvikelsen.
-
-  # Lärandemål 5: återkopplingstyper
-  - id: aterkopplingstyper
-    typ: begrepp
-    fraga: >-
-      Vilket av följande är ett exempel på framåtkoppling snarare än på negativ eller positiv
-      återkoppling?
-    alternativ:
-      - Natriumkanaler öppnas vid depolarisering, och inflödet av natrium depolariserar membranet ytterligare.
-      - Svettningen ökar när kroppstemperaturen har stigit under ett arbete.
-      - Insulin frisätts när man ser och känner doften av mat, innan någon glukos har tagits upp.
-      - Insulinfrisättningen ökar när plasmaglukos har stigit efter en måltid.
-    ratt: 3
-    forklaring: >-
-      Den cefaliska insulinfrisättningen sker innan den reglerade variabeln har förändrats, vilket
-      är kännetecknet för framåtkoppling. Natriumkanalernas öppning under aktionspotentialen är
-      positiv återkoppling. Svettning vid förhöjd temperatur och insulinfrisättning vid förhöjt
-      glukos är negativ återkoppling, eftersom de svarar på en avvikelse som redan har uppstått.
-
-  # Lärandemål 3 och 6: tidskonstant
-  - id: tidskonstant
+  - id: tillampa-hjartklappning
     typ: tillampning
     fraga: >-
-      Efter ett arbete är pulsen 160 slag per minut. Den närmar sig 70 slag per minut enligt
-      $y(t) = y_\infty + (y_0 - y_\infty)\,e^{-t/\tau}$ med tidskonstanten $\tau = 40$ s. Ungefär vilken
-      puls har personen efter 40 sekunder? ($e^{-1} \approx 0{,}37$)
+      Efter en brådskande promenad till bussen slår hjärtat hårt. Vilket sätt att hantera det stämmer bäst med
+      det du har läst i kapitlet?
     alternativ:
-      - Cirka 115 slag per minut
-      - Cirka 103 slag per minut
-      - Cirka 85 slag per minut
-      - Cirka 59 slag per minut
+      - Mät pulsen upprepade gånger tills den är exakt som i vila.
+      - Se det som kroppens svar på ansträngningen och lägg märke till hur det lugnar sig.
+      - Undvika att gå fort i framtiden.
+      - Försöka stoppa hjärtklappningen genom att hålla andan.
     ratt: 2
     forklaring: >-
-      Efter en tidskonstant återstår 37 procent av avvikelsen: $70 + 0{,}37 \cdot 90 \approx 103$
-      slag per minut. Svaret 115 motsvarar att halva avvikelsen återstår. Svaret 59 uppstår om man
-      tar 37 procent av hela värdet 160 i stället för av avvikelsen från 70.
+      Snabb puls efter ansträngning är kroppens normala sätt att ge musklerna mer syre. Att lägga märke till
+      hur den lugnar sig visar att regleringen fungerar. Att hålla andan är inte en metod som kursen
+      rekommenderar.

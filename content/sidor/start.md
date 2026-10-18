@@ -2,16 +2,23 @@
 titel: Restore
 ---
 
-Restore är en digital utbildning om hur människokroppen reglerar sig själv: hur nervsystemet, hormonsystemet, andningen, musklerna och sömnen samverkar när kroppen belastas och återhämtar sig. Utbildningen går från fysiologiska grundprinciper till tillämpning i vardagen, med teori på ungefär högskolenivå och ett bibliotek av praktiska laborationer.
+Restore är ett praktiskt program för att förstå och hantera stress och återhämtning. Du lär dig hur kroppen reagerar på påfrestningar, hur du känner igen dina egna mönster och vilka verktyg som fungerar i vardagen. Förklaringarna bygger på forskning, och övningarna går att göra hemma, på jobbet eller på väg någonstans.
 
-## Vem utbildningen riktar sig till
+## Vem programmet är för
 
-Utbildningen är skriven för vuxna som vill förstå sin kropp på djupet och arbeta systematiskt med sin förmåga att hantera belastning, återhämta sig och fungera väl över tid. Den förutsätter inga förkunskaper i biologi, men den förutsätter att du vill läsa ordentligt. Fackbegrepp används och förklaras när de införs.
+Programmet är skrivet för vuxna som vill förstå sina reaktioner bättre och hitta hållbara sätt att hantera krav. Du behöver inga förkunskaper. När ett fackord behövs förklaras det med vanliga ord.
 
-## Hur teori och övningar samverkar
+## Så är varje kapitel upplagt
 
-Varje underkapitel börjar med teori: definitioner, mekanismer, mätmetoder, forskningsläge och osäkerheter. Därefter följer laborationer där du undersöker samma fenomen i din egen kropp, med exakta instruktioner om vad du ska mäta och hur resultatet kan tolkas. Kapitlet avslutas med en kunskapskontroll. Ordningen är avsiktlig: du ska först förstå vad du observerar och sedan pröva det.
+Varje kapitel växlar mellan fyra steg:
+
+- **Förstå:** en kort förklaring av något du känner igen från vardagen.
+- **Upptäck:** en övning på några minuter där du undersöker det i din egen kropp.
+- **Reflektera:** en eller två frågor som hjälper dig att koppla ihop förklaringen med det du märkte.
+- **Tillämpa:** ett litet experiment att pröva senare samma dag eller under veckan.
+
+Kapitlet avslutas med ett kort självtest. Det är ett hjälpmedel för att se vad du har förstått, inte ett prov.
 
 ## Hur du börjar
 
-Börja med första underkapitlet, Homeostas och negativ återkoppling. Det introducerar de begrepp och samband som resten av kursen bygger på. Allt innehåll är tillgängligt från början, och du kan läsa i valfri ordning. Varje underkapitel anger vilka kapitel som är bra att ha läst först.
+Börja med modul 1, *Kroppen söker balans*. Ett kapitel tar ungefär en kvart till tjugo minuter. Du kan gå i din egen takt och läsa i valfri ordning. Alla övningar går att avbryta, och du väljer själv hur mycket du anstränger dig.

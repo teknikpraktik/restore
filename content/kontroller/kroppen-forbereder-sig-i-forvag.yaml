@@ -1,0 +1,71 @@
+# Självtest för 1.2 Kroppen förbereder sig i förväg.
+
+fragor:
+  - id: hjartklappning-fore-mote
+    typ: situation
+    fraga: Du märker att hjärtat slår snabbare och att du andas fortare strax innan ett viktigt möte. Vilken
+      förklaring är mest rimlig?
+    alternativ:
+      - Kroppen förbereder sig för en situation den uppfattar som krävande.
+      - Det är ett tecken på att du inte klarar mötet.
+      - Det betyder att något är fel med hjärtat.
+      - Det beror alltid på att du har druckit för mycket kaffe.
+    ratt: 1
+    forklaring: >-
+      Kroppen reagerar ofta i förväg på det den förväntar sig. Snabbare puls och andning före ett viktigt möte
+      är en vanlig förberedande reaktion. Den säger inget om hur det kommer att gå.
+
+  - id: saliv-och-doft
+    typ: forstaelse
+    fraga: Det vattnas i munnen när du känner doften av mat du tycker om. Vad är det ett exempel på?
+    alternativ:
+      - Att kroppen rättar till ett lågt blodsocker.
+      - Att du är uttorkad.
+      - Att kroppen reagerar på stress.
+      - Att kroppen förbereder matsmältningen innan maten har kommit.
+    ratt: 4
+    forklaring: >-
+      Kroppen använder ledtrådar, som doften av mat, för att börja förbereda matsmältningen i förväg. Det
+      kallas ibland framåtkoppling, i motsats till återkoppling som reagerar på det som redan har hänt.
+
+  - id: reaktion-minskar
+    typ: slutsats
+    fraga: >-
+      Du är nervös innan du ska hålla en presentation, men efter de första minuterna lugnar sig kroppen. Hur
+      kan det förstås?
+    alternativ:
+      - Nervositeten försvann eftersom presentationen var lätt.
+      - Kroppen blev för trött för att fortsätta reagera.
+      - När situationen väl pågår får kroppen ny information och kan justera reaktionen.
+      - Det visar att du egentligen inte var nervös.
+    ratt: 3
+    forklaring: >-
+      En förberedande reaktion bygger på förväntningar. När situationen väl börjar kan kroppen anpassa sig
+      efter det som faktiskt händer. Många märker därför att reaktionen minskar efter en stund.
+
+  - id: oro-i-onodan
+    typ: forstaelse
+    fraga: Varför kan oro inför något som aldrig händer ändå märkas i kroppen?
+    alternativ:
+      - Oro märks bara i kroppen om det man oroar sig för verkligen inträffar.
+      - Kroppen kan reagera på det vi tänker på, även när det inte händer på riktigt.
+      - Kroppen reagerar bara på yttre händelser.
+      - Det beror på att oron skadar nervsystemet.
+    ratt: 2
+    forklaring: >-
+      Förberedande reaktioner kan sättas igång av tankar och förväntningar, inte bara av verkliga händelser.
+      Det är inte farligt, men om det händer ofta och länge kan det bli tröttande.
+
+  - id: nar-soka-vard
+    typ: tillampning
+    fraga: Vilken av följande situationer är ett skäl att söka vård, och inte bara en förberedande reaktion?
+    alternativ:
+      - Bröstsmärta och andnöd när du sitter stilla.
+      - Svettiga händer före en anställningsintervju.
+      - En klump i magen inför ett svårt samtal.
+      - Hjärtklappning strax innan du ska tala inför en grupp.
+    ratt: 1
+    forklaring: >-
+      Svettiga händer, en klump i magen och hjärtklappning inför något laddat är vanliga reaktioner som går
+      över av sig själva. Bröstsmärta och andnöd i vila är däremot skäl att söka vård. Ring 112 vid akuta
+      symtom.

@@ -1,0 +1,69 @@
+# Självtest för 1.4 Temperatur och dygnets rytm.
+
+fragor:
+  - id: kalla-hander
+    typ: situation
+    fraga: Du sitter i ett svalt rum och märker att händerna har blivit kalla, fast resten av kroppen känns varm.
+      Vad är mest rimligt?
+    alternativ:
+      - Blodcirkulationen fungerar dåligt.
+      - Du har feber.
+      - Kroppen sparar värme genom att minska blodflödet i huden på händerna.
+      - Händerna är kalla för att du är stressad.
+    ratt: 3
+    forklaring: >-
+      När kroppen behöver spara värme drar blodkärlen i huden ihop sig, särskilt i händer och fötter. Kalla
+      händer i ett svalt rum är ett vanligt tecken på att temperaturregleringen fungerar.
+
+  - id: dygnets-lagsta
+    typ: forstaelse
+    fraga: När på dygnet är kroppstemperaturen normalt som lägst?
+    alternativ:
+      - Mitt på dagen.
+      - Under senare delen av natten.
+      - Sent på eftermiddagen.
+      - Den är densamma hela dygnet.
+    ratt: 2
+    forklaring: >-
+      Kroppstemperaturen följer en dygnsrytm. Den är normalt lägst under senare delen av natten och högre
+      under eftermiddag och kväll. Tidpunkten skiljer sig något mellan morgon- och kvällsmänniskor.
+
+  - id: frysa-med-feber
+    typ: slutsats
+    fraga: När febern stiger fryser och skakar man ofta, trots att temperaturen redan är högre än vanligt. Hur kan
+      det förstås?
+    alternativ:
+      - Kroppen har höjt den nivå den reglerar mot och arbetar för att nå den.
+      - Temperaturregleringen har slutat fungera.
+      - Termometern visar fel.
+      - Skakningarna är ett tecken på att infektionen är över.
+    ratt: 1
+    forklaring: >-
+      Vid feber höjer kroppen sin målnivå. En normal temperatur känns då för låg, och kroppen skakar och drar
+      ihop kärlen i huden för att höja temperaturen. Feber är aktiv reglering, inte ett sammanbrott.
+
+  - id: jamfora-temperatur
+    typ: tillampning
+    fraga: Du vill veta om din temperatur är förhöjd. Vilket sätt att jämföra är mest meningsfullt?
+    alternativ:
+      - Jämföra med 37 grader, oavsett hur och när du mätte.
+      - Jämföra med en väns temperatur.
+      - Mäta i örat en gång och i munnen en gång och ta medelvärdet.
+      - Jämföra med vad du brukar ha, mätt på samma sätt och vid ungefär samma tid på dygnet.
+    ratt: 4
+    forklaring: >-
+      Normal temperatur skiljer sig mellan personer, mellan mätplatser och över dygnet. Det mest meningsfulla
+      är att jämföra med ditt eget vanliga värde, mätt på samma sätt.
+
+  - id: planera-efter-rytmen
+    typ: tillampning
+    fraga: Du brukar vara piggast på förmiddagen och tröttast sent på eftermiddagen. Hur kan du använda det?
+    alternativ:
+      - Försöka tvinga kroppen att vara lika pigg hela dagen.
+      - Undvika allt arbete på eftermiddagen.
+      - Lägga de mest krävande uppgifterna på förmiddagen när det går.
+      - Det spelar ingen roll, eftersom vakenheten inte varierar.
+    ratt: 3
+    forklaring: >-
+      Den inre klockan påverkar vakenheten under dygnet. Att lägga krävande uppgifter där du brukar vara
+      piggast är ett enkelt sätt att arbeta med rytmen i stället för mot den.

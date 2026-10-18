@@ -2,41 +2,39 @@
 titel: Om Restore
 ---
 
-Restore är en webbaserad utbildning om människokroppens reglersystem: nervsystemet, stressfysiologi, andning, rörelse, sömn, fysisk och mental prestationsförmåga och återhämtning. Utbildningen förenar teori på ungefär högskolenivå med praktiska laborationer som deltagaren genomför själv, oftast utan specialutrustning.
+Restore är ett vetenskapligt förankrat, praktiskt program för stress och återhämtning, skrivet för vuxna utan medicinska förkunskaper. Praktiken är huvudsaken. Förklaringarna om hur kroppen fungerar finns där för att övningarna ska bli begripliga och användbara.
 
 ## Syfte
 
-Målet är att deltagaren ska få en vetenskapligt hållbar förståelse av hur kroppen fungerar och ett stort antal konkreta metoder för att undersöka och utveckla sin egen funktionsförmåga. Den pedagogiska modellen är: studera teori, förstå mekanismer, genomför praktiska experiment, kontrollera kunskaperna och tillämpa i vardagen.
+Efter programmet ska du förstå dina reaktioner bättre, känna igen dina egna stressmönster och ha praktiska verktyg som fungerar i vardagen. Programmet bedöms inte efter hur mycket fysiologi du kan återge, utan efter om du har fått något du kan använda.
 
-## Vetenskapliga principer
+Varje kapitel följer samma steg: förstå, upptäck, reflektera och tillämpa. Ungefär en tredjedel av tiden är förklaringar, knappt hälften är övningar och vardagsexperiment, och resten är reflektion och självtest.
 
-All teori ska bygga på etablerad vetenskap eller forskning vars evidensläge beskrivs korrekt. Källorna prioriteras i följande ordning: läroböcker i fysiologi och neurovetenskap, systematiska översikter och metaanalyser, randomiserade kontrollerade studier, större observationsstudier där experimentellt stöd saknas och, tydligt markerad, preliminär forskning.
+## Vetenskaplig grund
 
-Innehållet markeras med två evidensnivåer:
+Förklaringarna bygger på etablerad kunskap i fysiologi, psykologi och beteendevetenskap. Programmet skiljer mellan:
 
-- **Etablerad kunskap**: mekanismer och samband med starkt och brett vetenskapligt stöd.
-- **Experimentell metod**: metoder, interventioner eller hypoteser vars effekter är preliminära, varierande eller otillräckligt klarlagda.
+- hur kroppen fungerar, och vad som är dokumenterat om effekten av en viss övning
+- etablerad kunskap och sådant som fortfarande är osäkert eller omdiskuterat.
 
-En väl belagd fysiologisk mekanism innebär inte att en viss övning har dokumenterad praktisk effekt. Kursen skiljer därför mellan forskningsresultat, teoretiska modeller och pedagogiska förenklingar, och markerar dem i texten.
+Övningarna beskrivs med vad de kan och inte kan åstadkomma. En kroppslig förnimmelse under en övning är inte ett bevis för att något har förändrats eller läkt. Varje källa i källförteckningen har DOI, ISBN eller länk och en uppgift om när och hur den kontrollerades.
 
-Varje källa i källförteckningen anges med DOI, ISBN eller länk så att den kan kontrolleras. För varje källa anges också när och hur de bibliografiska uppgifterna kontrollerades. En källa som inte har kunnat kontrolleras markeras som overifierad.
+## Säkerhet
+
+Alla övningar går att avbryta och att göra med låg intensitet. Andningsövningar kräver aldrig att du håller andan eller andas snabbt och djupt. Om det känns obehagligt att rikta uppmärksamheten mot kroppen kan du i stället rikta den mot omgivningen, till exempel genom att titta dig omkring och lägga märke till det du ser och hör. Fysiska moment kan göras mindre, sittande eller hoppas över. Där det behövs står det när du bör söka vård.
 
 ## Avgränsning
 
-Restore är utbildning och frivillig egenutveckling. Det är inte sjukvård, psykoterapi eller ett diagnostiskt verktyg, och resultaten av övningarna är inte medicinska undersökningar. Där en övning innebär fysisk ansträngning eller kan ge yrsel anges det kortfattat i övningen. Den som har symtom som oroar, eller som har en sjukdom som påverkar förmågan att anstränga sig, bör rådgöra med vården.
+Restore är utbildning och friskvård, inte sjukvård, psykoterapi eller diagnostik. Den som har besvär som oroar, eller har varit mycket trött eller nedstämd under lång tid, bör kontakta vårdcentralen eller 1177. Vid akuta symtom: ring 112.
 
-## Kursens uppbyggnad och status
+## Programmets status
 
-Kursen består av femton moduler med sammanlagt drygt hundra underkapitel. Hela kursstrukturen är publicerad och alla underkapitel kan öppnas. Innehållet produceras ett underkapitel i taget. Ett underkapitel som ännu inte är färdigt visar rubrik, ämnesbeskrivning och planerade lärandemål, och är tydligt märkt som under produktion. Det finns inga kunskapskontroller eller övningar till kapitel som inte är färdiga.
+Programmet består av femton moduler. Modul 1, *Kroppen söker balans*, är färdig. Övriga moduler skrivs om enligt samma upplägg, en i taget. Kapitel som inte är färdiga visar en kort beskrivning och är märkta som under produktion.
 
-All teori är skriven för Restore. Ämnesval och övningstyper har delvis inspirerats av tidigare kursmaterial inom området, men inga texter eller övningsmanus har kopierats, och inga påståenden om biologiska mekanismer bygger på sådant material.
+Allt innehåll är skrivet för Restore. Ämnesval och övningstyper har delvis inspirerats av tidigare kursmaterial inom området, men inga texter eller övningsmanus har kopierats.
 
 ## Progression och data
 
-Ett underkapitel markeras som avklarat med en grön bock när kunskapskontrollen har klarats med minst 80 procent rätt. Antalet försök är obegränsat. Genomförda laborationer registreras separat, eftersom en godkänd kunskapskontroll inte visar att en praktisk färdighet behärskas.
+Ett kapitel markeras som klart med en grön bock när du har svarat rätt på minst fyra av fem frågor i självtestet. Du kan göra om testet hur många gånger du vill. Anteckningar från övningarna sparas separat.
 
-Progressionen och laborationsprotokollen sparas bara i den här webbläsaren på den här enheten. Ingenting skickas till någon server, och det finns ingen inloggning. Data synkroniseras därför inte mellan enheter eller webbläsare och försvinner om webbläsarens webbplatsdata rensas. Under Inställningar kan du exportera progressionen till en fil, läsa in den på en annan enhet eller återställa den.
-
-## Illustrationer
-
-Kursen har stöd för illustrationer i form av svartvita, vetenskapliga principskisser och anatomiska teckningar. Illustrationerna produceras tillsammans med innehållet och publiceras först när de är faktagranskade.
+Allt sparas bara i den här webbläsaren på den här enheten. Ingenting skickas till någon server, och det finns ingen inloggning. Uppgifterna synkroniseras därför inte mellan enheter och försvinner om webbläsarens webbplatsdata rensas. Under Inställningar kan du exportera, läsa in eller återställa dem.

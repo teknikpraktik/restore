@@ -1,0 +1,68 @@
+# Självtest för 1.3 Pulsen anpassar sig hela tiden.
+
+fragor:
+  - id: varfor-pulsen-okar
+    typ: forstaelse
+    fraga: Varför ökar pulsen en stund när du reser dig upp?
+    alternativ:
+      - För att musklerna i benen behöver mer syre när du står.
+      - För att det är ansträngande att stå.
+      - För att hjärtat alltid slår snabbare på dagen.
+      - För att blod samlas i benen och kroppen behöver hålla blodtrycket uppe.
+    ratt: 4
+    forklaring: >-
+      När du står upp drar tyngdkraften blod nedåt. Blodtrycket sjunker kort, blodtryckssensorer i stora kärl
+      registrerar det och hjärnstammen ökar pulsen. Förloppet kallas baroreflexen.
+
+  - id: mata-langre
+    typ: tillampning
+    fraga: Du vill jämföra din vilopuls mellan olika dagar. Vilket sätt att mäta ger mest pålitliga värden?
+    alternativ:
+      - Räkna i 10 sekunder och multiplicera med 6, när du har tid under dagen.
+      - Mäta direkt efter att du har gått i trappan, eftersom pulsen då syns tydligt.
+      - Räkna i 30 sekunder, sittande efter en minuts vila, vid samma tid varje dag.
+      - Mäta en gång och lita på det värdet.
+    ratt: 3
+    forklaring: >-
+      Ju längre du räknar, desto mindre blir felet av ett missat slag. Samma tid, samma kroppsställning och en
+      stunds vila gör att mätningarna går att jämföra.
+
+  - id: tva-matningar
+    typ: slutsats
+    fraga: Du mäter pulsen två gånger i rad i vila och får 66 och 72. Vilken slutsats är mest rimlig?
+    alternativ:
+      - Något är fel med hjärtat.
+      - Pulsen varierar naturligt och mätningen har ett visst fel, så skillnaden är normal.
+      - Den ena mätningen är fel och ska strykas.
+      - Du blev stressad mellan mätningarna.
+    ratt: 2
+    forklaring: >-
+      Pulsen ändras hela tiden, även i vila, och varje mätning har ett litet fel. En skillnad på några slag
+      mellan två mätningar är normal och säger inget särskilt.
+
+  - id: puls-och-kansla
+    typ: slutsats
+    fraga: Din pulsklocka visar en högre puls än vanligt när du sitter vid skrivbordet. Vad kan du dra för
+      slutsats av det ensamt?
+    alternativ:
+      - Inte så mycket. Pulsen påverkas av kaffe, temperatur, sömn, känslor och mycket annat.
+      - Att du är stressad.
+      - Att du är sjuk.
+      - Att du borde träna mer.
+    ratt: 1
+    forklaring: >-
+      Pulsen ensam kan inte avgöra vad en förändring beror på. Samma puls kan bero på kaffe, värme, förväntan
+      eller en nyss avslutad promenad. Den blir mer användbar när du jämför under liknande förhållanden.
+
+  - id: pulsklocka-i-rorelse
+    typ: forstaelse
+    fraga: När är en vanlig pulsklocka på handleden minst pålitlig?
+    alternativ:
+      - När du sitter stilla.
+      - När du sover.
+      - Den är lika noggrann i alla situationer.
+      - När du rör dig mycket eller pulsen ändras snabbt.
+    ratt: 4
+    forklaring: >-
+      Pulsklockor mäter med ljus genom huden. De är oftast ganska noggranna i vila men kan visa fel vid
+      rörelse och reagera med fördröjning när pulsen ändras snabbt.
