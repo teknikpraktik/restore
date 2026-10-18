@@ -132,6 +132,24 @@ describe('grön bock', () => {
   })
 })
 
+describe('flersvarsfrågor', () => {
+  it('visas med kryssrutor där flera alternativ kan väljas och nämns i ingressen', async () => {
+    const user = userEvent.setup()
+    const quiz = (await loadChapterContent(FIRST)).quiz!
+    const multi = quiz.questions.find((q) => q.multiple)!
+    renderAt(`/kurs/${FIRST}`)
+    await screen.findByRole('button', { name: 'Rätta testet' })
+    expect(screen.getByText(/Vissa frågor har flera rätta svar/)).toBeInTheDocument()
+    const boxes = multi.correct.map((c) => document.getElementById(`${multi.id}-${c}`) as HTMLInputElement)
+    expect(boxes[0].type).toBe('checkbox')
+    for (const b of boxes) await user.click(b)
+    expect(boxes.every((b) => b.checked)).toBe(true)
+    await user.click(boxes[0])
+    expect(boxes[0].checked).toBe(false)
+    expect(boxes[1].checked).toBe(true)
+  })
+})
+
 describe('responsiv navigation', () => {
   it('öppnar och stänger mobilmenyn med kursnavigeringen', async () => {
     const user = userEvent.setup()

@@ -118,6 +118,13 @@ describe('validering', () => {
     expect(run).toThrow(/5–8 frågor/)
   })
 
+  it('avvisar ett svarsalternativ som YAML läser som något annat än text', () => {
+    const run = buildWith('kontroller/din-normala-variation.yaml', (s) =>
+      s.replace('      - Dagsform och vilken arm du mätte på.', '      - Dagsform: vilken arm du mätte på.'),
+    )
+    expect(run).toThrow(/är inte text/)
+  })
+
   it('avvisar en övning som saknar ett standardavsnitt', () => {
     const run = buildWith('ovningar/ortostatisk-pulsrespons.md', (s) => s.replace('## Begränsningar', '## Övrigt'))
     expect(run).toThrow(/avsnitten måste vara/)

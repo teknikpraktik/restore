@@ -4,7 +4,7 @@ fragor:
   - id: varfor-variation
     typ: forstaelse
     fraga: >-
-      Du mäter pulsen tre gånger i rad i vila och får 62, 68 och 65. Vilka två saker förklarar enligt kapitlet
+      Du mäter pulsen tre gånger i rad i vila och får 62, 68 och 65. Vad förklarar enligt kapitlet
       skillnaderna?
     alternativ:
       - Att du blev mer avslappnad för varje mätning och att klockan värmdes upp.
@@ -67,10 +67,10 @@ fragor:
     fraga: >-
       Under en vecka ser du att energin var lägre de dagar du hade sovit sämre. Vilka slutsatser är rimliga?
     alternativ:
-      - Att sömnen är orsaken till din låga energi.
+      - Sömnen är orsaken till din låga energi.
       - Något tredje, till exempel en stressig period, kan ha påverkat både sömn och energi.
-      - Att sambandet är en hypotes värd att pröva vidare, men att det ännu inte visar vad som orsakar vad.
-      - Att sambandet är slumpmässigt och kan bortses från.
+      - Sambandet är en hypotes värd att pröva vidare, men det visar ännu inte vad som orsakar vad.
+      - Sambandet är slumpmässigt och kan bortses från.
     ratt: [ 2, 3 ]
     forklaring: >-
       Att två saker varierar samtidigt visar inte vilken som påverkar vilken, eller om något tredje påverkar

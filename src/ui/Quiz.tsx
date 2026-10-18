@@ -52,8 +52,10 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
   return (
     <div className="quiz">
       <p className="quiz-intro">
-        {quiz.questions.length} frågor. Efter rättningen får du en förklaring till varje fråga. Testet kan göras om hur
-        många gånger som helst.
+        {quiz.questions.length} frågor.{' '}
+        {quiz.questions.some((q) => q.multiple) &&
+          'Vissa frågor har flera rätta svar. De har kryssrutor, och alla rätta alternativ måste väljas. '}
+        Efter rättningen får du en förklaring till varje fråga. Testet kan göras om hur många gånger som helst.
       </p>
       {isPassed(progress, quiz.chapterId) && passedAt && (
         <p className="quiz-status">

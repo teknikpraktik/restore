@@ -476,6 +476,9 @@ function buildQuiz(
     ids.add(q.id)
     if (!QUESTION_KINDS.includes(q.typ)) err(where, `okänd frågetyp "${q.typ}"`)
     const alt = (q.alternativ ?? []) as string[]
+    for (const [field, v] of [['fraga', q.fraga], ['forklaring', q.forklaring], ...alt.map((a, j) => [`alternativ ${j + 1}`, a])])
+      if (typeof v !== 'string')
+        err(where, `${field} är inte text (troligen ett kolon som YAML tolkar som nyckel – skriv om eller sätt citattecken)`)
     if (alt.length < 3 || alt.length > 5) err(where, 'en fråga ska ha 3–5 alternativ')
     if (new Set(alt.map((a) => String(a).trim().toLowerCase())).size !== alt.length) err(where, 'två alternativ är lika')
     const ratt = (Array.isArray(q.ratt) ? q.ratt : [q.ratt]) as number[]
