@@ -1,74 +1,81 @@
 # Självtest för 1.1 Kroppen håller sig i balans.
-# ratt anger numret på rätt alternativ (1 = första). 4 av 5 rätt markerar kapitlet som klart.
+# ratt anger numret på rätt alternativ (1 = första). Alla svar måste vara rätta för grön bock.
 
 fragor:
-  - id: svettning-i-varmt-rum
-    typ: situation
-    fraga: Du kommer in i ett varmt rum och börjar svettas efter en stund. Vad är det mest rimliga sättet att
-      förstå det?
+  - id: reglerat-varde
+    typ: forstaelse
+    fraga: >-
+      När du går i en trappa ökar både puls och andning tydligt. Vilket påstående beskriver bäst vad kroppen
+      håller stabilt i den situationen?
     alternativ:
-      - Svettningen är ett tecken på att du är stressad.
-      - Kroppen har märkt att det blivit varmare och kyler sig själv.
-      - Kroppen har förlorat kontrollen över temperaturen.
-      - Svettningen beror på att du har druckit för lite.
+      - Pulsen, som kroppen försöker hålla på vilonivå trots ansträngningen.
+      - Syretillförseln till musklerna och blodtrycket, som upprätthålls genom att puls och andning ändras.
+      - Andningsfrekvensen, som anpassas för att pulsen ska kunna hållas konstant.
+      - Ingenting; under ansträngning upphör homeostasen tillfälligt.
     ratt: 2
     forklaring: >-
-      Svettning är ett av kroppens sätt att göra sig av med värme när det blir varmt. Det är ett exempel på
-      homeostas: kroppen känner av en förändring och svarar så att temperaturen hålls stabil.
+      Puls och andning är verktyg som ändras för att andra storheter, som syretillförsel och blodtryck, ska
+      hållas inom fungerande gränser. Homeostasen upphör inte under ansträngning; den kräver tvärtom stora
+      justeringar.
 
   - id: negativ-aterkoppling
     typ: forstaelse
-    fraga: Vad betyder det att en reglering i kroppen sker genom negativ återkoppling?
+    fraga: Vilka av följande är exempel på negativ återkoppling?
     alternativ:
-      - Att kroppen svarar i motsatt riktning mot förändringen, så att värdet förs tillbaka.
-      - Att regleringen har en negativ effekt på hälsan.
-      - Att kroppen förstärker förändringen tills den är klar.
-      - Att regleringen bara fungerar när man vilar.
-    ratt: 1
+      - Blodsockret stiger efter en måltid, insulin frisätts och blodsockret sjunker tillbaka.
+      - Du blir orolig, märker hjärtklappningen och blir ännu mer orolig.
+      - Blodsockret sjunker och du känner dig nedstämd.
+      - Kroppstemperaturen stiger, du börjar svettas och avdunstningen kyler kroppen.
+    ratt: [ 1, 4 ]
     forklaring: >-
-      Negativ betyder här att svaret motverkar förändringen: blir det för varmt kyler kroppen, blir det för
-      kallt värmer den. Ordet säger inget om att något är dåligt.
+      Vid negativ återkoppling motverkar svaret förändringen: högt blodsocker leder till insulin som sänker
+      det, och stigande temperatur leder till svett som kyler. Oro som förstärks av hjärtklappning är
+      motsatsen, ett förlopp som förstärker sig självt. Att bli nedstämd av lågt blodsocker är inget svar som
+      för tillbaka värdet.
 
-  - id: puls-vid-uppresning
-    typ: slutsats
-    fraga: Din puls ökar några sekunder efter att du har rest dig upp från soffan. Vilken slutsats är mest rimlig?
+  - id: kalla-fingrar-och-svett
+    typ: situation
+    fraga: >-
+      En kall dag går du raskt till jobbet. Väl framme är fingrarna kalla men du svettas om ryggen. Hur kan
+      det förstås?
     alternativ:
-      - Hjärtat arbetar för hårt och du bör vila mer.
-      - Du är troligen stressad.
-      - Pulsen borde vara densamma oavsett kroppsställning.
-      - Kroppen höjer pulsen för att hålla blodtrycket stabilt när blod samlas i benen.
-    ratt: 4
-    forklaring: >-
-      När du reser dig sjunker blodtrycket en kort stund. Kroppen ökar pulsen för att hålla blodtrycket uppe.
-      Det är blodtrycket som hålls stabilt, och pulsen är ett av verktygen. En pulsökning vid uppresning är
-      därför normal.
-
-  - id: normal-temperatur
-    typ: forstaelse
-    fraga: Din temperatur i munnen är 36,3 grader en morgon. Vad är mest rimligt att tänka?
-    alternativ:
-      - Värdet är för lågt, eftersom normal temperatur är 37 grader.
-      - Termometern måste vara trasig.
-      - Värdet ligger inom det normala spannet, som varierar mellan personer och över dygnet.
-      - Kroppen har slutat reglera temperaturen.
+      - Temperaturregleringen fungerar dåligt, eftersom kroppen gör två motsatta saker samtidigt.
+      - Svettningen beror på stress och har inget med temperaturen att göra.
+      - Olika delar av temperaturregleringen svarar på olika signaler: kall hud i händerna och värme inne i kroppen från ansträngningen.
+      - Fingrarna är kalla för att blodet behövs i benmusklerna.
     ratt: 3
     forklaring: >-
-      Normal temperatur är ett spann, inte en exakt siffra. I ett stort material låg friska personers
-      temperatur i munnen oftast mellan ungefär 35,7 och 37,3 grader, och den är lägre på morgonen än på
-      kvällen.
+      Kroppen kan samtidigt spara värme i huden på händerna, som utsätts för kyla, och avge värme genom svett
+      eftersom ansträngningen höjt temperaturen inne i kroppen. Regleringen består av flera delar som reagerar
+      på olika signaler.
 
-  - id: tillampa-hjartklappning
+  - id: normalspann
+    typ: slutsats
+    fraga: >-
+      Två friska personer mäter temperaturen i munnen samma morgon. Den ena har 36,1 grader, den andra 36,9.
+      Vilka slutsatser är rimliga?
+    alternativ:
+      - Den med 36,1 grader har sannolikt en för låg ämnesomsättning.
+      - Den med 36,9 grader har sannolikt en lätt infektion.
+      - Båda kan ha högre temperatur senare på dagen än på morgonen.
+      - Båda värdena kan vara normala; personer skiljer sig systematiskt inom ett normalspann.
+    ratt: [ 3, 4 ]
+    forklaring: >-
+      Normal temperatur är ett spann, ungefär 35,7–37,3 grader i munnen hos friska vuxna, och personer skiljer
+      sig systematiskt från varandra. Temperaturen är dessutom lägre på morgonen än senare på dagen. Ingen av
+      skillnaderna behöver tyda på sjukdom.
+
+  - id: tolka-hjartklappning
     typ: tillampning
     fraga: >-
-      Efter en brådskande promenad till bussen slår hjärtat hårt. Vilket sätt att hantera det stämmer bäst med
-      det du har läst i kapitlet?
+      Efter en brådskande promenad till bussen slår hjärtat hårt i flera minuter. Vad är den mest rimliga
+      tolkningen utifrån kapitlet?
     alternativ:
-      - Mät pulsen upprepade gånger tills den är exakt som i vila.
-      - Se det som kroppens svar på ansträngningen och lägg märke till hur det lugnar sig.
-      - Undvika att gå fort i framtiden.
-      - Försöka stoppa hjärtklappningen genom att hålla andan.
-    ratt: 2
+      - Ett tecken på att regleringen arbetar: hjärtat ökar blodflödet medan kroppen återhämtar sig efter ansträngningen.
+      - Ett tecken på att återhämtningen är för långsam och att konditionen är dålig.
+      - Ett tecken på att kroppen inte klarar plötsliga förändringar.
+      - Ett tecken på stress, eftersom pulsen borde vara tillbaka direkt.
+    ratt: 1
     forklaring: >-
-      Snabb puls efter ansträngning är kroppens normala sätt att ge musklerna mer syre. Att lägga märke till
-      hur den lugnar sig visar att regleringen fungerar. Att hålla andan är inte en metod som kursen
-      rekommenderar.
+      Förhöjd puls en stund efter ansträngning är regleringen i arbete. Det tar några minuter innan kroppen är
+      tillbaka i viloläge. Ett enskilt tillfälle säger inget om konditionen.

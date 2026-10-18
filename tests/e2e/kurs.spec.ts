@@ -10,8 +10,10 @@ const CORRECT = quiz.questions.map((q) => q.correct)
 const TOTAL = QUESTIONS.length
 const PRODUCED = built.meta.order.filter((id) => built.meta.chapters[id].content === 'producerad').length
 
-async function answer(page: Page, pick: (i: number) => number) {
-  for (const [i, q] of QUESTIONS.entries()) await page.locator(`label[for="${q}-${pick(i)}"]`).click()
+const WRONG = quiz.questions.map((q) => [q.options.findIndex((_, i) => !q.correct.includes(i))])
+
+async function answer(page: Page, pick: (i: number) => number[]) {
+  for (const [i, q] of QUESTIONS.entries()) for (const o of pick(i)) await page.locator(`label[for="${q}-${o}"]`).click()
   await page.getByRole('button', { name: 'Rätta testet' }).click()
 }
 
@@ -33,14 +35,14 @@ test.describe('desktop', () => {
     await expect(page.locator('.theory .box-upptack').first()).toBeVisible()
 
     // Lokal innehållsförteckning leder till rubriken
-    await page.getByRole('complementary', { name: 'Innehåll i underkapitlet' }).getByRole('link', { name: 'Balans betyder inte stillhet' }).click()
-    await expect(page).toHaveURL(/#balans-betyder-inte-stillhet$/)
-    await expect(page.getByRole('heading', { level: 2, name: 'Balans betyder inte stillhet' })).toBeInViewport()
+    await page.getByRole('complementary', { name: 'Innehåll i underkapitlet' }).getByRole('link', { name: 'Normalt är ett intervall' }).click()
+    await expect(page).toHaveURL(/#normalt-ar-ett-intervall$/)
+    await expect(page.getByRole('heading', { level: 2, name: 'Normalt är ett intervall' })).toBeInViewport()
     await expect(page.locator('.box-upptack').first()).toBeVisible()
     await expect(page.locator('details.fordjupning')).not.toHaveAttribute('open', '')
 
     // Underkänt: ingen bock
-    await answer(page, (i) => (CORRECT[i] + 1) % 4)
+    await answer(page, (i) => WRONG[i])
     await expect(page.locator('.quiz-result-score')).toContainText(`0 av ${TOTAL} rätt`)
     await expect(page.locator('.quiz-result-score')).toContainText('Inte godkänt')
     await expect(sidebarCheck(page)).toHaveCount(0)
@@ -108,7 +110,7 @@ test.describe('desktop', () => {
       await expect(page.locator('.theory .box-upptack').first()).toBeVisible()
       await expect(page.locator('.theory .box-reflektera').first()).toBeVisible()
       await expect(page.locator('.theory .box-tillampa').first()).toBeVisible()
-      for (const qq of q.questions) await page.locator(`label[for="${qq.id}-${qq.correct}"]`).click()
+      for (const qq of q.questions) for (const c of qq.correct) await page.locator(`label[for="${qq.id}-${c}"]`).click()
       await page.getByRole('button', { name: 'Rätta testet' }).click()
       await expect(page.locator('.quiz-result-score')).toContainText('Godkänt')
       await expect(

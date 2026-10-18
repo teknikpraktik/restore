@@ -1,71 +1,74 @@
 # Självtest för 1.2 Kroppen förbereder sig i förväg.
 
 fragor:
-  - id: hjartklappning-fore-mote
-    typ: situation
-    fraga: Du märker att hjärtat slår snabbare och att du andas fortare strax innan ett viktigt möte. Vilken
-      förklaring är mest rimlig?
-    alternativ:
-      - Kroppen förbereder sig för en situation den uppfattar som krävande.
-      - Det är ett tecken på att du inte klarar mötet.
-      - Det betyder att något är fel med hjärtat.
-      - Det beror alltid på att du har druckit för mycket kaffe.
-    ratt: 1
-    forklaring: >-
-      Kroppen reagerar ofta i förväg på det den förväntar sig. Snabbare puls och andning före ett viktigt möte
-      är en vanlig förberedande reaktion. Den säger inget om hur det kommer att gå.
-
-  - id: saliv-och-doft
+  - id: framat-eller-ater
     typ: forstaelse
-    fraga: Det vattnas i munnen när du känner doften av mat du tycker om. Vad är det ett exempel på?
+    fraga: Vilka av följande är framåtkoppling snarare än negativ återkoppling?
     alternativ:
-      - Att kroppen rättar till ett lågt blodsocker.
-      - Att du är uttorkad.
-      - Att kroppen reagerar på stress.
-      - Att kroppen förbereder matsmältningen innan maten har kommit.
-    ratt: 4
+      - Du börjar svettas efter tio minuters löpning.
+      - Pulsen stiger när du ställer dig vid startlinjen inför ett lopp.
+      - Saliv och magsaft frisätts när du ser och känner doften av mat.
+      - Pulsen ökar när du reser dig och blodtrycket sjunker.
+    ratt: [ 2, 3 ]
     forklaring: >-
-      Kroppen använder ledtrådar, som doften av mat, för att börja förbereda matsmältningen i förväg. Det
-      kallas ibland framåtkoppling, i motsats till återkoppling som reagerar på det som redan har hänt.
+      Vid startlinjen och inför en måltid reagerar kroppen på det den förväntar sig. Svettning efter tio
+      minuters löpning och pulsökning när blodtrycket har sjunkit är svar på förändringar som redan har
+      inträffat.
 
-  - id: reaktion-minskar
-    typ: slutsats
-    fraga: >-
-      Du är nervös innan du ska hålla en presentation, men efter de första minuterna lugnar sig kroppen. Hur
-      kan det förstås?
+  - id: syfte-med-forberedelse
+    typ: forstaelse
+    fraga: Vad är huvudsyftet med att kroppen reagerar i förväg?
     alternativ:
-      - Nervositeten försvann eftersom presentationen var lätt.
-      - Kroppen blev för trött för att fortsätta reagera.
-      - När situationen väl pågår får kroppen ny information och kan justera reaktionen.
-      - Det visar att du egentligen inte var nervös.
+      - Att varna för att situationen är farlig.
+      - Att ersätta den vanliga återkopplingen, som är för långsam för att fungera.
+      - Att minska den avvikelse som uppstår när händelsen väl inträffar.
+      - Att öka prestationen genom att hålla kroppen aktiverad så länge som möjligt.
     ratt: 3
     forklaring: >-
-      En förberedande reaktion bygger på förväntningar. När situationen väl börjar kan kroppen anpassa sig
-      efter det som faktiskt händer. Många märker därför att reaktionen minskar efter en stund.
+      Förberedelsen gör att avvikelsen blir mindre när händelsen kommer. Den ersätter inte återkopplingen, som
+      rättar till det om förutsägelsen var fel, och den säger inget om att situationen är farlig.
 
-  - id: oro-i-onodan
-    typ: forstaelse
-    fraga: Varför kan oro inför något som aldrig händer ändå märkas i kroppen?
+  - id: reaktion-som-klingar-av
+    typ: situation
+    fraga: >-
+      Inför en presentation har du hjärtklappning och torr mun. Efter fem minuter av presentationen har det
+      lagt sig. Vilken förklaring stämmer bäst?
     alternativ:
-      - Oro märks bara i kroppen om det man oroar sig för verkligen inträffar.
-      - Kroppen kan reagera på det vi tänker på, även när det inte händer på riktigt.
-      - Kroppen reagerar bara på yttre händelser.
-      - Det beror på att oron skadar nervsystemet.
-    ratt: 2
-    forklaring: >-
-      Förberedande reaktioner kan sättas igång av tankar och förväntningar, inte bara av verkliga händelser.
-      Det är inte farligt, men om det händer ofta och länge kan det bli tröttande.
-
-  - id: nar-soka-vard
-    typ: tillampning
-    fraga: Vilken av följande situationer är ett skäl att söka vård, och inte bara en förberedande reaktion?
-    alternativ:
-      - Bröstsmärta och andnöd när du sitter stilla.
-      - Svettiga händer före en anställningsintervju.
-      - En klump i magen inför ett svårt samtal.
-      - Hjärtklappning strax innan du ska tala inför en grupp.
+      - När situationen pågår får kroppen ny information och anpassar nivån efter det som faktiskt krävs.
+      - Hjärtklappningen avtog eftersom stresshormonerna tog slut.
+      - Kroppen blev uttröttad och kunde inte längre upprätthålla reaktionen.
+      - Reaktionen avtog eftersom presentationen var lättare än du hade trott, annars hade den fortsatt.
     ratt: 1
     forklaring: >-
-      Svettiga händer, en klump i magen och hjärtklappning inför något laddat är vanliga reaktioner som går
-      över av sig själva. Bröstsmärta och andnöd i vila är däremot skäl att söka vård. Ring 112 vid akuta
-      symtom.
+      Förberedelsen bygger på förväntningar. När situationen pågår justerar kroppen efter det verkliga
+      behovet. Det gäller även när uppgiften är krävande; reaktionen minskar inte bara för att den var lätt.
+
+  - id: oro-utan-handelse
+    typ: slutsats
+    fraga: >-
+      En person ligger vaken och tänker på ett svårt samtal nästa vecka och märker att hjärtat slår snabbare.
+      Vilken slutsats är mest rimlig?
+    alternativ:
+      - Reaktionen visar att samtalet kommer att gå dåligt.
+      - Reaktionen är skadlig och bör stoppas innan den påverkar hälsan.
+      - Kroppen reagerar bara så om personen har en ångestsjukdom.
+      - Kroppen förbereder sig för en föreställd situation; det är normalt men tröttande om det upprepas ofta.
+    ratt: 4
+    forklaring: >-
+      Förberedande reaktioner kan utlösas av tankar på något som inte har hänt. Det är en normal mekanism. Den
+      är inte skadlig i sig, men upprepad under lång tid blir den en belastning.
+
+  - id: skilja-ut-symtom
+    typ: tillampning
+    fraga: >-
+      Vilka av följande iakttagelser passar inte in på en vanlig förberedande reaktion och bör bedömas av
+      vården?
+    alternativ:
+      - Svimning när du står i en kö utan att något särskilt har hänt.
+      - Illamående och tryck i magen kvällen före en tentamen.
+      - Svettiga händer och snabb andning när du väntar på besked om ett jobb.
+      - Tryck över bröstet och andnöd när du sitter stilla en vanlig kväll.
+    ratt: [ 1, 4 ]
+    forklaring: >-
+      Illamående före en tentamen och svettiga händer i väntan på besked är kopplade till en förväntad
+      händelse och klingar av. Svimning och tryck över bröstet med andnöd i vila saknar en sådan koppling.

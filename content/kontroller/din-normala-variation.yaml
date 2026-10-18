@@ -1,69 +1,77 @@
 # Självtest för 1.8 Din egen normala variation.
 
 fragor:
-  - id: tva-olika-varden
-    typ: situation
-    fraga: Du mäter pulsen och får 64. En minut senare får du 70. Vad är mest rimligt?
-    alternativ:
-      - Den första mätningen var fel.
-      - Pulsen har stigit för att du blivit sjuk.
-      - Båda värdena kan vara riktiga. Pulsen varierar och mätningen har ett litet fel.
-      - Det går inte att mäta pulsen själv.
-    ratt: 3
-    forklaring: >-
-      Mätvärden varierar både av mätfel och av verklig variation i kroppen. En skillnad på några slag mellan
-      två mätningar är normal.
-
-  - id: baslinje
+  - id: varfor-variation
     typ: forstaelse
-    fraga: Vad menas med din baslinje?
+    fraga: >-
+      Du mäter pulsen tre gånger i rad i vila och får 62, 68 och 65. Vilka två saker förklarar enligt kapitlet
+      skillnaderna?
     alternativ:
-      - Ett värde som alla friska personer ska ha.
-      - Det läge dina egna värden brukar ligga på under vanliga förhållanden.
-      - Det lägsta värdet du någonsin har uppmätt.
-      - Gränsen för när man ska söka vård.
+      - Att du blev mer avslappnad för varje mätning och att klockan värmdes upp.
+      - Mätfel och verklig variation i kroppen.
+      - Att pulsen alltid sjunker vid upprepade mätningar och att du rörde dig.
+      - Dagsform och vilken arm du mätte på.
     ratt: 2
     forklaring: >-
-      Baslinjen är ditt eget vanliga läge. Eftersom människor skiljer sig från varandra är det ofta mer
-      användbart att jämföra med sin egen baslinje än med ett allmänt normalvärde.
+      Varje mätning har ett visst fel, och pulsen varierar på riktigt från ett andetag till nästa. Skillnader
+      på några slag är därför väntade.
 
-  - id: monster-over-tid
+  - id: meningsfull-skillnad
     typ: slutsats
-    fraga: Du sov dåligt i natt och känner dig trött i dag. Vilken slutsats är mest rimlig?
+    fraga: >-
+      Dina vilopulsmätningar under en vecka ligger mellan 58 och 66. En morgon får du 63. Vilka påståenden
+      stämmer?
     alternativ:
-      - Att en enstaka dålig natt säger lite. Ett mönster över flera dagar säger mer.
-      - Att du har fått sömnproblem.
-      - Att du måste börja mäta sömnen varje natt.
-      - Att du behöver söka vård direkt.
+      - Det är högre än ditt lägsta värde och tyder på sämre återhämtning.
+      - Det är lägre än ditt högsta värde och tyder på bättre återhämtning.
+      - För att tyda på en förändring skulle ett värde behöva ligga tydligt utanför 58–66.
+      - Det ligger inom din normala variation och säger inget om en förändring.
+    ratt: [ 3, 4 ]
+    forklaring: >-
+      En skillnad måste vara större än den normala variationen för att betyda något. 63 ligger mitt i det egna
+      spannet och säger inget om återhämtningen åt något håll.
+
+  - id: baslinje-mot-tabell
+    typ: tillampning
+    fraga: >-
+      En app anger att din vilopuls ligger högre än genomsnittet för din ålder. Hur är det klokast att använda
+      den uppgiften?
+    alternativ:
+      - Följa dina egna värden över tid under likartade förhållanden, eftersom genomsnitt inte visar var du
+        normalt ligger.
+      - Se det som ett tecken på dålig kondition och öka träningen.
+      - Bortse från alla mätningar, eftersom de ändå varierar.
+      - Mäta flera gånger om dagen tills värdet når genomsnittet.
     ratt: 1
     forklaring: >-
-      Enstaka dåliga dagar är vanliga. Det är först när något är annorlunda flera dagar i rad som det kan vara
-      värt att lägga märke till.
+      Genomsnitt bygger på många personer och säger lite om din baslinje. Egna värden över tid är mer
+      informativa. En mätning flera gånger om dagen ger inte bättre information.
 
-  - id: jamfora-med-tabell
-    typ: tillampning
-    fraga: En app säger att din vilopuls är högre än genomsnittet för din ålder. Hur är det klokast att använda
-      informationen?
+  - id: dalig-natt
+    typ: situation
+    fraga: >-
+      Du har sovit dåligt två nätter av sju och känner dig trött de dagarna. Vilken slutsats har bäst stöd?
     alternativ:
-      - Dra slutsatsen att något är fel.
-      - Strunta i alla mätningar framöver.
-      - Försöka få ner pulsen till genomsnittet så fort som möjligt.
-      - Jämföra med dina egna tidigare värden, mätta under liknande förhållanden.
-    ratt: 4
+      - Sömnen har försämrats och bör följas upp med daglig mätning.
+      - Två sämre nätter av sju ryms troligen inom den normala variationen; ett mönster över längre tid säger
+        mer.
+      - Tröttheten beror på att du har för låg baslinje.
+      - Du bör söka vård för sömnproblem.
+    ratt: 2
     forklaring: >-
-      Genomsnitt bygger på många personer och visar inte var just du brukar ligga. Det är mer användbart att
-      följa dina egna värden över tid. Har du symtom som oroar dig kan du alltid kontakta vården.
+      Enstaka sämre nätter är vanliga. Först om sömn och energi är sämre än vanligt under en längre period
+      finns skäl att uppmärksamma det.
 
-  - id: matning-och-oro
-    typ: tillampning
-    fraga: Du märker att du blir orolig av att kontrollera pulsklockan många gånger om dagen. Vad stämmer bäst med
-      kapitlet?
+  - id: monster-och-orsak
+    typ: slutsats
+    fraga: >-
+      Under en vecka ser du att energin var lägre de dagar du hade sovit sämre. Vilka slutsatser är rimliga?
     alternativ:
-      - Mäta ännu oftare för att vara säker.
-      - Byta till en dyrare klocka.
-      - Mäta mer sällan eller göra ett uppehåll. Syftet är att förstå, inte att övervaka.
-      - Oro av mätningar är ett tecken på sjukdom.
-    ratt: 3
+      - Att sömnen är orsaken till din låga energi.
+      - Något tredje, till exempel en stressig period, kan ha påverkat både sömn och energi.
+      - Att sambandet är en hypotes värd att pröva vidare, men att det ännu inte visar vad som orsakar vad.
+      - Att sambandet är slumpmässigt och kan bortses från.
+    ratt: [ 2, 3 ]
     forklaring: >-
-      För de flesta gör anteckningar det lättare att se mönster, men för en del ökar täta mätningar oron. Då
-      är det klokt att mäta mer sällan eller sluta en tid.
+      Att två saker varierar samtidigt visar inte vilken som påverkar vilken, eller om något tredje påverkar
+      båda. Sambandet är en rimlig hypotes att pröva vidare, men inte ett bevis.

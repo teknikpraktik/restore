@@ -90,7 +90,7 @@ Mekanismen bakom pulsens snabba återgång är etablerad kunskap. Sambandet mell
 
 ## Säkerhet
 
-Avbryt vid bröstsmärta, kraftig andfåddhet, yrsel eller oregelbunden puls. Har du hjärtsjukdom eller har du blivit avrådd från ansträngning, fråga din vårdgivare först.
+Övningen innebär måttlig ansträngning. Den som har hjärtsjukdom eller har avråtts från ansträngning bör stämma av med sin läkare först.
 
 ## Analysfrågor
 

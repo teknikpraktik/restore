@@ -109,16 +109,15 @@ Byggsteget räknar ut den obligatoriska teorin (allt utom Upptäck, Reflektera, 
 
 ## 6. Självtester
 
-Självtestet är ett lärandeverktyg. Frågorna utgår helst från en vardagssituation ("Du märker att andningen går snabbare inför ett viktigt möte. Vilken förklaring är mest rimlig?") och har tre rimliga felalternativ som motsvarar vanliga missförstånd. Förklaringen säger både varför rätt svar är rätt och varför ett vanligt felsvar är fel. Rätta alternativ fördelas jämnt över positionerna.
+Självtestet ska kräva förståelse, inte bara igenkänning. Frågorna utgår helst från en vardagssituation ("Du märker att andningen går snabbare inför ett viktigt möte. Vilken förklaring är mest rimlig?") och har tre rimliga felalternativ som motsvarar vanliga missförstånd. Förklaringen säger både varför rätt svar är rätt och varför ett vanligt felsvar är fel. Rätta alternativ fördelas jämnt över positionerna.
 
-### Godkännandegräns
+### Godkännandegräns och flersvarsfrågor
 
-Gränsen behålls på 80 procent. Med fem frågor blir det fyra rätt. Överväganden:
+Efter granskningen av piloten krävs alla rätt för grön bock (`PASS_THRESHOLD = 1`). Ungefär två frågor per kapitel har flera rätta svar och visas med kryssrutor. En sådan fråga räknas som rätt bara om exakt de rätta alternativen är valda, vilket gör det svårare att gissa sig till rätt svar.
 
 - Med obegränsat antal försök och förklaringar efter varje försök fungerar gränsen som återkoppling, inte som spärr. Inget innehåll låses.
-- En lägre gräns, till exempel 60 procent (tre av fem), skulle göra bocken mindre informativ utan att göra kursen mer tillgänglig.
-- Att ändra gränsen påverkar redan godkända kapitel. Den tekniska logiken (`passThreshold` per kontroll och lagrade försök) är därför oförändrad.
-- Förslag för senare beslut: visa efter ett underkänt försök vilket avsnitt i texten varje missad fråga hör till. Det kräver ett fält per fråga och har inte genomförts.
+- Redan lagrade godkännanden behålls, även de som gjordes med den tidigare gränsen på 80 procent. Lagringsformatet är oförändrat.
+- Förslag för senare beslut: visa efter ett underkänt försök vilket avsnitt i texten varje missad fråga hör till.
 
 Användare som godkände den gamla kontrollen för 1.1 behåller sin gröna bock. Kapitlets id och lagringsformatet är oförändrade.
 

@@ -76,7 +76,7 @@ describe('kursstruktur', () => {
     expect(content.html).toContain('box-upptack')
     expect(content.quiz!.questions.length).toBeGreaterThanOrEqual(5)
     expect(content.quiz!.questions.length).toBeLessThanOrEqual(8)
-    expect(content.quiz!.passThreshold).toBe(0.8)
+    expect(content.quiz!.passThreshold).toBe(1)
   })
 
   it('har övningar med hela standardstrukturen', () => {

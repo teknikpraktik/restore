@@ -72,10 +72,6 @@ Att ett enda pass rörelse i genomsnitt förbättrar stämningen är väl belagt
 - **Annan rörelse:** Pröva trappor, cykling eller några enkla rörelser i rummet.
 - **Utomhus:** Jämför en promenad ute med en promenad inomhus.
 
-## Säkerhet
-
-Välj en takt som känns bekväm. Rörelse ska kunna anpassas efter hur kroppen känns den dagen.
-
 ## Analysfrågor
 
 1. Hur stor var den genomsnittliga förändringen efter rörelsepauserna jämfört med de stillasittande pauserna?

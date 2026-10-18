@@ -98,12 +98,12 @@ describe('grön bock', () => {
     expect(within(link()).queryByRole('img', { name: /Godkänd/ })).toBeNull()
 
     act(() => {
-      submitQuiz(quiz, quiz.questions.map((q) => (q.correct + 1) % q.options.length))
+      submitQuiz(quiz, quiz.questions.map((q) => [q.options.findIndex((_, i) => !q.correct.includes(i))]))
     })
     expect(within(link()).queryByRole('img', { name: /Godkänd/ })).toBeNull()
 
     act(() => {
-      submitQuiz(quiz, quiz.questions.map((q) => q.correct))
+      submitQuiz(quiz, quiz.questions.map((q) => [...q.correct]))
     })
     expect(within(link()).getByRole('img', { name: /Godkänd/ })).toBeInTheDocument()
   })
@@ -118,14 +118,14 @@ describe('grön bock', () => {
     await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getByRole('alert')).toHaveTextContent(/obesvarade/)
     for (const q of quiz.questions)
-      await user.click(document.getElementById(`${q.id}-${(q.correct + 1) % q.options.length}`)!)
+      await user.click(document.getElementById(`${q.id}-${q.options.findIndex((_, i) => !q.correct.includes(i))}`)!)
     await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getByText(/Inte godkänt/)).toBeVisible()
     expect(document.querySelector('.course-sidebar .check')).toBeNull()
 
     // Sedan godkänt
     await user.click(screen.getByRole('button', { name: 'Gör om testet' }))
-    for (const q of quiz.questions) await user.click(document.getElementById(`${q.id}-${q.correct}`)!)
+    for (const q of quiz.questions) for (const c of q.correct) await user.click(document.getElementById(`${q.id}-${c}`)!)
     await user.click(screen.getByRole('button', { name: 'Rätta testet' }))
     expect(screen.getAllByText(/Godkänt\./)[0]).toBeVisible()
     expect(document.querySelector('.course-sidebar .check')).not.toBeNull()
@@ -191,7 +191,7 @@ describe('övriga sidor', () => {
     expect(screen.getByRole('link', { name: 'Börja utbildningen' })).toHaveAttribute('href', `/kurs/${FIRST}`)
     unmount()
     act(() => {
-      submitQuiz(quiz, quiz.questions.map((q) => q.correct))
+      submitQuiz(quiz, quiz.questions.map((q) => [...q.correct]))
     })
     renderAt('/')
     expect(screen.getByRole('link', { name: 'Fortsätt utbildningen' })).toBeVisible()
@@ -220,7 +220,7 @@ describe('övriga sidor', () => {
     const user = userEvent.setup()
     const quiz = (await loadChapterContent(FIRST)).quiz!
     act(() => {
-      submitQuiz(quiz, quiz.questions.map((q) => q.correct))
+      submitQuiz(quiz, quiz.questions.map((q) => [...q.correct]))
     })
     renderAt('/installningar')
     await user.click(screen.getByRole('button', { name: 'Återställ progression' }))

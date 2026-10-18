@@ -45,6 +45,8 @@ export type Chapter = {
   theoryWords?: number
   /** Uppskattad tid för kapitlets Upptäck-uppgifter. */
   practiceMinutes?: number
+  /** Uppskattad tid för reflektion och självtest. */
+  reviewMinutes?: number
   /** Antal uppgifter av varje slag i kapitlet. */
   tasks?: { upptack: number; reflektera: number; tillampa: number }
 }
@@ -76,8 +78,10 @@ export type QuizQuestion = {
   /** Frågetext som HTML (kan innehålla formler). */
   prompt: string
   options: string[]
-  /** Index för rätt alternativ. */
-  correct: number
+  /** Index för de rätta alternativen. En fråga med flera rätta svar visas med kryssrutor. */
+  correct: number[]
+  /** Sant om frågan har flera rätta alternativ. */
+  multiple: boolean
   explanation: string
 }
 

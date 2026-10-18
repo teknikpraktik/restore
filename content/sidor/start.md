@@ -17,8 +17,8 @@ Varje kapitel växlar mellan fyra steg:
 - **Reflektera:** en eller två frågor som hjälper dig att koppla ihop förklaringen med det du märkte.
 - **Tillämpa:** ett litet experiment att pröva senare samma dag eller under veckan.
 
-Kapitlet avslutas med ett kort självtest. Det är ett hjälpmedel för att se vad du har förstått, inte ett prov.
+Kapitlet avslutas med ett självtest som visar vad du har förstått.
 
 ## Hur du börjar
 
-Börja med modul 1, *Kroppen söker balans*. Ett kapitel tar ungefär en kvart till tjugo minuter. Du kan gå i din egen takt och läsa i valfri ordning. Alla övningar går att avbryta, och du väljer själv hur mycket du anstränger dig.
+Börja med modul 1, *Kroppen söker balans*. Ett kapitel tar ungefär en kvart till tjugo minuter. Du kan gå i din egen takt och läsa i valfri ordning.

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { QUESTION_KIND_LABEL, type Quiz as QuizData } from '../course'
-import { type Answers, type QuizResult, requiredCorrect } from '../course/quiz'
+import { type Answers, type QuizResult } from '../course/quiz'
 import { isPassed, submitQuiz, useProgress } from '../progress/store'
 import { CheckMark, formatDate, useFocusWhen } from './common'
 
@@ -18,17 +18,24 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
   const resultRef = useFocusWhen<HTMLDivElement>(result)
   const attempts = progress.chapters[quiz.chapterId]?.attempts ?? []
   const passedAt = progress.chapters[quiz.chapterId]?.passedAt
-  const need = requiredCorrect(quiz)
 
   const choose = (qi: number, oi: number) => {
     if (result) return
-    setAnswers((a) => a.map((v, i) => (i === qi ? oi : v)))
+    const multiple = quiz.questions[qi].multiple
+    setAnswers((a) =>
+      a.map((v, i) => {
+        if (i !== qi) return v
+        if (!multiple) return [oi]
+        const cur = v ?? []
+        return cur.includes(oi) ? cur.filter((x) => x !== oi) : [...cur, oi]
+      }),
+    )
     setMissing(0)
   }
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault()
-    const unanswered = answers.filter((a) => a === null).length
+    const unanswered = answers.filter((a) => !a || a.length === 0).length
     if (unanswered) {
       setMissing(unanswered)
       return
@@ -45,14 +52,12 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
   return (
     <div className="quiz">
       <p className="quiz-intro">
-        Självtestet hjälper dig att se vad du har förstått. {quiz.questions.length} frågor, de flesta om vardagliga
-        situationer. Med {need} rätta svar markeras kapitlet som klart. Du kan göra om testet hur många gånger du vill,
-        och efter varje försök får du en förklaring till varje fråga.
+        {quiz.questions.length} frågor. Efter rättningen får du en förklaring till varje fråga. Testet kan göras om hur
+        många gånger som helst.
       </p>
       {isPassed(progress, quiz.chapterId) && passedAt && (
         <p className="quiz-status">
-          <CheckMark label="Godkänd" /> Godkänd {formatDate(passedAt)}. Du kan göra om testet när du vill; ett
-          senare försök tar inte bort godkännandet.
+          <CheckMark label="Godkänd" /> Godkänd {formatDate(passedAt)}. Ett senare försök tar inte bort godkännandet.
         </p>
       )}
 
@@ -64,8 +69,8 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
           </p>
           <p>
             {result.passed
-              ? 'Kapitlet är markerat som klart i kursnavigeringen. Läs gärna förklaringarna nedan, även för de frågor du besvarade rätt.'
-              : `Med ${need} rätta svar markeras kapitlet som klart. Läs förklaringarna, gå gärna tillbaka till texten och försök igen när du vill.`}
+              ? 'Kapitlet är markerat som klart i kursnavigeringen.'
+              : 'Läs förklaringarna nedan och försök igen.'}
           </p>
           <p className="quiz-actions">
             <button type="button" className="button" onClick={retry}>
@@ -91,24 +96,26 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
                       Fråga {qi + 1} · {QUESTION_KIND_LABEL[q.kind]}
                     </span>
                     <span className="quiz-prompt" dangerouslySetInnerHTML={{ __html: q.prompt }} />
+                    {q.multiple && <span className="quiz-multiple">Flera alternativ kan vara rätt. Välj alla som stämmer.</span>}
                   </legend>
                   <ul className="quiz-options">
                     {q.options.map((o, oi) => {
                       const id = `${q.id}-${oi}`
-                      const isCorrect = result && oi === q.correct
-                      const isWrongChoice = result && oi === chosen && oi !== q.correct
+                      const picked = !!chosen?.includes(oi)
+                      const isCorrect = result && q.correct.includes(oi)
+                      const isWrongChoice = result && picked && !q.correct.includes(oi)
                       return (
                         <li
                           key={oi}
-                          className={`quiz-option ${chosen === oi ? 'is-chosen' : ''} ${isCorrect ? 'is-correct' : ''} ${
+                          className={`quiz-option ${picked ? 'is-chosen' : ''} ${isCorrect ? 'is-correct' : ''} ${
                             isWrongChoice ? 'is-wrong' : ''
                           }`}
                         >
                           <input
-                            type="radio"
+                            type={q.multiple ? 'checkbox' : 'radio'}
                             id={id}
                             name={q.id}
-                            checked={chosen === oi}
+                            checked={picked}
                             disabled={!!result}
                             onChange={() => choose(qi, oi)}
                           />
@@ -126,7 +133,7 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
                   </ul>
                   {result && (
                     <div className="quiz-explanation">
-                      <p className="quiz-verdict">{correct ? 'Rätt.' : chosen === null ? 'Obesvarad.' : 'Fel.'}</p>
+                      <p className="quiz-verdict">{correct ? 'Rätt.' : !chosen?.length ? 'Obesvarad.' : 'Fel.'}</p>
                       <p dangerouslySetInnerHTML={{ __html: q.explanation }} />
                     </div>
                   )}

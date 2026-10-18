@@ -1,6 +1,7 @@
 import type { Quiz } from './types'
 
-export type Answers = (number | null)[]
+/** Valda alternativ per fråga. Null eller tom lista betyder obesvarad. */
+export type Answers = (number[] | null)[]
 
 export type QuizResult = {
   correct: number
@@ -13,7 +14,11 @@ export type QuizResult = {
 
 /** Rättar ett självtest. Obesvarade frågor räknas som fel. */
 export function gradeQuiz(quiz: Quiz, answers: Answers): QuizResult {
-  const perQuestion = quiz.questions.map((q, i) => answers[i] === q.correct)
+  // En fråga är rätt besvarad bara om exakt de rätta alternativen är valda.
+  const perQuestion = quiz.questions.map((q, i) => {
+    const a = [...new Set(answers[i] ?? [])].sort((x, y) => x - y)
+    return a.length === q.correct.length && a.every((v, j) => v === q.correct[j])
+  })
   const correct = perQuestion.filter(Boolean).length
   const total = quiz.questions.length
   // Heltalsjämförelse så att till exempel 4 av 5 (exakt 80 %) blir godkänt utan avrundningsfel.

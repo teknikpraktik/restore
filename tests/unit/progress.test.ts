@@ -17,10 +17,11 @@ const FIRST = 'homeostas-och-negativ-aterkoppling'
 const PLANNED = 'baroreflexen'
 
 let quiz: Quiz
-const correctAnswers = () => quiz.questions.map((q) => q.correct)
-const wrongAnswers = () => quiz.questions.map((q) => (q.correct + 1) % q.options.length)
+const wrongOption = (q: Quiz['questions'][number]) => q.options.findIndex((_, i) => !q.correct.includes(i))
+const correctAnswers = () => quiz.questions.map((q) => [...q.correct])
+const wrongAnswers = () => quiz.questions.map((q) => [wrongOption(q)])
 /** Svar med exakt n rätta. */
-const withCorrect = (n: number) => quiz.questions.map((q, i) => (i < n ? q.correct : (q.correct + 1) % q.options.length))
+const withCorrect = (n: number) => quiz.questions.map((q, i) => (i < n ? [...q.correct] : [wrongOption(q)]))
 
 beforeAll(async () => {
   quiz = (await loadChapterContent(FIRST)).quiz!
@@ -34,24 +35,41 @@ beforeEach(() => {
 const fake = (n: number): Quiz => ({
   chapterId: 'x',
   passThreshold: 0.8,
-  questions: Array.from({ length: n }, (_, i) => ({ id: `q${i}`, kind: 'begrepp', prompt: '', options: ['a', 'b', 'c'], correct: 0, explanation: '' })),
+  questions: Array.from({ length: n }, (_, i) => ({ id: `q${i}`, kind: 'begrepp', prompt: '', options: ['a', 'b', 'c'], correct: [0], multiple: false, explanation: '' })),
 })
 
 describe('rättning', () => {
   it('kräver minst 80 procent rätt', () => {
     const five = fake(5)
-    expect(gradeQuiz(five, [0, 0, 0, 0, 1]).passed).toBe(true) // 4 av 5 = exakt 80 %
-    expect(gradeQuiz(five, [0, 0, 0, 1, 1]).passed).toBe(false)
+    expect(gradeQuiz(five, [[0], [0], [0], [0], [1]]).passed).toBe(true) // 4 av 5 = exakt 80 %
+    expect(gradeQuiz(five, [[0], [0], [0], [1], [1]]).passed).toBe(false)
     const eight = fake(8)
     expect(requiredCorrect(eight)).toBe(7)
-    expect(gradeQuiz(eight, [0, 0, 0, 0, 0, 0, 0, 1]).passed).toBe(true)
-    expect(gradeQuiz(eight, [0, 0, 0, 0, 0, 0, 1, 1]).passed).toBe(false)
+    expect(gradeQuiz(eight, [[0], [0], [0], [0], [0], [0], [0], [1]]).passed).toBe(true)
+    expect(gradeQuiz(eight, [[0], [0], [0], [0], [0], [0], [1], [1]]).passed).toBe(false)
   })
 
   it('räknar obesvarade frågor som fel', () => {
-    const r = gradeQuiz(fake(5), [0, 0, 0, null, null])
+    const r = gradeQuiz(fake(5), [[0], [0], [0], null, []])
     expect(r.correct).toBe(3)
     expect(r.perQuestion).toEqual([true, true, true, false, false])
+  })
+
+  it('kräver exakt de rätta alternativen i en flersvarsfråga', () => {
+    const q: Quiz = {
+      chapterId: 'x',
+      passThreshold: 1,
+      questions: [{ id: 'm', kind: 'situation', prompt: '', options: ['a', 'b', 'c', 'd'], correct: [0, 2], multiple: true, explanation: '' }],
+    }
+    expect(gradeQuiz(q, [[2, 0]]).passed).toBe(true)
+    expect(gradeQuiz(q, [[0]]).passed).toBe(false)
+    expect(gradeQuiz(q, [[0, 2, 3]]).passed).toBe(false)
+  })
+
+  it('kräver alla rätt i kapitlens självtester', () => {
+    expect(quiz.passThreshold).toBe(1)
+    expect(requiredCorrect(quiz)).toBe(quiz.questions.length)
+    expect(quiz.questions.some((q) => q.multiple)).toBe(true)
   })
 
   it('rättar kapitlets riktiga kontroll', () => {

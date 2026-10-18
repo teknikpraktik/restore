@@ -148,7 +148,7 @@ export function createMarkdown(resolveCite: CiteResolver) {
       const t = tokens[idx]
       if (t.nesting !== 1) return '</div></details>\n'
       const title = t.info.trim().slice('fordjupning'.length).trim()
-      return `<details class="fordjupning"><summary><span class="box-label">Fördjupning, frivillig</span> ${md.renderInline(
+      return `<details class="fordjupning"><summary><span class="box-label">Fördjupning</span> ${md.renderInline(
         title,
       )}</summary><div class="box-body">\n`
     },

@@ -1,72 +1,75 @@
 # Självtest för 1.7 När återhämtningen inte hinner ikapp.
 
 fragor:
-  - id: problemets-karna
+  - id: var-problemet-uppstar
     typ: forstaelse
-    fraga: När blir påfrestningar oftast ett problem för kroppen?
+    fraga: Vad avgör enligt kapitlet främst om påfrestningar blir ett problem?
     alternativ:
-      - Så fort man upplever någon form av stress.
-      - Bara när det handlar om fysisk ansträngning.
-      - Aldrig, kroppen anpassar sig alltid.
-      - När de kommer så tätt att återhämtningen inte hinner ikapp.
+      - Hur kraftig varje enskild påfrestning är.
+      - Om påfrestningarna är psykiska eller fysiska.
+      - Hur mycket man oroar sig för påfrestningarna i förväg.
+      - Om återhämtningen hinner ikapp mellan påfrestningarna.
     ratt: 4
     forklaring: >-
-      Enstaka påfrestningar är normala och kroppen återhämtar sig från dem. Problemet uppstår när de följer så
-      tätt att kroppen inte hinner tillbaka mellan gångerna.
+      Även kraftiga enskilda påfrestningar är kroppen rustad för. Problemen uppstår när de följer så tätt att
+      kroppen inte hinner tillbaka, eller när reaktionen inte klingar av mellan gångerna.
 
-  - id: tidigt-tecken
+  - id: monster-av-tecken
     typ: situation
     fraga: >-
-      Under de senaste veckorna har du svårare att somna, blir lättare irriterad och känner att helgen inte
-      räcker för att vila upp dig. Vad är mest rimligt?
+      En person har under en månad sovit sämre, blivit lättare irriterad och upplever att helgerna inte räcker
+      för att hämta sig. Vilken bedömning stämmer bäst med kapitlet?
     alternativ:
-      - Det är bevis på att du har en sjukdom.
-      - Det är normalt och inget att tänka på.
-      - Det kan vara tecken på att återhämtningen inte räcker, och värt att se över balansen.
-      - Det går över om du arbetar hårdare.
-    ratt: 3
-    forklaring: >-
-      Sämre sömn, irritation och vila som inte räcker är vanliga tidiga tecken på att återhämtningen inte
-      hinner ikapp. De kan ha andra orsaker och är inte en diagnos, men tillsammans är de en signal att se
-      över balansen.
-
-  - id: aktiv-aterhamtning
-    typ: forstaelse
-    fraga: Vilket påstående om återhämtning stämmer bäst?
-    alternativ:
-      - Återhämtning betyder alltid att ligga still.
-      - Återhämtning kan också vara aktiv, till exempel rörelse eller umgänge, och ser olika ut för olika
-        personer.
-      - Återhämtning sker bara under sömnen.
-      - Det som fungerar för en person fungerar för alla.
-    ratt: 2
-    forklaring: >-
-      Många återhämtar sig lika bra av att röra sig, träffa någon eller göra något med händerna som av att
-      vila. Det viktiga är att hitta vad som ger energi för just dig.
-
-  - id: nar-hjalp
-    typ: tillampning
-    fraga: I vilken situation är det rimligt att kontakta vårdcentralen eller 1177?
-    alternativ:
-      - Du har under flera veckor varit så trött att det är svårt att klara vardagen och sover dåligt nästan
-        varje natt.
-      - Du var trött efter en lång arbetsdag men piggare nästa morgon.
-      - Du kände dig spänd före ett möte.
-      - Du blev andfådd när du sprang till bussen.
+      - Tecknen är var för sig vanliga, men tillsammans och över tid är de en signal att se över balansen.
+      - Det rör sig sannolikt om utmattningssyndrom.
+      - Det är normala variationer som inte behöver uppmärksammas.
+      - Det är tecken på att personen tränar för lite.
     ratt: 1
     forklaring: >-
-      Långvarig trötthet som påverkar vardagen, sömnproblem nästan varje natt eller nedstämdhet under lång tid
-      är skäl att söka hjälp. Trötthet efter en lång dag och reaktioner inför ett möte är normala.
+      Kombinationen av flera tecken som håller i sig är det som är värt att notera. Kapitlet ger inget
+      underlag för en diagnos, och tecknen kan ha andra orsaker.
 
-  - id: planera-aterhamtning
-    typ: tillampning
-    fraga: Du ser att torsdag kommer att bli veckans tyngsta dag. Vad stämmer bäst med kapitlet?
+  - id: aterhamtning-aktiv
+    typ: slutsats
+    fraga: >-
+      En person blir piggare av att spela fotboll med vänner på kvällen, medan en kollega behöver lugn och
+      ensamhet. Vilka slutsatser är rimliga?
     alternativ:
-      - Fylla torsdagskvällen med fler uppgifter så att du hinner mer.
-      - Vänta med återhämtning till semestern.
-      - Hoppa över sömn för att hinna förbereda dig.
-      - Planera in något som brukar ge dig energi efter torsdagen, även om det är kort.
-    ratt: 4
+      - Kollegan återhämtar sig på rätt sätt, eftersom återhämtning kräver vila.
+      - Fotbollen är ingen återhämtning, eftersom den är fysiskt krävande.
+      - Återhämtning kan vara både aktiv och passiv, och vad som fungerar skiljer sig mellan personer.
+      - Vad som räknas som återhämtning avgörs av effekten, inte av hur stillsam aktiviteten är.
+    ratt: [ 3, 4 ]
     forklaring: >-
-      Återhämtning behöver inte vara lång för att göra skillnad. Att planera in något som ger energi efter en
-      tung dag är ett konkret sätt att hjälpa balansen.
+      Återhämtning kan vara både aktiv och passiv och skiljer sig mellan personer. Det som avgör är om
+      aktiviteten ger energi. Fotbollen är återhämtning för den som blir piggare av den.
+
+  - id: nar-soka-vard
+    typ: tillampning
+    fraga: Vilka situationer motiverar att kontakta vården?
+    alternativ:
+      - Trötthet efter en intensiv arbetsvecka som går över under helgen.
+      - Svårt att varva ner kvällen efter en konflikt på jobbet.
+      - Trötthet som i flera veckor gör vardagen svår att klara, tillsammans med sömnproblem nästan varje natt.
+      - Nedstämdhet som inte har gått över på flera veckor.
+    ratt: [ 3, 4 ]
+    forklaring: >-
+      Långvarig trötthet som påverkar vardagen, ihållande sömnproblem och nedstämdhet som inte går över är
+      skäl att söka vård. Trötthet efter en intensiv vecka och svårt att varva ner efter en konflikt är
+      kortvariga och har en tydlig orsak.
+
+  - id: planera-efter-tung-dag
+    typ: tillampning
+    fraga: >-
+      Torsdag ser ut att bli veckans tyngsta dag, och kvällen är fortfarande ledig. Vad stämmer bäst med
+      kapitlet?
+    alternativ:
+      - Använda kvällen till att förbereda fredagen, så att den blir lättare.
+      - Planera in något som brukar ge energi efter torsdagen och utvärdera efteråt om det gjorde skillnad.
+      - Vänta med återhämtning till helgen, då den blir mer effektiv.
+      - Lägga till ett träningspass, eftersom fysisk påfrestning alltid är bra.
+    ratt: 2
+    forklaring: >-
+      Återhämtning som placeras där belastningen är som störst gör mest nytta, och utvärderingen gör det
+      möjligt att se om den fungerar. Träning kan vara återhämtning för en del men är inte självklart rätt
+      efter en tung dag.

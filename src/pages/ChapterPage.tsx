@@ -79,8 +79,8 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
         {produced ? (
           <p className="chapter-meta">
             Läsning cirka {chapter.readingMinutes ?? 1} min
-            {chapter.practiceMinutes ? ` · Övningar i texten cirka ${chapter.practiceMinutes} min` : ''}
-            {quiz ? ` · Självtest med ${quiz.questions} frågor` : ''}
+            {chapter.practiceMinutes ? ` · Övningar cirka ${chapter.practiceMinutes} min` : ''}
+            {chapter.reviewMinutes ? ` · Reflektion och självtest cirka ${chapter.reviewMinutes} min` : ''}
             {` · Totalt cirka ${formatMinutes(chapter.minutes)}`}
           </p>
         ) : (
@@ -109,22 +109,6 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
               <li key={o}>{o}</li>
             ))}
           </ol>
-          {chapter.prerequisites.length > 0 && (
-            <p className="prerequisites">
-              <span className="label">Bra att ha läst först:</span>{' '}
-              {chapter.prerequisites.map((p, i) => {
-                const c = getChapter(p)!
-                return (
-                  <span key={p}>
-                    {i > 0 && ', '}
-                    <Link to={chapterHref(p)}>
-                      {c.number} {c.title}
-                    </Link>
-                  </span>
-                )
-              })}
-            </p>
-          )}
         </section>
 
         {produced && <Loading state={content}>{(c) => <Prose html={c.html} className="theory" />}</Loading>}

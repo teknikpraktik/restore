@@ -81,7 +81,7 @@ Hur kroppen reglerar blodtrycket vid uppresning är etablerad kunskap. Övningen
 
 ## Säkerhet
 
-Kortvarig yrsel när man reser sig är vanligt. Stå nära något stadigt och sätt dig om yrseln inte går över. Har du lätt för att svimma, gör övningen från sittande. Svimmar du ofta eller blir kraftigt yr när du reser dig: tala med vården.
+Kortvarig yrsel vid uppresning är vanligt. Stå nära något stadigt. Den som ofta svimmar vid uppresning gör övningen från sittande.
 
 ## Analysfrågor
 

@@ -1,69 +1,75 @@
 # Självtest för 1.4 Temperatur och dygnets rytm.
 
 fragor:
-  - id: kalla-hander
-    typ: situation
-    fraga: Du sitter i ett svalt rum och märker att händerna har blivit kalla, fast resten av kroppen känns varm.
-      Vad är mest rimligt?
-    alternativ:
-      - Blodcirkulationen fungerar dåligt.
-      - Du har feber.
-      - Kroppen sparar värme genom att minska blodflödet i huden på händerna.
-      - Händerna är kalla för att du är stressad.
-    ratt: 3
-    forklaring: >-
-      När kroppen behöver spara värme drar blodkärlen i huden ihop sig, särskilt i händer och fötter. Kalla
-      händer i ett svalt rum är ett vanligt tecken på att temperaturregleringen fungerar.
-
-  - id: dygnets-lagsta
+  - id: effektivaste-medlet
     typ: forstaelse
-    fraga: När på dygnet är kroppstemperaturen normalt som lägst?
+    fraga: >-
+      Vilka av följande är sätt för kroppen att göra sig av med värme?
     alternativ:
-      - Mitt på dagen.
-      - Under senare delen av natten.
-      - Sent på eftermiddagen.
-      - Den är densamma hela dygnet.
+      - Svettning.
+      - Att muskelskakningar ökar.
+      - Beteende, till exempel att ta av sig ett plagg eller söka skugga.
+      - Att blodkärlen i huden vidgas.
+    ratt: [ 1, 3, 4 ]
+    forklaring: >-
+      Svettning, att söka svalka och vidgade blodkärl i huden ökar värmeavgivningen. Muskelskakningar gör
+      tvärtom: de ökar värmeproduktionen i kyla.
+
+  - id: frysa-vid-feber
+    typ: forstaelse
+    fraga: >-
+      När febern stiger fryser och skakar man ofta, trots att temperaturen redan är högre än normalt. Vilken
+      förklaring stämmer?
+    alternativ:
+      - Infektionen stör temperatursinnet så att det felaktigt rapporterar kyla.
+      - Kroppen har höjt den nivå den reglerar mot och värmer sig för att nå den.
+      - Huden kyls av att svetten avdunstar, och det är den kylan man känner.
+      - Kroppen har tillfälligt förlorat förmågan att reglera temperaturen.
     ratt: 2
     forklaring: >-
-      Kroppstemperaturen följer en dygnsrytm. Den är normalt lägst under senare delen av natten och högre
-      under eftermiddag och kväll. Tidpunkten skiljer sig något mellan morgon- och kvällsmänniskor.
+      Vid feber höjs målnivån. Den faktiska temperaturen är då lägre än målet, så kroppen drar ihop hudens
+      kärl och skakar för att höja den. Feber är en aktiv reglering.
 
-  - id: frysa-med-feber
+  - id: morgonvarde-kvallsvarde
     typ: slutsats
-    fraga: När febern stiger fryser och skakar man ofta, trots att temperaturen redan är högre än vanligt. Hur kan
-      det förstås?
+    fraga: >-
+      Samma person mäter 36,3 grader klockan sju på morgonen och 37,1 grader klockan sex på kvällen, med samma
+      termometer. Vilka förklaringar är rimliga?
     alternativ:
-      - Kroppen har höjt den nivå den reglerar mot och arbetar för att nå den.
-      - Temperaturregleringen har slutat fungera.
-      - Termometern visar fel.
-      - Skakningarna är ett tecken på att infektionen är över.
-    ratt: 1
+      - Skillnaden ligger inom vad dygnsrytmen och dagens aktivitet kan förklara.
+      - Kvällsvärdet tyder på en begynnande infektion.
+      - Morgonvärdet är för lågt och tyder på dålig sömn.
+      - Dagens aktivitet kan ha bidragit till det högre kvällsvärdet.
+    ratt: [ 1, 4 ]
     forklaring: >-
-      Vid feber höjer kroppen sin målnivå. En normal temperatur känns då för låg, och kroppen skakar och drar
-      ihop kärlen i huden för att höja temperaturen. Feber är aktiv reglering, inte ett sammanbrott.
+      Temperaturen är normalt lägst sent på natten och högre på eftermiddag och kväll, och aktivitet under
+      dagen höjer den ytterligare. Skillnaden kräver varken infektion eller dålig sömn som förklaring.
 
-  - id: jamfora-temperatur
-    typ: tillampning
-    fraga: Du vill veta om din temperatur är förhöjd. Vilket sätt att jämföra är mest meningsfullt?
+  - id: kvallsmanniska
+    typ: situation
+    fraga: >-
+      En kvällsmänniska har svårt att komma i gång tidigt på morgonen. Hur kan det förstås utifrån kapitlet?
     alternativ:
-      - Jämföra med 37 grader, oavsett hur och när du mätte.
-      - Jämföra med en väns temperatur.
-      - Mäta i örat en gång och i munnen en gång och ta medelvärdet.
-      - Jämföra med vad du brukar ha, mätt på samma sätt och vid ungefär samma tid på dygnet.
+      - Kvällsmänniskor sover generellt sämre och behöver därför mer sömn.
+      - Låg morgonenergi beror främst på att man har ätit för lite kvällen före.
+      - Kvällsmänniskor har lägre kroppstemperatur hela dygnet.
+      - Kroppens inre klocka ligger senare, så den lägsta punkten i dygnsrytmen inträffar närmare uppvaknandet.
     ratt: 4
     forklaring: >-
-      Normal temperatur skiljer sig mellan personer, mellan mätplatser och över dygnet. Det mest meningsfulla
-      är att jämföra med ditt eget vanliga värde, mätt på samma sätt.
+      Hos kvällsmänniskor inträffar temperaturens lägsta punkt senare på morgonen. När väckarklockan ringer
+      befinner de sig därför tidigare i sin dygnsrytm än en morgonmänniska vid samma klockslag.
 
-  - id: planera-efter-rytmen
+  - id: planering-efter-rytm
     typ: tillampning
-    fraga: Du brukar vara piggast på förmiddagen och tröttast sent på eftermiddagen. Hur kan du använda det?
+    fraga: >-
+      Du har en analysuppgift som kräver full koncentration och en rad rutinärenden. Du är piggast på
+      förmiddagen. Vilket upplägg stämmer bäst med kapitlet?
     alternativ:
-      - Försöka tvinga kroppen att vara lika pigg hela dagen.
-      - Undvika allt arbete på eftermiddagen.
-      - Lägga de mest krävande uppgifterna på förmiddagen när det går.
-      - Det spelar ingen roll, eftersom vakenheten inte varierar.
-    ratt: 3
+      - Rutinärendena först, så att förmiddagen blir fri från störningar efter lunch.
+      - Analysen på förmiddagen och rutinärendena vid din tröttaste tid.
+      - Varva dem varje halvtimme för att hålla vakenheten jämn.
+      - Lägga analysen sent på kvällen, när kroppstemperaturen är som högst.
+    ratt: 2
     forklaring: >-
-      Den inre klockan påverkar vakenheten under dygnet. Att lägga krävande uppgifter där du brukar vara
-      piggast är ett enkelt sätt att arbeta med rytmen i stället för mot den.
+      Vakenheten följer dygnsrytmen. Den mest krävande uppgiften passar bäst när du brukar vara piggast. Att
+      kroppstemperaturen är hög på kvällen betyder inte att koncentrationen är bäst då för alla.

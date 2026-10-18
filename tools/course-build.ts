@@ -26,7 +26,8 @@ import type {
 } from '../src/course/types.ts'
 import { createMarkdown, escapeHtml, slug, theoryText, wordCount } from './markdown.ts'
 
-export const PASS_THRESHOLD = 0.8
+/** Alla svar måste vara rätta för att ett kapitel ska markeras som klart (sedan 3.0). */
+export const PASS_THRESHOLD = 1
 export const QUESTIONS_MIN = 5
 export const QUESTIONS_MAX = 8
 
@@ -394,6 +395,13 @@ export function buildCourse(root = 'content'): CourseBuild {
         }
       } else if (exists(quizRel)) err(where, 'kontrollfil finns men kontrollen är inte markerad som klar')
 
+      // För producerade kapitel räknas studietiden fram ur innehållet, så att delarna summerar:
+      // läsning + Upptäck-uppgifter + reflektion och självtest (en minut per reflektionsruta och fråga).
+      if (chapter.content === 'producerad' && chapter.readingMinutes != null) {
+        chapter.reviewMinutes = (chapter.tasks?.reflektera ?? 0) + (quizzes[k.id]?.questions.length ?? 0)
+        chapter.minutes = chapter.readingMinutes + (chapter.practiceMinutes ?? 0) + chapter.reviewMinutes
+      }
+
       chapters[k.id] = chapter
       mod.chapters.push(k.id)
       order.push(k.id)
@@ -470,14 +478,18 @@ function buildQuiz(
     const alt = (q.alternativ ?? []) as string[]
     if (alt.length < 3 || alt.length > 5) err(where, 'en fråga ska ha 3–5 alternativ')
     if (new Set(alt.map((a) => String(a).trim().toLowerCase())).size !== alt.length) err(where, 'två alternativ är lika')
-    if (!Number.isInteger(q.ratt) || q.ratt < 1 || q.ratt > alt.length) err(where, 'ratt ska vara numret (1, 2, …) på rätt alternativ')
+    const ratt = (Array.isArray(q.ratt) ? q.ratt : [q.ratt]) as number[]
+    if (!ratt.length || ratt.some((r) => !Number.isInteger(r) || r < 1 || r > alt.length) || new Set(ratt).size !== ratt.length)
+      err(where, 'ratt ska vara numret (1, 2, …) på rätt alternativ, eller en lista med nummer')
+    if (ratt.length >= alt.length) err(where, 'minst ett alternativ måste vara fel')
     if (!q.fraga || !q.forklaring) err(where, 'fråga och förklaring krävs')
     return {
       id: q.id,
       kind: q.typ,
       prompt: inline(where, q.fraga),
       options: alt.map((a) => inline(where, a)),
-      correct: q.ratt - 1,
+      correct: ratt.map((r) => r - 1).sort((a, b) => a - b),
+      multiple: Array.isArray(q.ratt),
       explanation: inline(where, q.forklaring),
     }
   })

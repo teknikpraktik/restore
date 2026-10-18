@@ -1,49 +1,49 @@
-Har du blivit lättirriterad sent på eftermiddagen och sedan märkt att det gick över när du åt något? Det är ett vardagligt exempel på hur nära kroppens energiförsörjning och vårt humör hänger ihop.
+Lättirriterad sent på eftermiddagen, och efter ett mellanmål är det borta. Det är ett vardagligt exempel på hur nära energiförsörjning och sinnesstämning hänger ihop.
 
-## En liten reserv som fylls på hela tiden
+## En liten reserv som ständigt fylls på
 
-Kroppens celler använder framför allt socker, **glukos**, och fett som bränsle. Hjärnan är särskilt beroende av glukos. Den väger bara ungefär två procent av kroppsvikten men står för omkring en femtedel av den energi som kommer från glukos [@mergenthaler2013].
+Kroppens celler använder framför allt socker, **glukos**, och fett som bränsle. Hjärnan är särskilt beroende av glukos. Den väger ungefär två procent av kroppsvikten men står för omkring en femtedel av den energi som kommer från glukos [@mergenthaler2013].
 
-Det överraskande är hur lite glukos som finns i blodet vid ett givet tillfälle: hos en vuxen person bara omkring fyra gram, ungefär en sockerbit [@wasserman2009]. Hjärnan skulle göra av med den mängden på mindre än en timme. Att blodsockret ändå är stabilt timme efter timme beror på att levern hela tiden fyller på mellan måltiderna, och att cellerna tar upp socker i samma takt.
+Blodet innehåller vid varje tidpunkt förvånansvärt lite glukos: hos en vuxen omkring fyra gram, ungefär en sockerbit [@wasserman2009]. Hjärnan skulle förbruka den mängden på mindre än en timme. Att blodsockret ändå är stabilt timme efter timme beror på att levern fyller på mellan måltiderna, samtidigt som upptaget i vävnaderna regleras.
 
-Två hormoner från bukspottkörteln är centrala. **Insulin** frisätts när blodsockret stiger och hjälper cellerna att ta upp sockret. Glukagon frisätts när blodsockret sjunker och får levern att frisätta socker [@roder2016]. Det är negativ återkoppling, precis som i kapitel 1.1.
+Två hormoner från bukspottkörteln är centrala. **Insulin** frisätts när blodsockret stiger och får cellerna att ta upp socker. Glukagon frisätts när blodsockret sjunker och får levern att frisätta socker [@roder2016]. Det är negativ återkoppling, samma princip som i kapitel 1.1.
 
-::: upptack 1 min Hur hungrig är du nu?
-Skatta din hunger från 0 (inte alls hungrig) till 10 (mycket hungrig). Notera också när du åt senast och hur du känner dig i övrigt: pigg, trött, rastlös, lättirriterad?
+::: upptack 1 min Läget just nu
+Skatta din hunger från 0 till 10 och notera när du åt senast. Notera också hur du är i övrigt: koncentrerad, trött, rastlös, irriterad.
 :::
 
 ## Kroppen reagerar innan det blir för lite
 
-När blodsockret sjunker reagerar kroppen i flera steg. I ett försök där blodsockret sänktes stegvis hos friska personer under kontrollerade former började kroppen först frisätta hormoner som höjer blodsockret, bland annat adrenalin. Först vid en lägre nivå kom kännbara tecken som hjärtklappning, svettning, darrighet och irritation. Koncentrationsförmågan påverkades först vid ännu lägre nivåer [@mitrakou1991].
+När blodsockret sjunker reagerar kroppen i flera steg. I ett försök där blodsockret sänktes stegvis hos friska personer under kontrollerade former frisatte kroppen först hormoner som höjer blodsockret, bland annat adrenalin. Först vid en lägre nivå uppträdde kännbara tecken som hjärtklappning, svettning, darrighet och irritation. Koncentrationsförmågan påverkades först vid ännu lägre nivåer [@mitrakou1991].
 
-Kroppen hinner alltså oftast rätta till det innan vi märker något. Men det betyder också att tecken som rastlöshet, irritation och svårt att koncentrera sig ibland kan vara kroppens sätt att säga att det är dags att äta. De är lätta att tolka som stress.
+Kroppen hinner alltså i regel rätta till ett sjunkande blodsocker innan vi märker något. Men det innebär också att rastlöshet, irritation och koncentrationssvårigheter ibland är signaler om att det är dags att äta, och de är lätta att förväxla med stress.
 
-Den som har diabetes har en annan situation och ska följa vårdens råd om blodsocker.
+För den som har diabetes gäller andra förutsättningar och vårdens anvisningar.
 
 ::: reflektera
-- Hur märker du att du är hungrig? Är det som en känsla i magen, eller snarare som trötthet, irritation eller svårt att tänka klart?
-- Händer det att du tolkar hunger som stress, eller tvärtom?
+- Hur yttrar sig hunger hos dig: som en känsla i magen, eller som trötthet, irritation eller tankspriddhet?
+- Har du tolkat hunger som stress, eller stress som hunger?
 :::
 
 ## Stress och aptit påverkar varandra
 
-Många märker att aptiten förändras under pressade perioder. Hos en del ökar den, hos andra minskar den. Det finns inget enda rätt mönster. Det viktiga är att känna igen sitt eget, eftersom långa pass utan mat kan göra det svårare att hantera krav, och eftersom det är lätt att missa måltider när man har bråttom.
+Aptiten förändras ofta under pressade perioder, hos en del uppåt, hos andra nedåt. Det finns inget allmängiltigt mönster. Det viktiga är att känna till sitt eget, eftersom långa pass utan mat gör krav svårare att hantera, och eftersom måltider lätt försvinner när tiden är knapp.
 
-::: upptack 2 min Din energi under en vanlig dag
-Tänk igenom en vanlig arbetsdag eller skoldag. Markera ungefär när du äter, och när du brukar känna dig som mest seg eller lättirriterad. Finns det något samband?
+::: upptack 2 min Energin under en vanlig dag
+Gå igenom en vanlig arbetsdag. Markera när du äter och när du brukar vara som mest seg eller lättirriterad. Notera om det finns något samband.
 :::
 
 ::: tillampa Planera energin för en krävande dag
-Välj en dag i veckan som brukar vara krävande. Planera in en måltid eller ett mellanmål innan dagens längsta eller svåraste pass. Skatta efteråt hur din koncentration och ditt humör var, från 0 till 10, och jämför med hur det brukar vara.
+Välj en dag i veckan som brukar vara krävande. Lägg in en måltid eller ett mellanmål före dagens längsta eller svåraste pass. Skatta efteråt koncentration och humör från 0 till 10 och jämför med en vanlig sådan dag.
 :::
 
-::: fordjupning Hur mäter forskare kroppens reglering av blodsocker?
-En vanlig metod är den så kallade glukosclampen. Forskaren tillför insulin i jämn takt och samtidigt så mycket socker som krävs för att hålla blodsockret på en bestämd nivå. Ju mer socker som behövs, desto känsligare är kroppen för insulin [@defronzo1979]. Metoden visar en allmän princip i fysiologisk forskning: genom att låsa ett värde kan man mäta hur resten av systemet arbetar.
+::: fordjupning Hur forskare mäter blodsockerregleringen
+En vanlig metod är den så kallade glukosclampen. Forskaren tillför insulin i jämn takt och samtidigt så mycket socker som krävs för att hålla blodsockret på en bestämd nivå. Ju mer socker som behövs, desto känsligare är kroppen för insulin [@defronzo1979]. Metoden illustrerar en allmän princip i fysiologisk forskning: genom att låsa ett värde kan man mäta hur resten av systemet arbetar.
 :::
 
 ## Det viktigaste
 
-- Blodet innehåller bara omkring fyra gram glukos. Levern fyller på hela tiden mellan måltiderna.
+- Blodet innehåller bara omkring fyra gram glukos. Levern fyller på mellan måltiderna.
 - Insulin och glukagon håller blodsockret stabilt genom negativ återkoppling.
-- När blodsockret sjunker reagerar kroppen först med hormoner, sedan med kännbara tecken som irritation och darrighet.
-- Hunger kan märkas som trötthet eller irritation och förväxlas med stress.
+- När blodsockret sjunker svarar kroppen först med hormoner och sedan med kännbara tecken som irritation och darrighet.
+- Hunger kan yttra sig som trötthet eller irritation och förväxlas med stress.

@@ -72,10 +72,6 @@ Att mätvärden varierar inom och mellan personer är etablerad kunskap. Att fö
 - **Längre:** Fortsätt i fyra veckor och jämför veckorna.
 - **Med experiment:** Ändra en sak, till exempel tiden du går och lägger dig, och jämför med en vecka utan ändring.
 
-## Säkerhet
-
-Om täta anteckningar eller mätningar gör dig orolig: notera mer sällan eller gör ett uppehåll.
-
 ## Analysfrågor
 
 1. Vilket var ditt vanligaste värde för energi och stress under veckan?

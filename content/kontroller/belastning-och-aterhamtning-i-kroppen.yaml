@@ -1,71 +1,77 @@
 # Självtest för 1.6 Belastning och återhämtning – kroppens normala rytm.
 
 fragor:
-  - id: paverkan-av-traning
+  - id: traningseffekt
     typ: forstaelse
-    fraga: Varför blir kroppen starkare och mer uthållig av regelbunden träning?
+    fraga: Vilka påståenden om träningseffekter stämmer med kapitlet?
     alternativ:
-      - För att den upprepade påfrestningen följs av återhämtning, och kroppen anpassar sig efter den.
-      - För att träning förhindrar all påfrestning.
-      - För att kroppen blir starkare ju mindre man vilar.
-      - För att musklerna slutar bli trötta.
-    ratt: 1
+      - Belastningen behöver vara så hög att man blir helt utmattad varje gång.
+      - Man bör träna varje dag så att kroppen inte hinner vänja sig av.
+      - Påfrestningen behöver upprepas och följas av återhämtning som kroppen hinner med.
+      - Anpassningen gäller främst den typ av belastning man har utsatts för.
+    ratt: [ 3, 4 ]
     forklaring: >-
-      När kroppen utsätts för en påfrestning den hinner återhämta sig från anpassar den sig. Både
-      påfrestningen och återhämtningen behövs.
+      Kroppen anpassar sig när påfrestningen upprepas och följs av återhämtning, och anpassningen gäller just
+      den belastning som har tränats. Utmattning varje gång eller daglig träning utan återhämtning är inte
+      förutsättningar.
 
-  - id: pulsen-sjunker
-    typ: situation
-    fraga: Du har gått snabbt i en trappa. Hur brukar pulsen förändras när du stannar?
+  - id: snabb-fas
+    typ: forstaelse
+    fraga: Vad förklarar främst att pulsen sjunker så snabbt under den första halvminuten efter en ansträngning?
     alternativ:
-      - Den sjunker i jämn takt tills den är som i vila.
-      - Den fortsätter att stiga en lång stund.
-      - Den sjunker först efter flera minuter.
-      - Den sjunker snabbast i början och sedan allt långsammare.
+      - Att musklerna snabbt slutar producera värme.
+      - Att stresshormonerna i blodet bryts ned inom några sekunder.
+      - Att blodtrycket sjunker kraftigt och hjärtat därför slår långsammare.
+      - Att vagusnerven, som bromsar hjärtat, snabbt blir aktiv igen.
     ratt: 4
     forklaring: >-
-      Den första snabba nedgången beror främst på att vagusnerven, som bromsar hjärtat, snabbt blir aktiv
-      igen. Därefter sjunker pulsen långsammare.
+      Den snabba fasen beror främst på att vagusnerven återaktiveras. Hormoner och värme påverkar den
+      långsammare fasen som följer.
 
-  - id: hemmatest
+  - id: tolka-hemmatest
     typ: slutsats
     fraga: >-
-      Din puls sjönk ganska lite under minuten efter en trappa. Vilken slutsats är mest rimlig utifrån det du
-      har läst?
+      Efter en minut i trappan sjönk din puls bara 10 slag under den första minuten. I studier av arbetsprov
+      är långsam återgång kopplad till ökad risk. Vilken slutsats är rimlig?
     alternativ:
-      - Att du har en hjärtsjukdom.
-      - Att du ska sluta röra på dig.
-      - Att ett enstaka hemmaförsök säger lite om hälsan, men att det kan vara intressant att följa över tid.
-      - Att pulsklockan måste vara trasig.
-    ratt: 3
-    forklaring: >-
-      Samband mellan långsam återgång och risk har setts i stora studier av arbetsprov inom vården. Ett
-      enskilt hemmaförsök kan inte bedöma hälsan. Det kan däremot vara intressant att följa hur din egen
-      återgång förändras.
-
-  - id: promenad-och-stamning
-    typ: forstaelse
-    fraga: Vad visar forskningen om hur en enstaka stunds rörelse påverkar stämningen?
-    alternativ:
-      - Den har ingen effekt på stämningen.
-      - Den förbättrar i genomsnitt stämningen och minskar upplevd stress, men effekten varierar mellan
-        personer.
-      - Den förbättrar alltid stämningen lika mycket för alla.
-      - Den fungerar bara om man tränar mycket hårt.
-    ratt: 2
-    forklaring: >-
-      Forskningen visar att ett enda pass rörelse i genomsnitt förbättrar stämningen och minskar upplevd
-      stress, men inte lika mycket för alla. Det är inte klarlagt vilken typ och längd som fungerar bäst.
-
-  - id: rorelsepaus
-    typ: tillampning
-    fraga: Du brukar känna dig seg och spänd runt klockan tre. Vilket experiment stämmer bäst med kapitlet?
-    alternativ:
-      - Lägga in fem minuters rörelse vid den tiden och jämföra hur du mår före och efter.
-      - Dricka mer kaffe för att orka.
-      - Undvika rörelse för att spara energi.
-      - Vänta tills känslan går över av sig själv.
+      - Ett enskilt hemmaförsök säger inget om din risk, men upprepade försök med samma upplägg kan visa hur
+        du förändras.
+      - Du har förhöjd risk för hjärt-kärlsjukdom och bör söka vård.
+      - Resultatet visar att du har dålig kondition.
+      - Resultatet är meningslöst, eftersom pulsåterhämtning inte har något med kondition att göra.
     ratt: 1
     forklaring: >-
-      En kort rörelsepaus är lätt att pröva. Genom att skatta energi, spänning och stämning före och efter kan
-      du se om det hjälper just dig.
+      Sambanden gäller grupper och standardiserade arbetsprov, inte ett enskilt försök hemma. Däremot finns
+      ett samband mellan kondition och återgångens hastighet, så upprepade mätningar under samma förhållanden
+      kan vara intressanta.
+
+  - id: promenad-utan-effekt
+    typ: situation
+    fraga: >-
+      Du tar en femminuterspromenad tre dagar i rad. Två dagar känner du dig piggare efteråt, en dag ingen
+      skillnad. Hur stämmer det med forskningen?
+    alternativ:
+      - Det tyder på att promenaden inte har någon egentlig effekt för dig.
+      - Det stämmer väl: effekten finns i genomsnitt men varierar mellan personer och tillfällen.
+      - Det visar att promenaden var för kort för att ge någon effekt.
+      - Det visar att effekten bara uppträder om man promenerar utomhus.
+    ratt: 2
+    forklaring: >-
+      Ett enda pass rörelse förbättrar i genomsnitt stämningen, men effekten är inte densamma varje gång. Tre
+      dagar är för lite för att dra slutsatser åt något håll.
+
+  - id: utvardera-rorelsepaus
+    typ: tillampning
+    fraga: >-
+      Du vill ta reda på om en rörelsepaus på eftermiddagen hjälper dig. Vilka inslag gör utvärderingen mer
+      tillförlitlig?
+    alternativ:
+      - Ta rörelsepausen när du känner för det och notera hur du mår efteråt.
+      - Ta en rörelsepaus en gång och jämför med hur du minns att du brukar må.
+      - Skatta energi och stämning före och efter, vid samma tid i flera dagar.
+      - Jämför med lika långa pauser utan rörelse.
+    ratt: [ 3, 4 ]
+    forklaring: >-
+      Skattningar före och efter under flera dagar gör det möjligt att se ett mönster, och jämförelsen med
+      vanliga pauser visar om det är rörelsen eller själva pausen som gör skillnad. Att ta pausen när man
+      känner för det eller jämföra med hur man minns att man brukar må ger osäkra resultat.

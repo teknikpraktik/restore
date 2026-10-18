@@ -19,13 +19,13 @@ Förklaringarna bygger på etablerad kunskap i fysiologi, psykologi och beteende
 
 Övningarna beskrivs med vad de kan och inte kan åstadkomma. En kroppslig förnimmelse under en övning är inte ett bevis för att något har förändrats eller läkt. Varje källa i källförteckningen har DOI, ISBN eller länk och en uppgift om när och hur den kontrollerades.
 
-## Säkerhet
+## Övningarna
 
-Alla övningar går att avbryta och att göra med låg intensitet. Andningsövningar kräver aldrig att du håller andan eller andas snabbt och djupt. Om det känns obehagligt att rikta uppmärksamheten mot kroppen kan du i stället rikta den mot omgivningen, till exempel genom att titta dig omkring och lägga märke till det du ser och hör. Fysiska moment kan göras mindre, sittande eller hoppas över. Där det behövs står det när du bör söka vård.
+Övningarna är utformade för friska vuxna och kan anpassas i intensitet. Andningsövningar kräver aldrig att man håller andan eller andas snabbt och djupt. Där en övning innebär ansträngning anges det.
 
 ## Avgränsning
 
-Restore är utbildning och friskvård, inte sjukvård, psykoterapi eller diagnostik. Den som har besvär som oroar, eller har varit mycket trött eller nedstämd under lång tid, bör kontakta vårdcentralen eller 1177. Vid akuta symtom: ring 112.
+Restore är utbildning och friskvård, inte sjukvård, psykoterapi eller diagnostik. Den som har besvär som oroar, eller har varit mycket trött eller nedstämd under lång tid, bör kontakta vårdcentralen eller 1177.
 
 ## Programmets status
 
@@ -35,6 +35,6 @@ Allt innehåll är skrivet för Restore. Ämnesval och övningstyper har delvis 
 
 ## Progression och data
 
-Ett kapitel markeras som klart med en grön bock när du har svarat rätt på minst fyra av fem frågor i självtestet. Du kan göra om testet hur många gånger du vill. Anteckningar från övningarna sparas separat.
+Ett kapitel markeras som klart med en grön bock när alla frågor i självtestet är rätt besvarade. Du kan göra om testet hur många gånger du vill. Anteckningar från övningarna sparas separat.
 
 Allt sparas bara i den här webbläsaren på den här enheten. Ingenting skickas till någon server, och det finns ingen inloggning. Uppgifterna synkroniseras därför inte mellan enheter och försvinner om webbläsarens webbplatsdata rensas. Under Inställningar kan du exportera, läsa in eller återställa dem.

@@ -1,68 +1,78 @@
 # Självtest för 1.3 Pulsen anpassar sig hela tiden.
 
 fragor:
-  - id: varfor-pulsen-okar
+  - id: kedjan-vid-uppresning
     typ: forstaelse
-    fraga: Varför ökar pulsen en stund när du reser dig upp?
+    fraga: Vilken ordning beskriver bäst vad som händer under sekunderna efter att du har rest dig upp?
     alternativ:
-      - För att musklerna i benen behöver mer syre när du står.
-      - För att det är ansträngande att stå.
-      - För att hjärtat alltid slår snabbare på dagen.
-      - För att blod samlas i benen och kroppen behöver hålla blodtrycket uppe.
-    ratt: 4
-    forklaring: >-
-      När du står upp drar tyngdkraften blod nedåt. Blodtrycket sjunker kort, blodtryckssensorer i stora kärl
-      registrerar det och hjärnstammen ökar pulsen. Förloppet kallas baroreflexen.
-
-  - id: mata-langre
-    typ: tillampning
-    fraga: Du vill jämföra din vilopuls mellan olika dagar. Vilket sätt att mäta ger mest pålitliga värden?
-    alternativ:
-      - Räkna i 10 sekunder och multiplicera med 6, när du har tid under dagen.
-      - Mäta direkt efter att du har gått i trappan, eftersom pulsen då syns tydligt.
-      - Räkna i 30 sekunder, sittande efter en minuts vila, vid samma tid varje dag.
-      - Mäta en gång och lita på det värdet.
-    ratt: 3
-    forklaring: >-
-      Ju längre du räknar, desto mindre blir felet av ett missat slag. Samma tid, samma kroppsställning och en
-      stunds vila gör att mätningarna går att jämföra.
-
-  - id: tva-matningar
-    typ: slutsats
-    fraga: Du mäter pulsen två gånger i rad i vila och får 66 och 72. Vilken slutsats är mest rimlig?
-    alternativ:
-      - Något är fel med hjärtat.
-      - Pulsen varierar naturligt och mätningen har ett visst fel, så skillnaden är normal.
-      - Den ena mätningen är fel och ska strykas.
-      - Du blev stressad mellan mätningarna.
+      - Pulsen ökar, blodtrycket stiger, blodtryckssensorerna registrerar det och pulsen sjunker.
+      - Blod samlas i benen, blodtrycket sjunker, blodtryckssensorerna signalerar mindre och pulsen ökar.
+      - Benmusklerna behöver mer syre, hjärnan ökar pulsen och blodtrycket stiger.
+      - Blodtrycket stiger av tyngdkraften, blodtryckssensorerna reagerar och pulsen ökar för att sänka det.
     ratt: 2
     forklaring: >-
-      Pulsen ändras hela tiden, även i vila, och varje mätning har ett litet fel. En skillnad på några slag
-      mellan två mätningar är normal och säger inget särskilt.
+      Tyngdkraften drar blod mot benen, så mindre blod återvänder till hjärtat och blodtrycket sjunker kort.
+      Blodtryckssensorerna skickar färre signaler, och hjärnstammen svarar med högre puls och sammandragna
+      kärl.
 
-  - id: puls-och-kansla
-    typ: slutsats
-    fraga: Din pulsklocka visar en högre puls än vanligt när du sitter vid skrivbordet. Vad kan du dra för
-      slutsats av det ensamt?
+  - id: matmetod
+    typ: tillampning
+    fraga: >-
+      Du vill veta om din vilopuls förändras under en period med regelbunden träning. Vilket upplägg ger mest
+      jämförbara värden?
     alternativ:
-      - Inte så mycket. Pulsen påverkas av kaffe, temperatur, sömn, känslor och mycket annat.
-      - Att du är stressad.
-      - Att du är sjuk.
-      - Att du borde träna mer.
-    ratt: 1
+      - Mäta varje kväll efter dagens sista måltid, eftersom det är då du har tid.
+      - Mäta på morgonen, sittande efter en minuts vila och före kaffet, i 30 sekunder.
+      - Mäta direkt efter varje träningspass, eftersom förändringen syns tydligast då.
+      - Mäta vid olika tider varje dag, så att du får ett medelvärde över dygnet.
+    ratt: 2
     forklaring: >-
-      Pulsen ensam kan inte avgöra vad en förändring beror på. Samma puls kan bero på kaffe, värme, förväntan
-      eller en nyss avslutad promenad. Den blir mer användbar när du jämför under liknande förhållanden.
+      Jämförbara värden kräver likartade förhållanden. Morgon, samma kroppsställning, vila före mätningen och
+      inget koffein minskar påverkan från dagens händelser. Längre räknetid minskar mätfelet.
 
-  - id: pulsklocka-i-rorelse
+  - id: rakna-fel
     typ: forstaelse
-    fraga: När är en vanlig pulsklocka på handleden minst pålitlig?
+    fraga: >-
+      Du räknar pulsen i 15 sekunder och multiplicerar med fyra. Vilka påståenden om mätningen stämmer?
     alternativ:
-      - När du sitter stilla.
-      - När du sover.
-      - Den är lika noggrann i alla situationer.
-      - När du rör dig mycket eller pulsen ändras snabbt.
-    ratt: 4
+      - Varje slag du missar eller räknar för mycket ger ett fel på fyra slag per minut.
+      - Felet blir mindre än om du räknar i 30 sekunder, eftersom pulsen hinner ändras mindre.
+      - Räknar du i stället i 30 sekunder och multiplicerar med två halveras felet.
+      - Ett missat slag påverkar resultatet med ett slag per minut.
+    ratt: [ 1, 3 ]
     forklaring: >-
-      Pulsklockor mäter med ljus genom huden. De är oftast ganska noggranna i vila men kan visa fel vid
-      rörelse och reagera med fördröjning när pulsen ändras snabbt.
+      Eftersom resultatet multipliceras med fyra blir varje räknefel fyra slag per minut. Med 30 sekunders
+      räkning och multiplikation med två blir felet två slag. Ett missat slag påverkar alltså mer än ett slag
+      per minut.
+
+  - id: hog-puls-i-mote
+    typ: slutsats
+    fraga: >-
+      Din pulsklocka visar 92 slag per minut under ett möte, mot vanligtvis runt 70 när du sitter still.
+      Vilken slutsats har bäst stöd?
+    alternativ:
+      - Du är stressad, eftersom förhöjd puls i vila är ett mått på stress.
+      - Klockan visar fel, eftersom pulsen inte stiger så mycket när man sitter.
+      - Något har höjt pulsen, men det kan lika gärna vara kaffe, värme, en nyss avslutad promenad eller
+        engagemang i samtalet.
+      - Du har sannolikt en infektion på gång.
+    ratt: 3
+    forklaring: >-
+      Pulsen påverkas av många faktorer. Ett förhöjt värde visar att något har förändrats, men inte vad.
+      Pulsen ensam är inte ett mått på stress.
+
+  - id: klockans-fel
+    typ: tillampning
+    fraga: >-
+      Du vill jämföra pulsen före och omedelbart efter en kort intervall i trappan. Vilka egenskaper hos en
+      pulsklocka på handleden kan ge en missvisande bild?
+    alternativ:
+      - Klockor mäter alltid för högt i vila.
+      - Den mäter sämre när handen och armen rör sig mycket.
+      - Den reagerar med fördröjning när pulsen ändras snabbt.
+      - Klockor mäter blodtryck snarare än puls.
+    ratt: [ 2, 3 ]
+    forklaring: >-
+      Optiska pulsmätare är oftast ganska noggranna i vila men sämre vid rörelse, och de reagerar med
+      fördröjning vid snabba förändringar. Båda delarna gäller kring en kort intervall. De mäter inte för högt
+      i vila och de mäter puls, inte blodtryck.

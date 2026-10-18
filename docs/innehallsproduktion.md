@@ -30,9 +30,7 @@ Inledning med en igenkännbar situation.
 Kort förklaring med källa [@cannon1929].
 
 ::: upptack 2 min Rubrik
-1. Numrerade steg.
-
-Ett alternativ med lägre intensitet eller fokus på omgivningen. Du kan avbryta när du vill.
+1. Numrerade, sakliga instruktioner.
 :::
 
 ::: reflektera
@@ -54,7 +52,7 @@ Frivilligt, kort och ihopfällt.
 
 Övriga rutor från 2.0 (`definition`, `fakta`, `modell`, `forenkling`, `rakneexempel`, `sakerhet`, `evidens`) och formler (`$...$`) fungerar fortfarande men används sparsamt.
 
-**Säkerhet i varje uppgift:** kan avbrytas, kan göras med låg intensitet, inget andningsuppehåll eller snabb djup andning, kroppsfokus kan ersättas av fokus på omgivningen, fysiska moment kan anpassas, och vårdhänvisning där det behövs.
+**Ton:** skriv för vuxna. Inga försiktighetsfraser som "om det känns obehagligt" eller "du kan avbryta när du vill", inga uppmuntrande tillrop och inga telefonnummer till vården i löptexten. Andningsövningar kräver aldrig andningsuppehåll eller snabb djup andning. Där en övning innebär ansträngning anges det i en mening.
 
 **Undvik** påståenden om att stress lagras i kroppen, att övningar läker nervsystemet, polyvagala förklaringar, ett "dåligt" sympatiskt och "bra" parasympatiskt nervsystem, och att en förnimmelse bevisar att något har förändrats.
 
@@ -64,10 +62,10 @@ Skapa `content/ovningar/<id>.md` med frontmatter (`titel`, `sammanfattning`, `sy
 
 ## 5. Självtest
 
-Skapa `content/kontroller/<id>.yaml` med fem frågor av typerna `situation`, `forstaelse`, `tillampning` och `slutsats`. Varje fråga har tre rimliga felalternativ som motsvarar vanliga missförstånd, och en förklaring som säger varför rätt svar är rätt. Fördela rätt svar över alternativens positioner. Inga beräkningar, medicinska detaljer eller terminologiska fällor.
+Skapa `content/kontroller/<id>.yaml` med fem frågor av typerna `situation`, `forstaelse`, `tillampning` och `slutsats`. Ungefär två frågor har flera rätta svar: ange då `ratt: [1, 3]`, och formulera frågan som "Vilka …". Felalternativen ska vara rimliga missförstånd. Förklaringen säger varför rätt svar är rätt och varför ett vanligt felsvar är fel. Fördela rätt svar över alternativens positioner. Inga beräkningar, medicinska detaljer eller terminologiska fällor. Grön bock kräver alla rätt.
 
 ## 6. Publicera
 
-1. Sätt `innehall: producerad`, `kontroll: klar`, `ovningar` och `studietid` (teori + Upptäck + reflektion + självtest + Tillämpa, avrundat).
+1. Sätt `innehall: producerad`, `kontroll: klar` och `ovningar`. Studietiden räknas fram automatiskt: läsning + Upptäck + en minut per reflektionsruta och fråga.
 2. Kör `npm test`, `npm run build` och `npm run e2e`. Bygget stoppar om mallen inte följs.
 3. Läs kapitlet på desktop och mobil, och gör alla Upptäck-uppgifter själv.
