@@ -39,7 +39,8 @@ for (const k of kallor) {
     const a = norm(title)
     const b = norm(k.titel)
     const titleOk = a.includes(b.slice(0, 40)) || b.includes(a.slice(0, 40))
-    const yearOk = year === k.ar
+    // Crossref anger ibland året för den elektroniska utgåvan, ett år före tryckt nummer.
+    const yearOk = Math.abs(year - k.ar) <= 1
     if (titleOk && yearOk) console.log(`ok  ${k.id}`)
     else {
       problems++

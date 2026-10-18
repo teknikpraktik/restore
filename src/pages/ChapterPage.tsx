@@ -56,9 +56,9 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
     ? [
         { id: 'larandemal', text: 'Lärandemål', level: 2 },
         ...chapter.headings,
-        ...(exercises.length ? [{ id: 'laborationer', text: 'Laborationer', level: 2 as const }] : []),
+        ...(exercises.length ? [{ id: 'ovningar', text: 'Längre övningar', level: 2 as const }] : []),
         ...(sources.length ? [{ id: 'referenser', text: 'Referenser', level: 2 as const }] : []),
-        ...(quiz ? [{ id: 'kunskapskontroll', text: 'Kunskapskontroll', level: 2 as const }] : []),
+        ...(quiz ? [{ id: 'sjalvtest', text: 'Självtest', level: 2 as const }] : []),
       ]
     : []
 
@@ -78,24 +78,24 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
 
         {produced ? (
           <p className="chapter-meta">
-            Studietid cirka {formatMinutes(chapter.minutes)}
-            {chapter.readingMinutes ? ` · Läsning cirka ${chapter.readingMinutes} min` : ''}
-            {exercises.length ? ` · ${exercises.length} laborationer` : ''}
-            {quiz ? ` · Kunskapskontroll med ${quiz.questions} frågor` : ''}
+            Läsning cirka {chapter.readingMinutes ?? 1} min
+            {chapter.practiceMinutes ? ` · Övningar i texten cirka ${chapter.practiceMinutes} min` : ''}
+            {quiz ? ` · Självtest med ${quiz.questions} frågor` : ''}
+            {` · Totalt cirka ${formatMinutes(chapter.minutes)}`}
           </p>
         ) : (
           <div className="notice" role="note">
             <p className="notice-title">Innehållet är under produktion</p>
             <p>
               Underkapitlet ingår i kursplanen men är ännu inte skrivet. Här visas ämnesbeskrivningen och de planerade
-              lärandemålen. Kunskapskontroll och laborationer publiceras när innehållet är färdigt och granskat.
+              lärandemålen. Självtest och övningar publiceras när innehållet är färdigt och granskat.
             </p>
           </div>
         )}
 
         {passedAt && (
           <p className="chapter-passed">
-            <CheckMark label="Godkänd" /> Kunskapskontrollen godkänd {formatDate(passedAt)}
+            <CheckMark label="Godkänd" /> Självtestet godkänt {formatDate(passedAt)}
           </p>
         )}
 
@@ -130,11 +130,11 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
         {produced && <Loading state={content}>{(c) => <Prose html={c.html} className="theory" />}</Loading>}
 
         {exercises.length > 0 && (
-          <section aria-labelledby="laborationer" className="chapter-section">
-            <h2 id="laborationer">Laborationer</h2>
+          <section aria-labelledby="ovningar" className="chapter-section">
+            <h2 id="ovningar">Längre övningar</h2>
             <p>
-              Laborationerna låter dig undersöka kapitlets mekanismer i din egen kropp. De finns också i
-              övningsbiblioteket. Genomförda laborationer registreras separat från kunskapskontrollen.
+              De här övningarna tar lite längre tid och kan göras senare, till exempel under veckan. De finns också
+              i övningsbiblioteket, där du kan anteckna vad du märkte.
             </p>
             <ol className="exercise-list">
               {exercises.map((e) => {
@@ -177,8 +177,8 @@ function ChapterView({ chapter }: { chapter: Chapter }) {
         )}
 
         {quiz && (
-          <section aria-labelledby="kunskapskontroll" className="chapter-section">
-            <h2 id="kunskapskontroll">Kunskapskontroll</h2>
+          <section aria-labelledby="sjalvtest" className="chapter-section">
+            <h2 id="sjalvtest">Självtest</h2>
             <Loading state={content}>
               {(c) => c.quiz && <Quiz quiz={c.quiz} theoryAnchor={chapter.headings[0]?.id ?? 'larandemal'} />}
             </Loading>

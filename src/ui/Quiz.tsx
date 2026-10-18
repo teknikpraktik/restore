@@ -7,7 +7,7 @@ import { CheckMark, formatDate, useFocusWhen } from './common'
 const LETTERS = 'ABCDE'
 
 /**
- * Kunskapskontroll med automatisk rättning. Obegränsat antal försök, ingen tidsgräns.
+ * Självtest med automatisk rättning. Obegränsat antal försök, ingen tidsgräns.
  * Förklaringar visas efter rättning.
  */
 export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: string }) {
@@ -45,12 +45,13 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
   return (
     <div className="quiz">
       <p className="quiz-intro">
-        {quiz.questions.length} frågor. Minst {need} rätta svar ({Math.round(quiz.passThreshold * 100)} %) krävs för
-        godkänt. Ingen tidsgräns och obegränsat antal försök. Förklaringarna visas när kontrollen har rättats.
+        Självtestet hjälper dig att se vad du har förstått. {quiz.questions.length} frågor, de flesta om vardagliga
+        situationer. Med {need} rätta svar markeras kapitlet som klart. Du kan göra om testet hur många gånger du vill,
+        och efter varje försök får du en förklaring till varje fråga.
       </p>
       {isPassed(progress, quiz.chapterId) && passedAt && (
         <p className="quiz-status">
-          <CheckMark label="Godkänd" /> Godkänd {formatDate(passedAt)}. Du kan göra om kontrollen när du vill; ett
+          <CheckMark label="Godkänd" /> Godkänd {formatDate(passedAt)}. Du kan göra om testet när du vill; ett
           senare försök tar inte bort godkännandet.
         </p>
       )}
@@ -63,15 +64,15 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
           </p>
           <p>
             {result.passed
-              ? 'Underkapitlet är markerat som avklarat i kursnavigeringen. Läs förklaringarna nedan, även för de frågor du besvarade rätt.'
-              : `Minst ${need} rätta svar krävs. Läs förklaringarna, repetera de delar av teorin som frågorna gäller och gör ett nytt försök.`}
+              ? 'Kapitlet är markerat som klart i kursnavigeringen. Läs gärna förklaringarna nedan, även för de frågor du besvarade rätt.'
+              : `Med ${need} rätta svar markeras kapitlet som klart. Läs förklaringarna, gå gärna tillbaka till texten och försök igen när du vill.`}
           </p>
           <p className="quiz-actions">
             <button type="button" className="button" onClick={retry}>
-              Gör om kontrollen
+              Gör om testet
             </button>
             <a className="button button-secondary" href={`#${theoryAnchor}`}>
-              Repetera teorin
+              Läs texten igen
             </a>
           </p>
         </div>
@@ -138,12 +139,12 @@ export function Quiz({ quiz, theoryAnchor }: { quiz: QuizData; theoryAnchor: str
           <div className="quiz-submit">
             {missing > 0 && (
               <p className="quiz-missing" role="alert">
-                {missing === 1 ? 'En fråga är obesvarad.' : `${missing} frågor är obesvarade.`} Besvara alla frågor
+                {missing === 1 ? 'En fråga är obesvarad.' : `${missing} frågor är obesvarade.`} Svara på alla frågor
                 innan du rättar.
               </p>
             )}
             <button type="submit" className="button">
-              Rätta kontrollen
+              Rätta testet
             </button>
           </div>
         )}

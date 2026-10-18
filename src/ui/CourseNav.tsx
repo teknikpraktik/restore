@@ -94,7 +94,7 @@ export function CourseNav({ onNavigate, idPrefix = 'nav' }: { onNavigate?: () =>
                           {c.title}
                           {planned && <span className="visually-hidden"> (under produktion)</span>}
                         </span>
-                        {done && <CheckMark label="Godkänd kunskapskontroll" />}
+                        {done && <CheckMark label="Godkänd självtest" />}
                       </Link>
                     </li>
                   )

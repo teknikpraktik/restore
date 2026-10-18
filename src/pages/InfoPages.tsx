@@ -31,7 +31,7 @@ export function ProgressPage() {
     <div className="page">
       <PageTitle>Min progression</PageTitle>
       <p className="lead">
-        En översikt över godkända underkapitel, genomförda kunskapskontroller och registrerade laborationer.
+        En översikt över godkända underkapitel, genomförda självtester och registrerade övningar.
         Uppgifterna finns bara i den här webbläsaren.
       </p>
 
@@ -43,11 +43,11 @@ export function ProgressPage() {
           </dd>
         </div>
         <div>
-          <dt>Genomförda kunskapskontroller</dt>
+          <dt>Genomförda självtester</dt>
           <dd>{attempts.length} försök</dd>
         </div>
         <div>
-          <dt>Registrerade laborationer</dt>
+          <dt>Registrerade övningar</dt>
           <dd>
             {registrations} genomföranden av {exerciseLogs.length} olika övningar
           </dd>
@@ -107,7 +107,7 @@ export function ProgressPage() {
         <p>Inga underkapitel är godkända ännu.</p>
       )}
 
-      <h2>Genomförda kunskapskontroller</h2>
+      <h2>Genomförda självtester</h2>
       {attempts.length ? (
         <ul className="plain-list">
           {attempts.map((a) => {
@@ -121,12 +121,12 @@ export function ProgressPage() {
           })}
         </ul>
       ) : (
-        <p>Inga kunskapskontroller genomförda ännu.</p>
+        <p>Inga självtester genomförda ännu.</p>
       )}
 
-      <h2>Registrerade laborationer</h2>
+      <h2>Registrerade övningar</h2>
       <p className="small">
-        Registrerade laborationer redovisas separat. En godkänd kunskapskontroll visar förståelse av teorin, inte att
+        Registrerade övningar redovisas separat. En godkänd självtest visar förståelse av teorin, inte att
         en praktisk färdighet behärskas.
       </p>
       {exerciseLogs.length ? (
@@ -142,7 +142,7 @@ export function ProgressPage() {
           })}
         </ul>
       ) : (
-        <p>Inga laborationer registrerade ännu.</p>
+        <p>Inga övningar registrerade ännu.</p>
       )}
 
       <p>
@@ -166,7 +166,7 @@ export function SourcesPage() {
     <div className="page">
       <PageTitle>Källor</PageTitle>
       <p className="lead">
-        Samtliga källor som citeras i kursens teori och laborationer, ordnade per modul. Varje källa har DOI, ISBN eller
+        Samtliga källor som citeras i kursens teori och övningar, ordnade per modul. Varje källa har DOI, ISBN eller
         länk så att den kan kontrolleras.
       </p>
       <p>
@@ -210,6 +210,29 @@ export function SourcesPage() {
           </section>
         )
       })}
+      {(() => {
+        const background = sortSources(all.filter((s) => !s.chapters.length && match(s)))
+        if (!background.length) return null
+        return (
+          <section aria-labelledby="kallor-underlag" className="sources-module">
+            <h2 id="kallor-underlag">Övrigt underlag</h2>
+            <p className="small">
+              Källor som används som underlag för kursen men inte citeras i den text som är publicerad nu.
+            </p>
+            <ol className="references">
+              {background.map((s) => (
+                <li key={s.id} id={`kalla-${s.id}`}>
+                  <span dangerouslySetInnerHTML={{ __html: s.citation }} />
+                  <span className="reference-meta">
+                    {s.type} ·{' '}
+                    {s.verified ? `Kontrollerad ${s.verified.date}: ${s.verified.method}` : 'Overifierad källa.'}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )
+      })()}
       {needle && !all.some(match) && <p>Inga källor matchar sökningen.</p>}
     </div>
   )
@@ -262,7 +285,7 @@ export function SettingsPage() {
       <PageTitle>Inställningar</PageTitle>
       <h2>Lokal lagring</h2>
       <p>
-        Progressionen, kunskapskontrollernas resultat och laborationsprotokollen sparas bara i den här webbläsaren på den
+        Progressionen, självtesternas resultat och övningsprotokollen sparas bara i den här webbläsaren på den
         här enheten. Ingenting skickas till någon server. Data synkroniseras inte mellan enheter eller webbläsare och
         försvinner om webbläsarens webbplatsdata rensas.
       </p>
@@ -292,7 +315,7 @@ export function SettingsPage() {
 
       <h2>Återställ progressionen</h2>
       <p>
-        Återställningen tar bort alla godkända kunskapskontroller, alla försök och alla laborationsprotokoll i den här
+        Återställningen tar bort alla godkända självtester, alla försök och alla övningsanteckningar i den här
         webbläsaren. Exportera först om du vill kunna återställa dem senare.
       </p>
       {confirming ? (

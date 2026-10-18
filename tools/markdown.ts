@@ -68,7 +68,12 @@ export type RenderEnv = {
   headings: Heading[]
   cited: string[]
   errors: string[]
+  /** Uppskattad tid i minuter för varje Upptäck-uppgift. */
+  practice: number[]
+  counts: { reflektera: number; tillampa: number }
 }
+
+const newEnv = (): RenderEnv => ({ headings: [], cited: [], errors: [], practice: [], counts: { reflektera: 0, tillampa: 0 } })
 
 export function createMarkdown(resolveCite: CiteResolver) {
   const md = new MarkdownIt({ html: true, linkify: false, typographer: false })
@@ -98,6 +103,54 @@ export function createMarkdown(resolveCite: CiteResolver) {
       return `<aside class="box box-evidens box-evidens-${level}"><p class="box-label">${EVIDENCE_BOX[level]}</p>${
         title ? `<p class="box-title">${md.renderInline(title)}</p>` : ''
       }<div class="box-body">\n`
+    },
+  })
+
+  // Den pedagogiska sekvensen i Restore 3.0: Upptäck (kort praktisk uppgift med tidsangivelse),
+  // Reflektera, Tillämpa i vardagen, och frivillig Fördjupning som är ihopfälld.
+  md.use(container, 'upptack', {
+    validate: (params: string) => params.trim().split(/\s+/)[0] === 'upptack',
+    render: (tokens: any[], idx: number, _opts: unknown, env: RenderEnv) => {
+      const t = tokens[idx]
+      if (t.nesting !== 1) return '</div></aside>\n'
+      const rest = t.info.trim().slice('upptack'.length).trim()
+      const m = rest.match(/^(\d+)(?:–(\d+))? min\s*(.*)$/)
+      if (!m) env.errors?.push(`Upptäck-uppgiften "${rest}" saknar tidsangivelse (till exempel "::: upptack 2 min Rubrik")`)
+      const [lo, hi] = m ? [Number(m[1]), Number(m[2] ?? m[1])] : [0, 0]
+      env.practice?.push((lo + hi) / 2)
+      const title = m ? m[3] : rest
+      const time = m ? `${m[1]}${m[2] ? `–${m[2]}` : ''} min` : ''
+      return `<aside class="box box-upptack"><p class="box-label">Upptäck${time ? ` · ${time}` : ''}</p>${
+        title ? `<p class="box-title">${md.renderInline(title)}</p>` : ''
+      }<div class="box-body">\n`
+    },
+  })
+  for (const [name, label] of [
+    ['reflektera', 'Reflektera'],
+    ['tillampa', 'Tillämpa i vardagen'],
+  ] as const) {
+    md.use(container, name, {
+      validate: (params: string) => params.trim().split(/\s+/)[0] === name,
+      render: (tokens: any[], idx: number, _opts: unknown, env: RenderEnv) => {
+        const t = tokens[idx]
+        if (t.nesting !== 1) return '</div></aside>\n'
+        if (env.counts) env.counts[name]++
+        const title = t.info.trim().slice(name.length).trim()
+        return `<aside class="box box-${name}"><p class="box-label">${label}</p>${
+          title ? `<p class="box-title">${md.renderInline(title)}</p>` : ''
+        }<div class="box-body">\n`
+      },
+    })
+  }
+  md.use(container, 'fordjupning', {
+    validate: (params: string) => params.trim().split(/\s+/)[0] === 'fordjupning',
+    render: (tokens: any[], idx: number) => {
+      const t = tokens[idx]
+      if (t.nesting !== 1) return '</div></details>\n'
+      const title = t.info.trim().slice('fordjupning'.length).trim()
+      return `<details class="fordjupning"><summary><span class="box-label">Fördjupning, frivillig</span> ${md.renderInline(
+        title,
+      )}</summary><div class="box-body">\n`
     },
   })
 
@@ -183,17 +236,23 @@ export function createMarkdown(resolveCite: CiteResolver) {
 
   return {
     render(src: string) {
-      const env: RenderEnv = { headings: [], cited: [], errors: [] }
+      const env = newEnv()
       const html = md.render(preprocess(src, env), env)
       return { html, ...env }
     },
     renderInline(src: string) {
-      const env: RenderEnv = { headings: [], cited: [], errors: [] }
+      const env = newEnv()
       const html = md.renderInline(preprocess(src, env), env)
       return { html, ...env }
     },
   }
 }
+
+/** Rutor som inte räknas som obligatorisk teori: praktiska uppgifter, reflektion och fördjupning. */
+const NON_THEORY = /^::: (upptack|reflektera|tillampa|fordjupning)\b[^\n]*\n[\s\S]*?^:::\s*$/gm
+
+/** Den obligatoriska teorin, det vill säga texten utan praktiska uppgifter, reflektion och fördjupning. */
+export const theoryText = (src: string) => src.replace(/\r\n/g, '\n').replace(NON_THEORY, ' ')
 
 /** Ungefärligt antal ord i löptext, utan formler och markup. */
 export function wordCount(src: string) {

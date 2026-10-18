@@ -17,6 +17,8 @@ export type Module = {
   number: number
   title: string
   description: string
+  /** Vad deltagaren ska förstå, upptäcka eller göra annorlunda efter modulen. */
+  goals: string[]
   chapters: string[]
 }
 
@@ -37,13 +39,30 @@ export type Chapter = {
   headings: Heading[]
   /** Källor som citeras i teorin, i den ordning de först förekommer. */
   sources: string[]
-  /** Läsning av teorin i minuter, räknat på ordantal. */
+  /** Läsning av den obligatoriska teorin i minuter, räknat på ordantal. */
   readingMinutes?: number
+  /** Antal ord obligatorisk teori (utan uppgifter, reflektion och fördjupning). */
+  theoryWords?: number
+  /** Uppskattad tid för kapitlets Upptäck-uppgifter. */
+  practiceMinutes?: number
+  /** Antal uppgifter av varje slag i kapitlet. */
+  tasks?: { upptack: number; reflektera: number; tillampa: number }
 }
 
-export type QuestionKind = 'begrepp' | 'orsak-verkan' | 'tillampning' | 'berakning' | 'resonemang'
+export type QuestionKind =
+  | 'situation'
+  | 'forstaelse'
+  | 'tillampning'
+  | 'slutsats'
+  | 'begrepp'
+  | 'orsak-verkan'
+  | 'berakning'
+  | 'resonemang'
 
 export const QUESTION_KIND_LABEL: Record<QuestionKind, string> = {
+  situation: 'Vardagssituation',
+  forstaelse: 'Förståelse',
+  slutsats: 'Rimlig slutsats',
   begrepp: 'Begreppsfråga',
   'orsak-verkan': 'Orsak och verkan',
   tillampning: 'Tillämpning',
@@ -174,7 +193,7 @@ export type CourseMeta = {
   chapters: Record<string, Chapter>
   /** Alla kapitel-id i kursordning. */
   order: string[]
-  /** Antal frågor och godkäntgräns för varje färdig kunskapskontroll. */
+  /** Antal frågor och godkäntgräns för varje färdigt självtest. */
   quizzes: Record<string, { questions: number; passThreshold: number }>
   exercises: Record<string, Exercise>
   sources: Record<string, Source>

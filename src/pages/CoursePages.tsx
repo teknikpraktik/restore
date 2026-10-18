@@ -37,7 +37,7 @@ export function HomePage() {
     <div className="page home">
       <header className="home-head">
         <h1 tabIndex={-1}>Restore</h1>
-        <p className="home-tagline">En vetenskaplig utbildning om kroppens reglersystem, belastning och återhämtning.</p>
+        <p className="home-tagline">Ett praktiskt och vetenskapligt förankrat program för stress och återhämtning.</p>
         <p>
           <Link to={chapterHref(target.id)} className="button button-large">
             {started ? 'Fortsätt utbildningen' : 'Börja utbildningen'}
@@ -54,10 +54,10 @@ export function HomePage() {
       <Prose html={page.html} />
 
       <section aria-labelledby="kunskapsomraden" className="home-modules">
-        <h2 id="kunskapsomraden">Kunskapsområden</h2>
+        <h2 id="kunskapsomraden">Kursens moduler</h2>
         <p>
-          Kursen består av {modules.length} moduler med sammanlagt {total} underkapitel, ordnade från fysiologiska
-          grundprinciper till praktisk tillämpning.
+          Kursen består av {modules.length} moduler med sammanlagt {total} underkapitel, från hur kroppen
+          fungerar till en personlig plan för vardagen.
         </p>
         <ol className="module-list">
           {modules.map((m) => (
@@ -77,7 +77,7 @@ export function HomePage() {
         <h2 id="status">Innehållets status</h2>
         <p>
           Hela kursstrukturen är publicerad och alla underkapitel kan öppnas. Färdigproducerat innehåll med teori,
-          laborationer och kunskapskontroll finns i dag för {produced.length} av {total} underkapitel:
+          övningar och självtest finns i dag för {produced.length} av {total} underkapitel:
         </p>
         <ul>
           {produced.map((c) => (
@@ -102,7 +102,7 @@ export function CourseOverviewPage() {
       <PageTitle>Kursens innehåll</PageTitle>
       <p className="lead">
         {modules.length} moduler och {chapterOrder.length} underkapitel. Underkapitel med grön bock har godkänd
-        kunskapskontroll. Underkapitel i grå text är under produktion.
+        självtest. Underkapitel i grå text är under produktion.
       </p>
       {modules.map((m) => (
         <section key={m.id} className="overview-module" aria-labelledby={`modul-${m.id}`}>
@@ -169,8 +169,18 @@ export function ModulePage() {
       <PageTitle eyebrow={`Modul ${m.number} av ${modules.length}`}>{m.title}</PageTitle>
       <p className="lead">{m.description}</p>
       <p className="chapter-meta">
-        {chapters.length} underkapitel · {produced} färdigproducerade · {passed} godkända
+        {chapters.length} underkapitel · {produced} färdigproducerade · {passed} klara
       </p>
+      {m.goals.length > 0 && (
+        <>
+          <h2>Efter modulen</h2>
+          <ul className="objectives">
+            {m.goals.map((g) => (
+              <li key={g}>{g}</li>
+            ))}
+          </ul>
+        </>
+      )}
       <h2>Underkapitel</h2>
       <ChapterTable chapters={chapters} passed={(id) => isPassed(progress, id)} detailed />
     </div>

@@ -24,7 +24,7 @@ import type {
   Source,
   SourceType,
 } from '../src/course/types.ts'
-import { createMarkdown, escapeHtml, slug, wordCount } from './markdown.ts'
+import { createMarkdown, escapeHtml, slug, theoryText, wordCount } from './markdown.ts'
 
 export const PASS_THRESHOLD = 0.8
 export const QUESTIONS_MIN = 5
@@ -74,7 +74,21 @@ const SOURCE_TYPES: SourceType[] = [
   'konsensusdokument',
 ]
 
-const QUESTION_KINDS: QuestionKind[] = ['begrepp', 'orsak-verkan', 'tillampning', 'berakning', 'resonemang']
+const QUESTION_KINDS: QuestionKind[] = [
+  'situation',
+  'forstaelse',
+  'tillampning',
+  'slutsats',
+  'begrepp',
+  'orsak-verkan',
+  'berakning',
+  'resonemang',
+]
+
+/** Läshastighet i ord per minut för uppskattning av teorins lästid. */
+export const WORDS_PER_MINUTE = 150
+/** Minst en Upptäck-uppgift per så här många minuters obligatorisk teori. */
+export const THEORY_MINUTES_PER_TASK = 7
 
 /** Standardstrukturen för övningar (avsnitt 4.1). Utrustning skrivs i frontmatter. */
 export const EXERCISE_SECTIONS = [
@@ -103,6 +117,11 @@ export const FORBIDDEN_PHRASES = [
   'återställ ditt nervsystem',
   'balansera ditt nervsystem',
   'detox',
+  'lagras i kroppen',
+  'läker nervsystemet',
+  'läka nervsystemet',
+  'frigör stress',
+  'stress frigörs',
 ]
 
 type Raw = Record<string, any>
@@ -297,9 +316,10 @@ export function buildCourse(root = 'content'): CourseBuild {
     if (moduleIds.has(m.id)) err(mwhere, 'id förekommer två gånger')
     moduleIds.add(m.id)
     if (!m.titel || !m.beskrivning) err(mwhere, 'titel och beskrivning krävs')
+    if (!Array.isArray(m.mal) || !m.mal.length) err(mwhere, 'modulen saknar mål (vad deltagaren ska förstå, upptäcka eller göra)')
     const kapitel = (m.kapitel ?? []) as Raw[]
     if (!kapitel.length) err(mwhere, 'modulen saknar underkapitel')
-    const mod: Module = { id: m.id, number: mi + 1, title: m.titel, description: m.beskrivning, chapters: [] }
+    const mod: Module = { id: m.id, number: mi + 1, title: m.titel, description: m.beskrivning, goals: m.mal ?? [], chapters: [] }
 
     kapitel.forEach((k, ki) => {
       const where = `kursplan.yaml (${k.id})`
@@ -339,8 +359,19 @@ export function buildCourse(root = 'content'): CourseBuild {
           chapterContent[k.id] = { html: out.html }
           chapter.headings = out.headings
           chapter.sources = out.cited
-          chapter.readingMinutes = Math.max(1, Math.round(wordCount(src) / 150))
+          const body = splitFrontmatter(src).body
+          chapter.theoryWords = wordCount(theoryText(body))
+          chapter.readingMinutes = Math.max(1, Math.round(chapter.theoryWords / WORDS_PER_MINUTE))
+          chapter.practiceMinutes = Math.round(out.practice.reduce((a, b) => a + b, 0))
+          chapter.tasks = { upptack: out.practice.length, ...out.counts }
           if (!out.headings.length) err(theoryRel, 'teorin saknar rubriker')
+          // Den pedagogiska mallen: Förstå, Upptäck, Reflektera, Tillämpa.
+          if (!out.practice.length) err(theoryRel, 'kapitlet saknar Upptäck-uppgift')
+          if (!out.counts.reflektera) err(theoryRel, 'kapitlet saknar Reflektera-ruta')
+          if (!out.counts.tillampa) err(theoryRel, 'kapitlet saknar Tillämpa-ruta')
+          const needed = Math.ceil(chapter.readingMinutes / THEORY_MINUTES_PER_TASK)
+          if (out.practice.length < needed)
+            err(theoryRel, `${chapter.readingMinutes} minuters teori kräver minst ${needed} Upptäck-uppgifter (har ${out.practice.length})`)
         }
       } else {
         if (exists(theoryRel)) err(where, 'kapitel under produktion får inte ha en teorifil')
@@ -383,7 +414,7 @@ export function buildCourse(root = 'content'): CourseBuild {
     c.sources.forEach((s) => attach(s, id))
     for (const e of c.exercises) exercises[e]?.sources.forEach((s) => attach(s, id))
   }
-  for (const s of Object.values(sources)) if (!s.chapters.length) err(`kallor.yaml (${s.id})`, 'källan citeras inte någonstans')
+  // Källor som inte citeras i den publicerade texten finns kvar som underlag (Restore 3.0).
   for (const e of Object.values(exercises)) if (!e.chapters.length) err(`ovningar/${e.id}.md`, 'övningen används inte i något kapitel')
 
   // Sidor

@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'Restore',
         short_name: 'Restore',
         lang: 'sv',
-        description: 'Vetenskaplig utbildning om kroppens reglersystem, belastning och återhämtning.',
+        description: 'Praktiskt och vetenskapligt förankrat program för stress och återhämtning.',
         display: 'standalone',
         start_url: '/',
         background_color: '#FFFFFF',

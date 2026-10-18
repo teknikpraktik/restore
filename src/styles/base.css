@@ -686,6 +686,47 @@ th:last-child {
 .box-modell {
   border-style: dashed;
 }
+/* Den pedagogiska sekvensen: Upptäck, Reflektera, Tillämpa, Fördjupning */
+.box-upptack {
+  border: 1px solid var(--text);
+}
+.box-reflektera {
+  border: 0;
+  border-left: 2px solid var(--line-strong);
+  padding: 4px 0 4px 18px;
+}
+.box-tillampa {
+  border: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.box-upptack ol,
+.box-upptack ul,
+.box-reflektera ul,
+.box-tillampa ul {
+  margin-bottom: 0.6em;
+}
+.fordjupning {
+  margin: 1.8em 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.fordjupning > summary {
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: 600;
+  list-style-position: outside;
+}
+.fordjupning > summary .box-label {
+  display: inline;
+  margin-right: 6px;
+}
+.fordjupning > .box-body {
+  padding: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
 .box-label {
   font-size: 0.72rem;
   font-weight: 650;
@@ -814,7 +855,7 @@ th:last-child {
   cursor: pointer;
 }
 
-/* Kunskapskontroll */
+/* Självtest */
 
 .quiz-intro {
   color: var(--text-2);

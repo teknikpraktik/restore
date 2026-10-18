@@ -19,11 +19,11 @@ export const allChapters = () => chapterOrder.map((id) => course.chapters[id])
 export const producedChapters = () => allChapters().filter((c) => c.content === 'producerad')
 export const allExercises = () => Object.values(course.exercises).sort((a, b) => a.title.localeCompare(b.title, 'sv'))
 
-/** Ett kapitel kan godkännas bara om både innehåll och kunskapskontroll är färdigproducerade. */
+/** Ett kapitel kan godkännas bara om både innehåll och självtest är färdigproducerade. */
 export const isPassable = (c: Chapter | undefined) =>
   !!c && c.content === 'producerad' && c.quiz === 'klar' && !!course.quizzes[c.id] && !!chapterLoaders[c.id]
 
-// Teori, kunskapskontroller och övningstexter ligger i egna filer som laddas när de behövs.
+// Teori, självtester och övningstexter ligger i egna filer som laddas när de behövs.
 
 const chapterCache = new Map<string, Promise<ChapterContent>>()
 const exerciseCache = new Map<string, Promise<ExerciseContent>>()

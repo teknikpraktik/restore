@@ -11,7 +11,7 @@ export type QuizResult = {
   perQuestion: boolean[]
 }
 
-/** Rättar en kunskapskontroll. Obesvarade frågor räknas som fel. */
+/** Rättar ett självtest. Obesvarade frågor räknas som fel. */
 export function gradeQuiz(quiz: Quiz, answers: Answers): QuizResult {
   const perQuestion = quiz.questions.map((q, i) => answers[i] === q.correct)
   const correct = perQuestion.filter(Boolean).length

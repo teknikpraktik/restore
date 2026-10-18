@@ -92,12 +92,12 @@ export function ExerciseLibraryPage() {
     <div className="page">
       <PageTitle>Övningsbibliotek</PageTitle>
       <p className="lead">
-        Laborationer, mätningar och träningsprotokoll från kursens underkapitel. Varje övning beskriver syfte,
+        Övningar, mätningar och träningsprotokoll från kursens underkapitel. Varje övning beskriver syfte,
         teoretisk bakgrund, genomförande, vad som ska observeras, hur resultatet kan tolkas och vilket evidensläge
         som gäller.
       </p>
       <p className="notice-inline">
-        Biblioteket innehåller i dag de {all.length} laborationer som hör till de färdigproducerade underkapitlen.
+        Biblioteket innehåller i dag de {all.length} övningar som hör till de färdigproducerade underkapitlen.
         Nya övningar publiceras tillsammans med respektive underkapitel.
       </p>
 
@@ -177,8 +177,8 @@ export function ExercisePage() {
       <PageTitle
         eyebrow={
           back ? (
-            <Link to={`${chapterHref(back.id)}#laborationer`}>
-              Laboration i {back.number} {back.title}
+            <Link to={`${chapterHref(back.id)}#ovningar`}>
+              Övning i {back.number} {back.title}
             </Link>
           ) : (
             <Link to="/ovningar">Övningsbibliotek</Link>
@@ -250,7 +250,7 @@ export function ExercisePage() {
             </Link>
           </span>
         ))}
-        . {firstChapter && 'Läs teorin i kapitlet innan du genomför laborationen.'}
+        . {firstChapter && 'Läs teorin i kapitlet innan du gör övningen.'}
       </p>
     </div>
   )
@@ -278,7 +278,7 @@ function ExerciseLog({ exercise: e }: { exercise: Exercise }) {
     <section aria-labelledby="protokoll" className="exercise-section exercise-log">
       <h2 id="protokoll">Protokoll</h2>
       <p>
-        Registrera att du har genomfört laborationen och, om du vill, dina mätvärden. Uppgifterna sparas bara i den här
+        Registrera att du har gjort övningen och, om du vill, vad du mätte eller märkte. Uppgifterna sparas bara i den här
         webbläsaren. Alla fält är frivilliga.
       </p>
       <form onSubmit={submit} className="log-form">
