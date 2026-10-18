@@ -81,14 +81,25 @@ Kursens metadata ingår i huvudpaketet (cirka 430 kB, 128 kB komprimerat, inklus
 
 ## 6. Driftsättning
 
-Vercels Git-integration bygger varje push i projektet `teknikpraktik/restore` och rapporterar resultatet till GitHub. `vercel.json` skriver om alla adresser till `index.html` så att direktlänkar fungerar. Ingen server, databas eller miljövariabel används.
+Produktionsdomän: **<https://restore-your-mind.vercel.app>**
 
-Läget 18 oktober 2026:
+Vercels Git-integration bygger varje push i projektet `teknikpraktik/restore` och rapporterar resultatet till GitHub. `main` är produktionsgren. `vercel.json` skriver om alla adresser till `index.html` så att direktlänkar fungerar. Ingen server, databas eller miljövariabel används.
 
-- Förhandsversionen av `feature/restore-2` (commit `30342ea`) byggdes utan fel enligt Vercels status på GitHub.
-- Alla projektets `*.vercel.app`-adresser kräver inloggning (Vercel Authentication) och kunde inte granskas utan behörighet.
-- Push till `main` gav ingen produktionsdeployment. Den senaste produktionsdeploymenten är från 3 oktober (commit `e45aa0d`). Projektets produktionsgren eller inställningar för automatisk driftsättning behöver kontrolleras i Vercel.
-- `restore-delta.vercel.app`, som anges som hemsida i GitHub-förrådet, visar en annan webbplats och hör inte till projektet.
+Vercel Authentication är aktiverat med Standard Protection. Produktionsdomänen är därför publik, medan förhandsversioner och enskilda deploymentadresser (`restore-<hash>-teknikpraktik.vercel.app`, `restore-teknikpraktik.vercel.app`) kräver inloggning. Använd bara produktionsdomänen för att verifiera produktionen.
+
+`restore-delta.vercel.app`, som anges som hemsida i GitHub-förrådet, är en annan webbplats och hör inte till projektet.
+
+### Verifiering av produktion, 18 oktober 2026
+
+Produktionsdeployment av commit `7e9f534`.
+
+- `https://restore-your-mind.vercel.app/` svarar `200 OK` utan omdirigering eller inloggning.
+- Webbplatsen levererar samma bygge som det lokala produktionsbygget (`assets/index-C5vJScJV.js`, `assets/index-TVHOONrV.css`).
+- Alla routes (`/kurs`, `/kurs/<id>`, `/ovningar`, `/ovningar/<id>`, `/progression`, `/kallor`, `/om`, `/installningar` och okända adresser) svarar 200 via SPA-omskrivningen. `sw.js`, `manifest.webmanifest` och ikonerna svarar 200.
+- Hela e2e-sviten (`tests/e2e/kurs.spec.ts`, 5 tester) kördes mot produktionsdomänen och gick igenom: kunskapskontroll med underkänt och godkänt försök, grön bock som består efter omladdning, laborationsprotokoll, återställning, expansion av alla 15 moduler och öppning av alla 118 underkapitel, gamla hashadresser och mobilnavigering utan horisontell overflow.
+- I webbläsaren: inga konsolfel, kapitlets innehållsfil laddas separat, formlerna renderas utan KaTeX-fel och service workern är aktiv.
+
+För att köra e2e-sviten mot produktion: använd en Playwright-konfiguration med `baseURL: 'https://restore-your-mind.vercel.app'` och utan `webServer`.
 
 ## 7. Kända begränsningar
 

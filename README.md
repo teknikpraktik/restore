@@ -2,7 +2,9 @@
 
 Vetenskaplig webbutbildning om människokroppens reglersystem, nervsystemet, stressfysiologi, andning, rörelse, sömn, belastning och återhämtning. Teori på ungefär högskolenivå kombineras med praktiska laborationer och automatiskt rättade kunskapskontroller.
 
-Driftsättning: Vercels Git-integration (projektet `teknikpraktik/restore`). Se [docs/arkitektur.md](docs/arkitektur.md#6-driftsättning) för status.
+Produktion: <https://restore-your-mind.vercel.app>. Verifierad 18 oktober 2026, se [docs/arkitektur.md](docs/arkitektur.md#6-driftsättning).
+
+Driftsättning via Vercels Git-integration (projektet `teknikpraktik/restore`, produktionsgren `main`). Förhandsversioner är skyddade med Vercel Authentication; produktionsdomänen är publik.
 
 ## Status
 
