@@ -1,6 +1,6 @@
 # Restore
 
-Vetenskaplig webbutbildning om människokroppens reglersystem, nervsystemet, stressfysiologi, andning, rörelse, sömn, belastning och återhämtning. Teori på ungefär högskolenivå kombineras med praktiska laborationer och automatiskt rättade kunskapskontroller.
+Praktiskt och vetenskapligt förankrat träningsprogram för stress och återhämtning, för vuxna utan förkunskaper. Varje kapitel växlar mellan korta förklaringar, praktiska uppgifter, reflektion och vardagsexperiment, och avslutas med ett självtest.
 
 Produktion: <https://restore-your-mind.vercel.app>. Verifierad 18 oktober 2026, se [docs/arkitektur.md](docs/arkitektur.md#6-driftsättning).
 
@@ -8,9 +8,9 @@ Driftsättning via Vercels Git-integration (projektet `teknikpraktik/restore`, p
 
 ## Status
 
-- Kursplan: 15 moduler, 118 underkapitel, alla synliga och öppningsbara.
-- Färdigproducerat: underkapitel 1.1 *Homeostas och negativ återkoppling* med teori (cirka 3 900 ord), 3 laborationer, 8 kontrollfrågor och 31 kontrollerade källor.
-- Övriga underkapitel: beskrivning och planerade lärandemål, märkta *under produktion*.
+- Version 3.0. Kursplan: 15 moduler med vardagsnära namn och mål, 118 delkapitel.
+- Färdigt: modul 1 *Kroppen söker balans* (pilot), 8 delkapitel med 16 korta övningar, 8 vardagsexperiment, 17 reflektionsfrågor, 40 självtestfrågor och 6 längre övningar.
+- Modul 2–15: nya namn och mål. Delkapitlen är under produktion och skrivs om efter godkännande av piloten.
 
 ## Kommandon
 
@@ -25,11 +25,12 @@ npm run verify:sources   # kontrollera alla DOI:er mot Crossref (kräver nätver
 
 ## Dokumentation
 
-- [PRODUKTSPECIFIKATION.md](PRODUKTSPECIFIKATION.md) – vision, vetenskapliga krav, kursarkitektur, progression
+- [PRODUKTSPECIFIKATION.md](PRODUKTSPECIFIKATION.md) – inriktning, pedagogisk modell, moduler, säkerhet, självtest
+- [docs/pedagogik.md](docs/pedagogik.md) – inventering, mall, modulmål och granskning av modul 1
 - [DESIGNSPRAK.md](DESIGNSPRAK.md) – färg, typografi, layout och komponenter
 - [docs/arkitektur.md](docs/arkitektur.md) – inventering av Restore 1, teknisk arkitektur, datamodell, validering
 - [docs/innehallsproduktion.md](docs/innehallsproduktion.md) – hur ett underkapitel produceras
-- [docs/historik/](docs/historik/) – specifikation och designspråk för Restore 1
+- [docs/historik/](docs/historik/) – specifikationer och designspråk för Restore 1 och 2.0
 
 ## Data
 

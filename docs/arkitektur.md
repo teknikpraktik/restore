@@ -53,10 +53,10 @@ tests/unit, tests/e2e        Vitest och Playwright
 
 Innehåll och presentation är åtskilda. Inga texter finns i komponenterna utöver gränssnittstexter.
 
-- **Module**: id, nummer, titel, beskrivning, kapitel-id.
-- **Chapter**: id, nummer (räknas fram), modul, titel, beskrivning, förkunskaper, lärandemål, studietid, innehållsstatus, kontrollstatus, övningar, rubriker, citerade källor, lästid.
+- **Module**: id, nummer, titel, beskrivning, mål (`mal`, sedan 3.0), kapitel-id.
+- **Chapter**: id, nummer (räknas fram), modul, titel, beskrivning, förkunskaper, lärandemål, studietid, innehållsstatus, kontrollstatus, övningar, rubriker, citerade källor, obligatorisk teori i ord och minuter, övningstid och antal Upptäck-, Reflektera- och Tillämpa-rutor (sedan 3.0).
 - **ChapterContent** (laddas vid behov): teori som HTML och kunskapskontroll.
-- **Quiz / QuizQuestion**: frågetyp, fråga, alternativ, rätt alternativ, förklaring. Godkäntgräns 0,8.
+- **Quiz / QuizQuestion**: frågetyp (sedan 3.0 främst situation, förståelse, tillämpning och slutsats), fråga, alternativ, rätt alternativ, förklaring. Godkäntgräns 0,8.
 - **Exercise**: id, titel, sammanfattning, system, typ, tid, svårighetsgrad, utrustning, evidensläge, mätfält, källor, kapitel (räknas fram). **ExerciseContent**: standardavsnitten.
 - **Source**: typ, författare, år, titel, tidskrift, volym, nummer, sidor, DOI/ISBN/URL, verifiering, kortcitat, formaterad referens, kapitel och moduler där den används.
 - **ProgressState** (`localStorage`): försök och godkännande per kapitel, protokoll per övning, senast öppnade kapitel. Versionerat format.

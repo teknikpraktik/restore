@@ -1,6 +1,6 @@
-# Restore 2.0 – designspråk
+# Restore 3.0 – designspråk
 
-Ersätter designspråket för Restore 1 (`docs/historik/DESIGNSPRAK-v1.md`). Stilmallen finns i `src/styles/base.css`.
+Designspråket från Restore 2.0 behålls oförändrat i 3.0 (en kopia finns i `docs/historik/DESIGNSPRAK-v2.md`). Tillägget i 3.0 är rutorna för den pedagogiska sekvensen nedan. Stilmallen finns i `src/styles/base.css`.
 
 ## Princip
 
@@ -42,6 +42,7 @@ Grönt används inte för något annat: inte för rätt svar i kontrollen, inte 
 ## Komponenter
 
 - **Vänstermeny:** modulnamn som knapp med pil, nummer och, när något är godkänt, antal godkända (`1/8`). Underkapitel med nummer och titel; aktivt kapitel i halvfet stil på grå bakgrund; kapitel under produktion i grå text; godkända med grön bock.
+- **Pedagogisk sekvens (3.0):** *Upptäck* har tunn svart ram och etikett med tidsåtgång ("Upptäck · 2 min"). *Reflektera* har en grå vänsterlinje utan ram. *Tillämpa i vardagen* har en svart linje ovanför och en grå under. *Fördjupning* är ihopfälld (`<details>`) mellan två grå linjer, så att den inte konkurrerar med huvudtexten. Inga nya färger.
 - **Rutor:** Definition (vänsterkant 3 px svart), Faktaruta och Räkneexempel (ljusgrå botten), Teoretisk modell och Pedagogisk förenkling (streckad ram), Evidensläge, Säkerhet. Hörnradie 0.
 - **Knappar:** svart fylld för huvudhandling, vit med svart ram för sekundär. Hörnradie 2 px.
 - **Kunskapskontroll:** alternativ som rader med ram och bokstav; valt alternativ med tjockare ram. Efter rättning: förklaring på ljusgrå botten.
